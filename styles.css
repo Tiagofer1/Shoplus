@@ -4,7 +4,7 @@ body, html {
   background-color: #110615;
   color: white;
   font-family: 'Netflix Sans', Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {

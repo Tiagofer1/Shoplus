@@ -52,3 +52,24 @@ margin-left: 10px;
 .derecha h5 {
     padding: 10px;
 }
+#todas-marcas img{
+    width: 70%;
+    cursor: pointer;
+    
+}
+.marcas{
+    display: flex;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #100d1f;
+    border-radius: 10px;
+}
+#todas-marcas{
+    width: 24%;
+    text-align: center;
+    margin-top: 1.5%;
+    margin-bottom:1.5% ;
+}

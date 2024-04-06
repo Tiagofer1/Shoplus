@@ -52,24 +52,41 @@ margin-left: 10px;
 .derecha h5 {
     padding: 10px;
 }
-#todas-marcas img{
-    width: 70%;
-    cursor: pointer;
-    
-}
-.marcas{
-    display: flex;
+.sagas{
+    margin-top: 20px;
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
-    margin-top: 20px;
-    align-items: center;
-    background-color: #100d1f;
-    border-radius: 10px;
 }
-#todas-marcas{
-    width: 24%;
+.menu-sagas{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+.sagas-img img{
+    width:90%;
+    border: 5px solid white;
+    transition: 800ms;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.img-sagas{
+    display: flex;
+    width: 100%;
     text-align: center;
-    margin-top: 1.5%;
-    margin-bottom:1.5% ;
+    margin-bottom: 20px;
+}
+.sagas-img{
+    width: 33%;
+}
+.sagas-img img:hover{
+    border-radius: 30px;
+}
+.izquierda-sagas a{
+    font-weight: 900;
+    font-size: 30px;
 }

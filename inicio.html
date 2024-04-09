@@ -9,11 +9,14 @@
 <body>
     <div class="menu-aariba">
         <div class="izquierda">
-            <img src="shotienda-logo.png" alt="" class="logo">
+            <h5>Inicio</h5>
         </div>
         <div class="derecha">
             <h5>Explorar</h5>
-            <h5>Buscar</h5>
+            <h5></h5>
+        </div>
+        <div class="centro">
+            <h5>Perfil</h5>
         </div>
     </div>
 
@@ -36,6 +39,109 @@
     <div class="sagas-img"><img src="https://image.tmdb.org/t/p/original/slsap7k8H4vBFMbjuojs79SpCOM.jpg" alt=""></div>
 </div>
 </div>
-    
+
+<style>*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 1s;
+}
+body{
+    background-color: #110615;
+
+}
+.poster-principal{
+    width: 96%;
+    height: 330px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+.poster-principal img{
+    width: 100%;
+    height: 330px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.logo-pelicula{
+    width: 200px;
+}
+.menu-aariba{
+    position: fixed;
+    width: 96%;
+    height: 80px;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgba(0, 0, 0, 0.984);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    bottom: 1%;
+
+}
+
+.derecha{
+    display: flex;
+}
+
+.derecha h5 {
+    padding: 10px;
+}
+.sagas{
+    margin-top: 20px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.menu-sagas{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+.sagas-img img{
+    width:90%;
+    border: 2px solid white;
+    transition: 800ms;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+.img-sagas{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sagas-img{
+    width: 33%;
+}
+.sagas-img img:hover{
+    border-radius: 30px;
+}
+.izquierda-sagas a{
+    font-weight: 900;
+    font-size: 30px;
+}
+.izquierda-sagas a:hover{
+transform: rotate(20g);
+}
+.centro{
+    margin-right: 3%;
+}
+.izquierda{
+    margin-left: 3%;
+}
+h5{
+    font-size: 16px;
+    font-family: monospace;
+}
+</style>
+
 </body>
 </html>

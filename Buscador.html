@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+        <h1 class="logo">ShoPlus</h1>
     <div class="accion">
         <input type="text" id="searchInput" placeholder="Buscar película..." class="search-input">
         <div class="Peliculas-accion" id="movieList">
@@ -49,6 +51,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: 300ms;
         }
         body {
             background-color: #110615;
@@ -66,13 +69,14 @@
             height: 40px;
             padding: 10px;
             margin-bottom: 10%;
-            margin-top: 10%;
+            margin-top: 5%;
             margin-left: 20%;
             margin-right: 20%;
             border-radius: 5px;
             border: none;
-            background-color: #222;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            text-align: center;
         }
     
         .Peliculas-accion {
@@ -87,7 +91,9 @@
             text-align: center;
             margin-right: 15px;
         }
-    
+        .peliculas:hover{
+            transform: translateY(-10px);
+        }
         .peliculas img {
             width: 110%;
             border-radius: 3px;
@@ -97,6 +103,13 @@
             font-family: monospace;
             font-size: 13px;
             margin-top: 5px;
+        }
+        .logo{
+            font-size: 70px;
+            text-align: center;
+            font-family: "Anton", sans-serif;
+            margin-top: 5%;
+            color: rebeccapurple;
         }
     </style>
     

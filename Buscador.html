@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div class="menu">
+        <div>
+           <a href="inicio.html"><img src="shotienda-logo.png" alt=""></a> 
+        </div>
+        <div>
+            <img src="Explorar.png" alt="">
+        </div>
+        <div>
+            <a href="Buscador.html"><img src="Lupa.png" alt=""></a>
+        </div>
+    </div>
+
         <h1 class="logo">ShoPlus</h1>
     <div class="accion">
         <input type="text" id="searchInput" placeholder="Buscar película..." class="search-input">
@@ -108,8 +121,27 @@
             font-size: 70px;
             text-align: center;
             font-family: "Anton", sans-serif;
-            margin-top: 5%;
+            margin-top: 70px;
             color: rebeccapurple;
+        }
+        .menu{
+            width: 90%;
+            background-color: #000000b0;
+            height: 50px;
+            border-radius:30px;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+        .menu img{
+            width: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
     </style>
     

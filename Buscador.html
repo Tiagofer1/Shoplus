@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="accion">
+        <input type="text" id="searchInput" placeholder="Buscar película..." class="search-input">
+        <div class="Peliculas-accion" id="movieList">
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg" alt="">
+            <h3 class="h7">Kung Fu Panda 4</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/n726fdyL1dGwt15bY7Nj3XOXc4Q.jpg" alt="">
+            <h3 class="h7">Heart of the Hunter</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/ldfCF9RhR40mppkzmftxapaHeTo.jpg" alt="">
+            <h3 class="h7">Migration</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/AgHbB9DCE9aE57zkHjSmseszh6e.jpg" alt="">
+            <h3 class="h7">Damsel</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/3KOsvvaGgnriVAe0hZoV91bjlfl.jpg" alt="">
+            <h3 class="h7">No Way Up</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/51tAtnATqN9VizZDnCN0IdCQpXF.jpg" alt="">
+            <h3 class="h7">Godzilla vs. Kong</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg" alt="">
+            <h3 class="h7">The Wages of Fear</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/tMefBSflR6PGQLv7WvFPpKLZkyk.jpg" alt="">
+            <h3 class="h7">Godzilla x Kong: The New Empire</h3></div>
+            <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/wJG5FeCzwLmSKkClWYRymKpG9KJ.jpg" alt="">
+                <h3 class="h7">Stranger Things</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg" alt="">
+                <h3 class="h7">Dark</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/8VNA0RdrPk8Ec7XVjpeT0Rnui79.jpg" alt="">
+                <h3 class="h7">Control Z</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/7mfPWKrNInkTbjVwp0EkaFYRHqD.jpg" alt="">
+                <h3 class="h7">Vis A Vis</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/k0kMdO52LpC5JWgd0uWEH7gqcCe.jpg" alt="">
+                <h3 class="h7">El Mentalista</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg" alt="">
+                <h3 class="h7">Juego De Trono</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/ineLOBPG8AZsluYwnkMpHRyu7L.jpg" alt="">
+                <h3 class="h7">Breaking Bad</h3></div>
+                <div class="peliculas"><img src="https://image.tmdb.org/t/p/original/yff28MtQ52vrngK5aM3DtnArwCr.jpg" alt="">
+                <h3 class="h7">The Walking Dead</h3></div>
+        </div>
+    </div>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+    
+        .accion {
+            width: 96%;
+            margin-left: 2%;
+            margin-right: 2%;
+            color: white;
+            margin-bottom: 20px;
+        }
+    
+        .search-input {
+            width: 60%;
+            height: 40px;
+            padding: 10px;
+            margin-bottom: 10%;
+            margin-top: 10%;
+            margin-left: 20%;
+            margin-right: 20%;
+            border-radius: 5px;
+            border: none;
+            background-color: #222;
+            color: white;
+        }
+    
+        .Peliculas-accion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .peliculas {
+            width: 110px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-left: 1%;
+        }
+    
+        .peliculas img {
+            width: 100%;
+            border-radius: 3px;
+        }
+    
+        .h7 {
+            font-family: monospace;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    </style>
+    
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function() {
+            const searchValue = this.value.toLowerCase();
+            const movies = document.querySelectorAll("#movieList .peliculas");
+            
+            movies.forEach(movie => {
+                const title = movie.querySelector(".h7").textContent.toLowerCase();
+                
+                if (title.includes(searchValue)) {
+                    movie.style.display = "block";
+                } else {
+                    movie.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -96,6 +96,11 @@
     padding: 0;
     box-sizing: border-box;
     transition: 1s;
+    a, button {
+    -webkit-tap-highlight-color: transparent; /* Safari */
+    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
+    outline: none; /* Elimina el borde alrededor del elemento activado */
+  }
 }
 body{
     background-color: #110615;
@@ -197,16 +202,18 @@ body{
 }
 .menu{
             width: 90%;
-            background-color:#000000b0;
+            background-color:#000000b1;
             height: 50px;
             border-radius:30px;
             margin-left: 5%;
             margin-right: 5%;
-            margin-top: 1%;
+            margin-bottom: 1%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
+            bottom: 0;
+            backdrop-filter: blur(10px);
         }
         .menu img{
             width: 30px;
@@ -217,11 +224,6 @@ body{
             text-decoration: none;
             color: white;
         }
-            a, button {
-    -webkit-tap-highlight-color: transparent; /* Safari */
-    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
-    outline: none; /* Elimina el borde alrededor del elemento activado */
-  }
 </style>
 
 </body>

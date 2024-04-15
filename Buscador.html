@@ -22,7 +22,7 @@
 
         <h1 class="logo">ShoPlus</h1>
     <div class="accion">
-        <input type="text" id="searchInput" placeholder="Buscar película..." class="search-input">
+        <input type="text" id="searchInput" placeholder="Que pelicula buscas..." class="search-input">
         <div class="Peliculas-accion" id="movieList">
             <a href="Kun-Fu panda 4.html"><div class="peliculas"><img src="https://image.tmdb.org/t/p/original/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg" alt=""></a>
             <h3 class="h7">Kung Fu Panda 4</h3></div>
@@ -65,6 +65,11 @@
             padding: 0;
             box-sizing: border-box;
             transition: 300ms;
+            a, button {
+    -webkit-tap-highlight-color: transparent; /* Safari */
+    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
+    outline: none; /* Elimina el borde alrededor del elemento activado */
+  }
         }
         body {
             background-color: #110615;
@@ -126,28 +131,25 @@
         }
         .menu{
             width: 90%;
-            background-color: #000000b0;
+            background-color:#000000b1;
             height: 50px;
             border-radius:30px;
             margin-left: 5%;
             margin-right: 5%;
-            margin-top: 1%;
+            margin-bottom: 1%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            top: 0;
+            bottom: 0;
+            backdrop-filter: blur(10px);
+            z-index: 1;
         }
         .menu img{
             width: 30px;
             margin-left: 20px;
             margin-right: 20px;
         }
-                a, button {
-    -webkit-tap-highlight-color: transparent; /* Safari */
-    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
-    outline: none; /* Elimina el borde alrededor del elemento activado */
-  }
     </style>
     
     <script>

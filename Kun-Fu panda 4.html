@@ -19,19 +19,35 @@
             <a href="Buscador.html"><img src="Lupa.png" alt=""></a>
         </div>
     </div>
+    <div class="titulo">
+        <h5>Kun-Fu Panda 4</h5>
+    </div>
     <div class="poster-principal">
-        <img src="https://image.tmdb.org/t/p/original/wTakf8tiPyfrf4im9YfXgrwwAIp.jpg" alt="">
+        <img class="img-desenfocada" src="https://image.tmdb.org/t/p/original/kYgQzzjNis5jJalYtIHgrom0gOx.jpg" alt="">
+        <img class="poster" src="https://image.tmdb.org/t/p/original/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg" alt="">
+    </div>
+    <div class="reproducir-descargar">
+    <div class="reproducir">
+        <img class="img-play-descarga" src="Play.png" alt="">
+    </div>
+        <div class="descargar">
+            <img class="img-play-descarga" src="descargar.png" alt="">
+        </div>
     </div>
 
-    <div class="botones">
-        <div class="reproducir"><input type="button" value="Reproducir"></div>
-        <div class="descargar"><input type="button" value="descargar"></div>
-    </div>
-<style>*{
+
+
+<style>
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: 1s;
+    a, button {
+    -webkit-tap-highlight-color: transparent; /* Safari */
+    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
+    outline: none; /* Elimina el borde alrededor del elemento activado */
+  }
 }
 body{
     background-color: #110615;
@@ -40,79 +56,97 @@ body{
 .poster-principal{
     width: 100%;
     height: 400px;
-
+    display:flex ;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
-.poster-principal img{
+.img-desenfocada{
     width: 100%;
     height: 400px;
     object-fit: cover;
-}
+    filter: blur(10px);
 
+}
+.poster{
+    width: 200px;
+    z-index: 1;
+    position: absolute;
+    border: 2px solid white;
+    box-shadow: 20px 11px 40px 3px black;
+
+}
+.titulo{
+    color: white;
+    margin-top: 1rem;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+.titulo h5{
+    text-align: center;
+}
 .menu{
             width: 90%;
-            background-color:#000000b0;
+            background-color:#000000b1;
             height: 50px;
             border-radius:30px;
             margin-left: 5%;
             margin-right: 5%;
-            margin-top: 1%;
+            margin-bottom: 1%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
+            bottom: 0;
+            backdrop-filter: blur(10px);
         }
-        .menu img{
+ .menu img{
             width: 30px;
             margin-left: 20px;
             margin-right: 20px;
         }
-        a{
+a{
             text-decoration: none;
             color: white;
         }
-        .botones{
-            display: flex;
-            width: 90%;
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-top: 20px;
-            color: white;
-        }
-        .reproducir{
-            width: 60%;
-            
-        }
-        .reproducir input{
-            width: 100%;
-            height: 40px;
-            background-color: #3d0e4e;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            font-size: 20px;
-            font-family: "Alata", sans-serif;
-
-        }
-        .descargar{
-            width: 38%;
-            margin-left: 2%;
-            
-        }
-        .descargar input{
-            width: 100%;
-            height: 40px;
-            background-color: #ffffff;
-            border: none;
-            color: rgb(0, 0, 0);
-            border-radius: 10px;
-            font-size: 20px;
-            font-family: "Alata", sans-serif;
-        }
-        a, button {
-    -webkit-tap-highlight-color: transparent; /* Safari */
-    tap-highlight-color: transparent; /* Chrome, Firefox, Opera, y otros */
-    outline: none; /* Elimina el borde alrededor del elemento activado */
-  }
+ 
+.reproducir{
+    width: 69%;
+    height: 60px;
+    background: rgb(60 9 146);
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.reproducir:hover{
+    background-color: rgb(42, 6, 105);
+}
+.img-play-descarga{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.reproducir-descargar{
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+width: 90%;
+}
+.descargar{
+    width: 20%;
+    background: #20074a;
+    text-align: center;
+    margin-left: 1%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.descargar:hover{
+   background-color: rgb(60 9 146);
+}
 </style>
 
 </body>

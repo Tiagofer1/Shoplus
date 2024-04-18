@@ -42,7 +42,7 @@
     </div>
 
     <div class="accion">
-        <a href="#"><h6>Accion  ></h6></a>
+        <a href="#"><h6>Similares</h6></a>
         <div class="Peliculas-accion">
             <a href="Kun-Fu panda 4.html"><div class="peliculas"><img src="https://image.tmdb.org/t/p/original/wkfG7DaExmcVsGLR4kLouMwxeT5.jpg" alt=""></a>
             <h3 class="h7">Kung Fu Panda 4</h3></div>
@@ -82,7 +82,7 @@ body{
 }
 .poster-principal{
     width: 100%;
-    height: 400px;
+    height: 350px;
     display:flex ;
     align-items: center;
     text-align: center;
@@ -90,10 +90,10 @@ body{
 }
 .img-desenfocada{
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
     filter: blur(10px);
-
+    z-index: 1;
 }
 .poster{
     width: 200px;
@@ -141,30 +141,32 @@ a{
         }
  
 .reproducir{
-    width: 49%;
-    height: 60px;
-    background: rgb(60 9 146);
+    width: 30%;
+    height: 50px;
+    background: rgb(243, 65, 0);
     text-align: center;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.reproducir:hover{
-    background-color: rgb(42, 6, 105);
-}
+
 .img-play-descarga{
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-top: 15px;
     margin-left: 5px;
 }
 .reproducir-descargar{
     display: flex;
     margin-left: 5%;
-width: 90%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 .descargar{
     width: 20%;
-    background: #20074a;
+    background: #ff2f00;
     text-align: center;
     margin-left: 1%;
     border-top-right-radius: 10px;

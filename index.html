@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="colores-principales.css">
+    <link rel="stylesheet" href="../colores-principales.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>AmPlay | Nahatoro San</title>
 </head>
@@ -25,6 +25,7 @@
 }
 .share-icon{
     width: 30px;
+    margin: 0px 30px 0px 0px;
 }
 .erc-series-tags.tags {
     color: white;
@@ -82,6 +83,9 @@ h5.puntuacion-media {
     color: white;
     font-weight: 900;
 }
+.reproducir-boton:hover{
+    background: var(--color-hover-vermas);
+}
 a.añadir-favorito {
     position: absolute;
     margin: 20px 0% 0px 300px;
@@ -89,12 +93,30 @@ a.añadir-favorito {
     height: 50px;
     align-items: center;
     justify-content: center;
-    border: 5px solid var(--color-hover-vermas);
+    border: 2px solid var(--color-primario);
 }
 svg.favorito-svg {
     width: 35px;
     height: 35px;
-    margin: 4px;
+    margin: 6px;
+}
+.descripcion {
+    margin: 85px 1% 80px 1%;
+    color: white;
+    text-align: left;
+}
+    p {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 13px;
+    width: 90%;
+    overflow: hidden;
+}
+h5.titulo-descripcion {
+    font-size: x-large;
+    font-family: 'Oswald';
+    color: var(--color-primario);
+    margin: 0px 0px 10px 0px;
 }
     </style>
     <div class="menu-abajo">
@@ -449,12 +471,18 @@ svg.favorito-svg {
     <h5 class="puntuacion-media">| Puntuación Media 4.6</h5>
 </div>
 <div class="botones-reproducir-favorito">
-    <a class="reproducir-boton" href=""><span></span>Comenzar E1</a>
+    <a class="reproducir-boton" href="https://jkanime.net/um.php?e=SVJyZ3RVcEM3eGg2N2xFNjBnZVdDazd5QnFkaWx6M3hxUjZ6d1V3WUlIOU5uZmpWNWFzYVJVZE5udEhwZ2FSL0oyaTBDV0x6MWxsM2Y1ZERYUjl3MHc9PTo6HqQQohwjHAKCl5IzrxERQQ--&t=e66292f43e32d3b92d2c00229a6afe55"><span></span>Comenzar E1</a>
     <a class="añadir-favorito" href="#">
         <span>
             <svg class="favorito-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path class="favorito-path" d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
         </span>
     </a>
+</div>
+<div class="descripcion">
+    <h5 class="titulo-descripcion"></h5>
+    <p>"¡Una chica de un grado inferior me acaba de hacer llorar!" Un día, Senpai visita la biblioteca después de la escuela y se convierte en el objetivo de un joven súper sádico. El nombre de la chica que se burla, atormenta y tienta a Senpai es "¡Nagatoro!" Es molesta pero adorable. Es doloroso, pero aún así quieres estar a su lado. Esta es una historia sobre una chica extremadamente sádica y temperamental y sentirás que algo se despierta dentro de ti.
+
+    </p>
 </div>
 </div>
 

@@ -6,15 +6,20 @@
     <title>SH-B</title>
     <style>
         :root{
-            --color-primario:#0077ff;
+            --color-primario:rgb(0, 119, 255);
+            --color-hover-vermas:rgba(0, 119, 255, 0.7);
+            
         }
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: 300ms;
+
         }
         body{
             background-color: black;
+
         }
         .menu-abajo{
             width: 100%;
@@ -25,6 +30,7 @@
             align-items: center;
             position: fixed;
             bottom: 0;
+            z-index: 99;
         }
         .centro,.izquierda,.derecha{
             width: 40px;
@@ -77,6 +83,11 @@
              border-radius: 2px;
 
                 }
+            .boton-ver-ahora:hover{
+                background-color:var(--color-hover-vermas) ;
+                backdrop-filter: blur(1px   );
+
+            }
 
             a.añadir-favorito {
             position: absolute;
@@ -86,7 +97,6 @@
             height: 40px;
             width: 40px;
             border-radius: 2px;
-            transition: 300ms;
         }
         a.añadir-favorito:hover{
             border:2px solid white;
@@ -116,7 +126,8 @@
             height: 100%;
             margin: 0px 5px 0px 5px;
             text-align: center;
-    color: white;
+            color: white;
+            position: relative;
         }
         .img-anime{
             width: 150px;
@@ -126,41 +137,20 @@
         }
         .hover-anime {
             width: 150px;
-            height: 280px;
+            height: 250px;
             position: absolute;
             z-index: 1;
-            transition: 300ms;
             border-radius: 3px;
-            opacity: 0;
-        }
-        .hover-anime:hover{
-            background: #000000b8;
             color: white;
             opacity: 1;
         }
-        .titulo-hover h5 {
-    margin: 10px 0px 5px 1px;
-    font-size: .6rem;
-}
-.puntuacion-hover,.botones-hover {
-    display: flex;
-}
-.puntuacion-hover p {
-    font-size: .8rem;
-    margin: 10px 0px 0px 10px;
-}
-.puntuacion-hover svg {
-    width: 10px;
-    margin: 10px 0px 0px 5px;
-}
-.descripcion-hover {
-    height: 40%;
-    overflow: hidden;
-    margin: 10px 10px 0px 10px;
-}
+        .hover-anime:hover{
+            background: linear-gradient(223deg, #000000ab, transparent);
+
+        }
 .botones-hover svg {
     width: 25px;
-    margin: 30px 0px 0px 10px;
+    margin: 10px 0px 0px 120px;
     
 }
     </style>
@@ -511,41 +501,30 @@
     <div class="fila-un-ninja-un-camino">
         <div class="anime">
             <div class="hover-anime">
-                <div class="titulo-hover">
-                <h5>DON'T TOY WITH ME, MISS NAGATORO</h5>
-            </div>
-            <div class="puntuacion-hover">
-                <p>4.6</p>
-                <svg class="star-rating-short-static__star-icon--JLlR- base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="star-svg" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
-            </div>
-            <div class="descripcion-hover">
-                <p>"¡Una chica menor que yo me ha hecho llorar!".
 
-                    Un día, un chico de segundo está en la biblioteca de la escuela y acaba siendo el objetivo de una chica de primero extremadamente sádica. La chica que lo atormenta, lo molesta y a la vez lo fascina se llama Nagatoro. Es muy molesta, pero es adorable. Es insoportable, pero quieres que esté a tu lado. Esta es una historia sobre una chica muy sádica y temperamental que acabará despertando algo en tu interior.</p>
-            </div>
             <div class="botones-hover">
-                <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="false" role="img"><title id="play-svg">Reproducir</title><path d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>
-                <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
-            <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="add-svg" aria-labelledby="add-svg" aria-hidden="false" role="img"><title id="add-svg">Añadir</title><path d="M13 3v8h8v2h-8v8h-2v-8H3v-2h8V3z"></path></svg>
-            </div>
+                <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>            </div>
             </div>
             <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
             <h5>Nagatoro-san</h5>
         </div>
         <div class="anime">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
+                        <div class="hover-anime">
+
+            <div class="botones-hover">
+                <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>            </div>
+            </div>
+            <img class="img-anime" src="https://image.tmdb.org/t/p/original/k61vVOnVjyfjgvEG0d2G8K8Mi5c.jpg" alt="">
+            <h5>Orimiya</h5>
         </div>
         <div class="anime">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
+            <div class="hover-anime">
+
+        <div class="botones-hover">
+            <svg class="tooltip-icon__action-icon--toIky" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>            </div>
         </div>
-        <div class="anime">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
-        </div>
-        <div class="anime">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
-        </div>
-        <div class="anime">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
+        <img class="img-anime" src="https://image.tmdb.org/t/p/original/qqqQXLydaC9WgEUrQV7dIZjMcgP.jpg" alt="">
+        <h5>Tomo-chan Is a Girl!</h5>
         </div>
     </div>
 </div>

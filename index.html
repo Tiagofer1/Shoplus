@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="colores-principales.css">
+    <link rel="stylesheet" href="../colores-principales.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>AmPlay | Nahatoro San</title>
 </head>
@@ -101,7 +101,7 @@ svg.favorito-svg {
     margin: 6px;
 }
 .descripcion {
-    margin: 85px 1% 80px 1%;
+    margin: 85px 1% 0px 0px;
     color: white;
     text-align: left;
 }
@@ -117,6 +117,64 @@ h5.titulo-descripcion {
     font-family: 'Oswald';
     color: var(--color-primario);
     margin: 0px 0px 10px 0px;
+}
+.tab-container {
+        width: 100%;
+        margin: 0 0 80px 0;
+    }
+    select#gender-select {
+    width: 150px;
+    height: 40px;
+    margin: 15px 0px 20px 2%;
+    border-radius: 3px;
+    background: rgb(0 0 0);
+    color: white;
+    border: 2px solid var(--color-primario);
+    outline: none;
+}
+
+
+    .tab-content {
+        display: none;
+        width: 96%;
+        margin: 0px 2% 0px 2%;
+        color: white;
+    }
+    .temporada-1-padre {
+    width: 100%;
+}
+.temporada-1-medio {
+    width: 100%;
+}
+.temporada-1-hijo-episodios {
+    width: 100%;
+    display: flex;
+}
+.temporada-1-hijo-episodios img{
+
+    width: 170px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 7px;
+
+}
+.a-episodios h5{
+ 
+    margin: 10px;
+    font-family: 'Oswald';
+    
+
+}
+.a-episodios p{
+    margin: 10px;
+}
+.episodios-titulo{
+    color: var(--color-primario);
+}
+.a-episodios{
+    display: flex;
+    color: white;
+    text-decoration: none;
 }
     </style>
     <div class="menu-abajo">
@@ -471,7 +529,7 @@ h5.titulo-descripcion {
     <h5 class="puntuacion-media">| Puntuación Media 4.6</h5>
 </div>
 <div class="botones-reproducir-favorito">
-    <a class="reproducir-boton" href="https://jkanime.net/um.php?e=SVJyZ3RVcEM3eGg2N2xFNjBnZVdDazd5QnFkaWx6M3hxUjZ6d1V3WUlIOU5uZmpWNWFzYVJVZE5udEhwZ2FSL0oyaTBDV0x6MWxsM2Y1ZERYUjl3MHc9PTo6HqQQohwjHAKCl5IzrxERQQ--&t=e66292f43e32d3b92d2c00229a6afe55"><span></span>Comenzar E1</a>
+    <a class="reproducir-boton" target="_blank" href="https://jkanime.net/um.php?e=SVJyZ3RVcEM3eGg2N2xFNjBnZVdDazd5QnFkaWx6M3hxUjZ6d1V3WUlIOU5uZmpWNWFzYVJVZE5udEhwZ2FSL0oyaTBDV0x6MWxsM2Y1ZERYUjl3MHc9PTo6HqQQohwjHAKCl5IzrxERQQ--&t=e66292f43e32d3b92d2c00229a6afe55"><span></span>Comenzar E1</a>
     <a class="añadir-favorito" href="#">
         <span>
             <svg class="favorito-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path class="favorito-path" d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
@@ -485,6 +543,60 @@ h5.titulo-descripcion {
     </p>
 </div>
 </div>
+
+    <div class="tab-container">
+        <select id="gender-select" onchange="switchTab()">
+            <option value="T1">Temporada 1</option>
+            <option value="T2">Temporada 2</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <div id="T1" class="tab-content">
+            <div class="temporada-1-padre">
+                <div class="temporada-1-medio">
+                    <div class="temporada-1-hijo-episodios">
+                        <a class="a-episodios" href="">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/s1xjPXtrFemLQJF5H3bn0GAbENM.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                        <h5>NAGATORO-SAN</h5>
+                        <p><span class="episodios-titulo">T1 E1 - </span>Senpai es un poco... / Senpai, ¿nunca te enojas?</p>
+                    </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="T2" class="tab-content" style="display:none">
+            <h3>Hombre</h3>
+            <p>Contenido para Hombre.</p>
+        </div>
+        <div id="Otro" class="tab-content" style="display:none">
+            <h3>Otro</h3>
+            <p>Contenido para Otro.</p>
+        </div>
+    </div>
+
+    <script>function switchTab() {
+        var select = document.getElementById("gender-select");
+        var selectedValue = select.value;
+        var tabcontent = document.getElementsByClassName("tab-content");
+    
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+    
+        document.getElementById(selectedValue).style.display = "block";
+    }
+    
+    // Mostrar la primera pestaña por defecto
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("gender-select").value = "T1";
+        switchTab();
+    });
+    </script>
+
 
 </body>
 </html>

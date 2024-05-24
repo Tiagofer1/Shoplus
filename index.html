@@ -781,25 +781,30 @@ width: 100%;
 
     </div>
 
-    <script>function switchTab() {
-        var select = document.getElementById("gender-select");
-        var selectedValue = select.value;
-        var tabcontent = document.getElementsByClassName("tab-content");
-    
-        for (var i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-    
-        document.getElementById(selectedValue).style.display = "block";
-    }
-    
-    // Mostrar la primera pestaña por defecto
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("gender-select").value = "T1";
-        switchTab();
-    });
-    </script>
 
+    <script>
+        function switchTab() {
+            var select = document.getElementById("gender-select");
+            var selectedValue = select.value;
+            var tabcontent = document.getElementsByClassName("tab-content");
+
+            // Guardar la selección en localStorage
+            localStorage.setItem('selectedTab', selectedValue);
+
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            document.getElementById(selectedValue).style.display = "block";
+        }
+
+        // Mostrar la pestaña seleccionada previamente o la primera por defecto
+        document.addEventListener("DOMContentLoaded", function () {
+            var savedTab = localStorage.getItem('selectedTab') || "T1";
+            document.getElementById("gender-select").value = savedTab;
+            switchTab();
+        });
+    </script>
 
 </body>
 </html>

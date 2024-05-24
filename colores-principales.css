@@ -62,3 +62,15 @@
         height: 350px;
         background: linear-gradient(0deg, black, transparent);
             }
+            ::-webkit-scrollbar {
+                width: 9px; /* Ancho de la barra de desplazamiento */
+              }
+            
+              ::-webkit-scrollbar-track {
+                background: rgb(36, 35, 35); /* Color de fondo de la pista de la barra de desplazamiento */
+              }
+            
+              ::-webkit-scrollbar-thumb {
+                background: var(--color-primario); /* Color de la barra de desplazamiento */
+                border-radius: 10px; /* Redondear los bordes de la barra de desplazamiento */
+              }

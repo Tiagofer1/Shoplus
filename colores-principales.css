@@ -62,3 +62,12 @@
         height: 350px;
         background: linear-gradient(0deg, black, transparent);
             }
+.poster {
+                width: 170px;
+                position: absolute;
+                margin: 120px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+            }

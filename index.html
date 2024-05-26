@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Login Único</title>
+    <link rel="stylesheet" href="colores-principales.css">
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .background-image {
+            background-image: url('https://static.crunchyroll.com/cr-acquisition/assets/img/landing/hero/background-desktop@3x.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        div#loginModal {
+            width: 340px;
+            background: #00000078;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+        .modal-content {
+            width: 340px;
+            height: 100%;
+        }
+        h2.h2-login {
+            margin: 30px 0px 30px 0px;
+            font-family: oswald;
+            font-size: xx-large;
+        }
+        .Usuario-contraseña {
+    margin: 60px 0px 20px 0px;
+    font-family: oswald;
+    font-size: large;
+}
+
+
+input#username {
+    width: 80%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    color: white;
+    margin: 15px 0px 15px 0px;
+    outline: none;
+    padding: 0px 0px 5px 0px;
+}
+input#password {
+    width: 80%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    color: white;
+    margin: 15px 0px 15px 0px;
+    outline: none;
+    padding: 0px 0px 5px 0px;
+}
+button#loginButton {
+    margin: 15px 0px 30px 0px;
+    width: 80%;
+    height: 40px;
+    background: var(--color-primario);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+            </style>
+    <div class="background-image">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2 class="h2-login">Iniciar Sesion</h2>
+            <label for="username" class="Usuario-contraseña">Nombre de Usuario</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password" class="Usuario-contraseña">Contraseña</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button id="loginButton">Inciar Sesion</button>
+        </div>
+    </div>
+</div>
+
+   <script>document.addEventListener('DOMContentLoaded', function() {
+        const loginModal = document.getElementById('loginModal');
+        const loginButton = document.getElementById('loginButton');
+    
+        // Verificar si el usuario ya está registrado
+        if (!localStorage.getItem('registered')) {
+            loginModal.style.display = 'flex'; // Mostrar modal si no está registrado
+        } else {
+            window.location.href = 'inicio.html'; // Redirigir si ya está registrado
+        }
+    
+        loginButton.addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            if (username && password) {
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+                // Verificar si el nombre de usuario ya está en uso
+                if (users.includes(username)) {
+                    alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
+                } else {
+                    // Guardar el nombre de usuario en la lista de usuarios registrados
+                    users.push(username);
+                    localStorage.setItem('users', JSON.stringify(users));
+    
+                    // Guardar estado de registro en localStorage
+                    localStorage.setItem('registered', 'true');
+                    localStorage.setItem('currentUser', username);
+                    window.location.href = 'welcome.html'; // Redirigir a otra página después de registrarse
+                }
+            } else {
+                alert('Por favor, ingresa un nombre de usuario y una contraseña.');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -21,13 +21,14 @@ background-color: black;
     overflow: hidden;
     display: flex;
     align-items: center;
-    background-image: url(https://artfiles.alphacoders.com/121/121546.png);
+    background-image: url(https://images.alphacoders.com/919/919628.jpg);
     background-position-y: unset;
     background-position-x: center;
 }
 .profile-image {
     width: 150px;
     height: 150px;
+    z-index: 1;
 }
 img.foto-perfil {
     width: 150px;
@@ -44,6 +45,7 @@ div#usernameDisplay {
     font-weight: 600;
     font-variant: all-petite-caps;
     padding: 0px 10px 0px 30px;
+    z-index: 1;
 }
 .AmPlay {
     color: black;
@@ -62,7 +64,6 @@ div#usernameDisplay {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
 }
 
 .modal-content {
@@ -93,12 +94,158 @@ div#usernameDisplay {
     border-radius: 10px;
     cursor: pointer;
     margin: 10px;
+    object-position: top;
 }
 .seleccion-personaje-p {
     font-family: 'Oswald';
     text-align: center;
     padding: 20px;
 }
+.tabs {
+    width: 96%;
+    margin: 70px 2% 0px 2%;
+}
+.tab-button {
+    width: 100%;
+    margin: 0px .5% 10px;
+    height: 45px;
+    background: var(--color-primario);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Oswald';
+    font-size: x-large;
+}
+.favorites-title {
+    margin: 20px;
+    color: white;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 30px;
+}
+.animes {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.anime-poster-info {
+    width: 170px;
+    height: 320px;
+    overflow: hidden;
+    margin: 0px 5px 10px;
+    border-radius: 10px;
+}
+div#opcion1, div#opcion2 {
+    margin: 0px 0px 80px 0px;
+}
+#imageOptions{
+    margin: 0px 0px 70px 0px;
+}
+img.poster-anime {
+    width: 170px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.degrade {
+    width: 100%;
+    position: absolute;
+    height: 200px;
+    background: #00000038;
+}
+input.buscador {
+    width: 90%;
+    height: 40px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    outline: none;
+    color: white;
+    font-family: 'Oswald';
+    font-size: smaller;
+    padding: 5px;
+}
+.animes {
+    width: 100%;
+    margin: 0px 0px 70px 0px;
+}
+
+.fila {
+    width: 96%;
+    margin: 20px 2% 0px 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-wrap: wrap; /* Permitir el cambio de línea */
+
+    color: white;
+}
+
+img.banner-anime {
+    width: 150px;
+    object-fit: cover;
+    height: 250px;
+    border-radius: 2px;
+}
+
+.anime {
+    width: 155px;
+    height: 340px;
+    text-align: justify;
+}
+h5.Titulo-anime {
+    font-family: 'Oswald';
+    padding-left: 3px;
+    font-size: 15px;
+}
+
+
+.temporadas-episodios{
+    color: white;
+    font-weight: 900;
+    padding-left: 5px;
+}
+.perla-finalizado {
+    display: flex;
+    align-items: center;
+    padding: 5px 0px 5px 3px;
+    
+}
+h5.finalizado-emision-h5 {
+    padding: 00px 0px 0px 7px;
+    font-family: 'Oswald';
+    font-size: 13px;
+}
+.perla {
+    width: 5px;
+    height: 5px;
+    transform: rotateZ(45deg);
+    background: var(--color-hover-vermas);
+}
+.a-abajo-poster-logo{
+    width: 170px;
+}
+.a-abajo-poster:hover{
+    background-color: var(--color-primario);
+}
+.eliminar-button {
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 10px 0px;
+         width: 150px;
+
+        }
+
+        .eliminar-button:hover {
+            background-color: var(--color-hover-vermas);
+        }
     </style>
 </head>
 <body>
@@ -434,6 +581,7 @@ div#usernameDisplay {
     </div>
 
     <div class="profile-container">
+        <div class="degrade"></div>
         <div class="profile-image" onclick="openModal()">
             <img class="foto-perfil"  src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Foto de perfil" >
         </div>
@@ -477,83 +625,219 @@ div#usernameDisplay {
 
 
     <div class="tabs">
-        <button class="tab-button" onclick="openTab('opcion1')">Opción 1</button>
-        <button class="tab-button" onclick="openTab('opcion2')">Opción 2</button>
+        <button class="tab-button" onclick="openTab('opcion1')">Animes Favoritos</button>
+        <button class="tab-button" onclick="openTab('opcion2')">Añadir a Favoritos</button>
     </div>
 
     <div id="opcion1" class="tab-content">
         <div class="favorites-title">Favoritos</div>
         <div class="animes">
-            <div class="anime-poster-info">
-                <img class="poster-anime" src="https://image.tmdb.org/t/p/original/2YqZ6IyFk7menirwziJvfoVvSOh.jpg" alt="">
-                <h5 class="nombre-anime">Godzilla vs kong</h5>
-            </div>
-    
-            <div class="anime-poster-info">
-                <img class="poster-anime" src="https://image.tmdb.org/t/p/original/2YqZ6IyFk7menirwziJvfoVvSOh.jpg" alt="">
-                <h5 class="nombre-anime">godzilla vs kong</h5>
-            </div>
+
         </div>
     </div>
 
     <div id="opcion2" class="tab-content">
-        <div class="aniadir-favorito">
+        <div class="favorites-title">
             <h3 class="añadir-favorito">Añadir Favorito</h3>
-            <input class="buscador" type="text">
+            <input id="searchInput" class="buscador" type="text">
+            <div class="animes">
+                <div class="fila">
+                    <div class="anime">
+        
+                        <a class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/6m0DaxNVYATG8YrzHl38fuUkwlz.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Classrom Of The Elite</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Finalizado</h5>
+                        </div>
+                    </div>
+                    <div class="anime">
+                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/5FMsT2WzniLgELATUlXpE8zi6NM.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Nagatoro-San</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Finalizado</h5>
+                        </div>
+                    </div>
+                    <div class="anime">
+                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/iSOKGl5KIeOCAtigUDCfFZe2cOi.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Horimiya</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Finalizado</h5>
+                        </div>
+                    </div>
+                    <div class="anime">
+                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/55YOpgycwAX7KZhFOT9gObKwNIi.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Tomo-chan Is a Girl!</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Finalizado</h5>
+                        </div>
+                    </div>
+                    <div class="anime">
+                        <a  class="a-abajo-poster"><img class="banner-anime" src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Nisekoi</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Finalizado</h5>
+                        </div>
+                    </div>
+                    <div class="anime">
+                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/gsq1pCxMHhZDCHEh78sD6yEHoLu.jpg" alt=""></a>
+                        <h5 class="Titulo-anime">Demon slayer</h5>
+                        <div class="perla-finalizado">
+                            <div class="perla"></div>
+                            <h5 class="finalizado-emision-h5">Reestreno</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const username = localStorage.getItem('currentUser');
-            const selectedImage = localStorage.getItem('selectedImage');
-            
-            if (username) {
-                document.getElementById('usernameDisplay').textContent = username;
-            } else {
-                window.location.href = 'index.html'; // Redirigir al login si no hay usuario registrado
-            }
-            
-            if (selectedImage) {
-                document.querySelector('.profile-image img').src = selectedImage;
-            }
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    const username = localStorage.getItem('currentUser');
+    const selectedImage = localStorage.getItem('selectedImage');
     
-        var modal = document.getElementById("myModal");
-    
-        function openModal() {
-            modal.style.display = "block";
-        }
-    
-        function closeModal() {
-            modal.style.display = "none";
-        }
-    
-        function selectImage(imageUrl) {
-            var profileImage = document.querySelector('.profile-image img');
-            profileImage.src = imageUrl;
-            
-            // Guardar la URL de la imagen seleccionada en el almacenamiento local
-            localStorage.setItem('selectedImage', imageUrl);
-            
-            closeModal();
-        }
-        function openTab(tabName) {
-        // Ocultar todos los contenidos de las tabs
-        var i, tabcontent;
-        tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-    
-        // Mostrar el contenido de la tab seleccionada
-        document.getElementById(tabName).style.display = "block";
+    if (username) {
+        document.getElementById('usernameDisplay').textContent = username;
+    } else {
+        window.location.href = 'index.html'; // Redirigir al login si no hay usuario registrado
     }
     
-    // Mostrar por defecto la primera tab
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementsByClassName("tab-button")[0].click();
+    if (selectedImage) {
+        document.querySelector('.profile-image img').src = selectedImage;
+    }
+
+    // Cargar favoritos al cargar la página
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    const contenedorFavoritos = document.querySelector('.animes'); // Contenedor de favoritos
+
+    favoritos.forEach(favorito => {
+        const nuevoFavorito = document.createElement('div');
+        nuevoFavorito.classList.add('anime-poster-info');
+
+        const nuevaImagen = document.createElement('img');
+        nuevaImagen.classList.add('poster-anime');
+        nuevaImagen.src = favorito.posterSrc;
+
+        // Botón para eliminar de favoritos
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'Eliminar de Favoritos';
+        botonEliminar.classList.add('eliminar-button'); // Clase para el botón de eliminar
+        botonEliminar.addEventListener('click', function() {
+            eliminarDeFavoritos(favorito.posterSrc, nuevoFavorito);
+            contenedorFavoritos.removeChild(nuevoFavorito);
+        });
+
+        nuevoFavorito.appendChild(nuevaImagen);
+        nuevoFavorito.appendChild(botonEliminar);
+        contenedorFavoritos.appendChild(nuevoFavorito);
     });
+});
+
+function eliminarDeFavoritos(posterSrc, elementoPadre) {
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    favoritos = favoritos.filter(favorito => favorito.posterSrc !== posterSrc);
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+var modal = document.getElementById("myModal");
+
+function openModal() {
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+function selectImage(imageUrl) {
+    var profileImage = document.querySelector('.profile-image img');
+    profileImage.src = imageUrl;
+    
+    // Guardar la URL de la imagen seleccionada en el almacenamiento local
+    localStorage.setItem('selectedImage', imageUrl);
+    
+    closeModal();
+}
+
+function openTab(tabName) {
+    // Ocultar todos los contenidos de las tabs
+    var i, tabcontent;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Mostrar el contenido de la tab seleccionada
+    document.getElementById(tabName).style.display = "block";
+}
+
+// Mostrar por defecto la primera tab
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementsByClassName("tab-button")[0].click();
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+    const searchValue = this.value.toLowerCase();
+    const animes = document.querySelectorAll('.anime');
+
+    animes.forEach(anime => {
+        const title = anime.querySelector('.Titulo-anime').textContent.toLowerCase();
+        if (title.includes(searchValue)) {
+            anime.style.display = 'inline-block';
+        } else {
+            anime.style.display = 'none';
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contenedorFavoritos = document.querySelector('.animes'); // Contenedor de favoritos
+
+    const banners = document.querySelectorAll('.banner-anime');
+
+    banners.forEach(banner => {
+        banner.addEventListener('click', function() {
+            const posterSrc = this.src; // Obtener la URL del póster del banner
+
+            if (!localStorage.getItem('favoritos')) {
+                localStorage.setItem('favoritos', JSON.stringify([]));
+            }
+
+            let favoritos = JSON.parse(localStorage.getItem('favoritos'));
+
+            if (!favoritos.includes(posterSrc)) {
+                favoritos.push(posterSrc);
+                localStorage.setItem('favoritos', JSON.stringify(favoritos));
+
+                const nuevoFavorito = document.createElement('div');
+                nuevoFavorito.classList.add('anime-poster-info');
+
+                const nuevaImagen = document.createElement('img');
+                nuevaImagen.classList.add('poster-anime');
+                nuevaImagen.src = posterSrc;
+
+                // Botón para eliminar de favoritos
+                const botonEliminar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar de Favoritos';
+                botonEliminar.classList.add('eliminar-button'); // Clase para el botón de eliminar
+                botonEliminar.addEventListener('click', function() {
+                    eliminarDeFavoritos(posterSrc, nuevoFavorito);
+                    contenedorFavoritos.removeChild(nuevoFavorito);
+                });
+
+                nuevoFavorito.appendChild(nuevaImagen);
+                nuevoFavorito.appendChild(botonEliminar);
+                contenedorFavoritos.appendChild(nuevoFavorito);
+            }
+        });
+    });
+});
+
     </script>
     
 </body>

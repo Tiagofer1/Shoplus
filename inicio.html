@@ -487,6 +487,18 @@ img.logo-anime {
 
 <div class="un-ninja-un-camino">
     <div class="titulo-div">
+        <h4>Reciente</h4>
+        <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512">
+            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+        </svg>
+    </div>
+    <div class="fila-un-ninja-un-camino" id="fila-reciente">
+    </div>
+</div>
+
+
+<div class="un-ninja-un-camino">
+    <div class="titulo-div">
     <h4>Amores Divertidos</h4>
     <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
     </div>
@@ -513,6 +525,8 @@ img.logo-anime {
         </div></a>
     </div>
 </div>
+  
+
 <div class="un-ninja-un-camino">
     <div class="titulo-div">
     <h4>Almas En Juego</h4>
@@ -540,5 +554,42 @@ img.logo-anime {
     </div>
 </div>
 <div class="separacion"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let recientesGuardados = JSON.parse(localStorage.getItem('recientes')) || [];
+        const filaReciente = document.getElementById('fila-reciente');
+
+        // Limpiar divs si hay más de 5 guardados
+        if (recientesGuardados.length > 5) {
+            recientesGuardados = recientesGuardados.slice(0, 5);
+        }
+
+        // Renderizar divs guardados
+        recientesGuardados.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'anime';
+            div.innerHTML = item;
+            filaReciente.appendChild(div);
+        });
+
+        // Agregar evento de clic a cada div.anime
+        document.querySelectorAll('.anime').forEach(anime => {
+            anime.addEventListener('click', () => {
+                const alreadyExists = Array.from(filaReciente.children).some(child => child.innerHTML === anime.innerHTML);
+                if (alreadyExists) {
+                    filaReciente.insertBefore(anime, filaReciente.firstChild);
+                } else {
+                    if (filaReciente.children.length >= 5) {
+                        filaReciente.removeChild(filaReciente.lastElementChild);
+                        recientesGuardados.pop();
+                    }
+                    filaReciente.insertBefore(anime.cloneNode(true), filaReciente.firstChild);
+                }
+                recientesGuardados = Array.from(filaReciente.children).map(child => child.innerHTML);
+                localStorage.setItem('recientes', JSON.stringify(recientesGuardados));
+            });
+        });
+    });
+</script>
 </body>
 </html>

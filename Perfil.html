@@ -16,20 +16,20 @@
 background-color: black;
         }
         .profile-container {
-    width: 100%;
-    height: 350px;
+    width: 80%;
+    height: 300px;
     overflow: hidden;
     display: flex;
     align-items: center;
-    background-image: url(https://images.alphacoders.com/919/919628.jpg);
-    background-position-y: unset;
-    background-position-x: center;
     justify-content: center;
+    margin: 20px 10% 0px 10%;
+    border-radius: 20px;
 }
 .profile-image {
     width: 150px;
     height: 150px;
     z-index: 1;
+    margin: 0px 0px 30px 0px;
 }
 img.foto-perfil {
     width: 150px;
@@ -69,18 +69,19 @@ div#usernameDisplay {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: black;
     margin: 5% auto;
-    border: 1px solid #888;
     width: 100%;
+    color: white;
 }
 
 .close {
     color: #aaa;
-    padding: 20px;
+    padding: 10px;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
 }
 
 .close:hover,
@@ -107,18 +108,22 @@ div#usernameDisplay {
     width: 96%;
     margin: 70px 2% 0px 2%;
     display: flex;
+    justify-content: center;
 }
 .tab-button {
-    width: 100%;
+    width: 40%;
     margin: 0px .5% 10px;
     height: 45px;
     background: none;
     border: none;
     color: white;
     font-family: 'Oswald';
-    font-size: x-large;
+    font-size: medium;
     border-bottom: 2px solid var(--color-primario);
     text-wrap: nowrap;
+}
+.tab-button:hover{
+    border-bottom: 2px solid white;
 }
 .favorites-title {
     margin: 20px;
@@ -153,18 +158,18 @@ img.poster-anime {
     object-fit: cover;
     border-radius: 10px;
 }
-.degrade {
+.gradient {
     width: 100%;
     position: absolute;
     height: 350px;
     background: #00000038;
 }
 input.buscador {
-    width: 90%;
+    width: 80%;
     height: 40px;
     background: none;
     border: none;
-    border-bottom: 2px solid var(--color-primario);
+    border-bottom: 2px solid white;
     outline: none;
     color: white;
     font-family: 'Oswald';
@@ -262,6 +267,79 @@ h5.finalizado-emision-h5 {
 }
 a{
     display: block;
+}
+.añadir-favorito {
+    font-size: smaller;
+}
+h3 {
+    font-size: x-large;
+    font-weight: 500;
+}
+h5.titulo-foto-anime {
+    margin: 0px 0px 0px 10px;
+    font-size: medium;
+    font-family: 'Oswald';
+}
+img.banner-anime-foto-perfil {
+    display: none;
+}
+#banner-modal , #banner-modal {
+  display: none; /* Oculta el modal por defecto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fondo semitransparente */
+}
+
+
+
+#banner-modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+h2.banners-titulo {
+    font-size: x-large;
+    font-family: 'Oswald';
+    text-align: center;
+}
+.banners-div {
+    width: 98%;
+    height: auto;
+    margin: 0px 1% 0px 1%;
+    display: flex;
+    justify-content: center;
+}
+.div-banners-img {
+    width: 40%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 1% 0px;
+}
+img.banners-opciones {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+img.fondo {
+    position: absolute;
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
 }
     </style>
 </head>
@@ -598,8 +676,10 @@ a{
     </div>
 
     <div class="profile-container">
-        <div class="degrade"></div>
+        <img src="https://wallpapercave.com/uwp/uwp4320187.jpeg" alt="" class="fondo">
+        <div  class="gradient"></div>
         <div class="profile-image" onclick="openModal()">
+        
             <img class="foto-perfil"  src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Foto de perfil" >
             <div class="username" id="usernameDisplay">Nombre de Usuario</div>
             <div class="AmPlay">AmPlay</div>
@@ -609,54 +689,147 @@ a{
                 <span class="close" onclick="closeModal()">&times;</span>
                 <p class="seleccion-personaje-p">Selecciona un personaje</p>
                 <div id="imageOptions">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Anime 1" onclick="selectImage('https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0" alt="Anime 2" onclick="selectImage('https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain" alt="Anime 3" onclick="selectImage('https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg" alt="Anime 4" onclick="selectImage('https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg')">
-                    <img class="imagen-perfil" src="https://wallpaperaccess.com/full/4695547.jpg" alt="Anime 5" onclick="selectImage('https://wallpaperaccess.com/full/4695547.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg" alt="Anime 6" onclick="selectImage('https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg" alt="Anime 8" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg" alt="Anime 9" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-88.jpg" alt="Anime 10" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-88.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg" alt="Anime 11" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-20.jpg" alt="Anime 12" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-20.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg" alt="Anime 13" onclick="selectImage('https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg" alt="Anime 14" onclick="selectImage('https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg" alt="Anime 15" onclick="selectImage('https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0" alt="Anime 16" onclick="selectImage('https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg" alt="Anime 17" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-136.jpg" alt="Anime 18" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-136.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg" alt="Anime 19" onclick="selectImage('https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg" alt="Anime 20" onclick="selectImage('https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain" alt="Anime 21" onclick="selectImage('https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0" alt="Anime 22" onclick="selectImage('https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0" alt="Anime 23" onclick="selectImage('https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain" alt="Anime 24" onclick="selectImage('https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://images4.alphacoders.com/678/678569.jpg" alt="Anime 25" onclick="selectImage('https://images4.alphacoders.com/678/678569.jpg')">
-                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg" alt="Anime 26" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg" alt="Anime 27" onclick="selectImage('https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0" alt="Anime 28" onclick="selectImage('https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es" alt="Anime 29" onclick="selectImage('https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.E2ilRTswt0ESbiIJ1eywcAAAAA?w=443&h=332&rs=1&pid=ImgDetMain" alt="Anime 30" onclick="selectImage('https://th.bing.com/th/id/OIP.E2ilRTswt0ESbiIJ1eywcAAAAA?w=443&h=332&rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0" alt="Anime 31" onclick="selectImage('https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain" alt="Anime 32" onclick="selectImage('https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0" alt="Anime 33" onclick="selectImage('https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg" alt="Anime 34" onclick="selectImage('https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain" alt="Anime 35" onclick="selectImage('https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg" alt="Anime 36" onclick="selectImage('https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg')">
-                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg" alt="Anime 37" onclick="selectImage('https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0" alt="Anime 38" onclick="selectImage('https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0" alt="Anime 39" onclick="selectImage('https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Anime 40" onclick="selectImage('https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')">
-                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain" alt="Anime 41" onclick="selectImage('https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain')">
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Dragon Ball</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Anime 1" onclick="selectImage('https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain" alt="Anime 3" onclick="selectImage('https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg" alt="Anime 6" onclick="selectImage('https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg" alt="Anime 19" onclick="selectImage('https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0" alt="Anime 23" onclick="selectImage('https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain" alt="Anime 24" onclick="selectImage('https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Anime 40" onclick="selectImage('https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')">
 
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Naruto</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0" alt="Anime 2" onclick="selectImage('https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://wallpaperaccess.com/full/4695547.jpg" alt="Anime 5" onclick="selectImage('https://wallpaperaccess.com/full/4695547.jpg')">
+                            <img class="imagen-perfil" src="https://images4.alphacoders.com/678/678569.jpg" alt="Anime 25" onclick="selectImage('https://images4.alphacoders.com/678/678569.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0" alt="Anime 39" onclick="selectImage('https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0" alt="Anime 33" onclick="selectImage('https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Saint Seiya</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg" alt="Anime 13" onclick="selectImage('https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg" alt="Anime 14" onclick="selectImage('https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg" alt="Anime 34" onclick="selectImage('https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain" alt="Anime 35" onclick="selectImage('https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain')">
+        
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Classroom Of The Elite</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg" alt="Anime 4" onclick="selectImage('https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg" alt="Anime 20" onclick="selectImage('https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain" alt="Anime 21" onclick="selectImage('https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg" alt="Anime 27" onclick="selectImage('https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">My Hero Academia</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain')">
+                            <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg" alt="Anime 26" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg')">
+                            <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg" alt="Anime 17" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Darling in the Franxx</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg" alt="Anime 8" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Demon Slayer</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg" alt="Anime 9" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg')">
+                            <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg" alt="Anime 11" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Mob Pyycho 100</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg" alt="Anime 15" onclick="selectImage('https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg')">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0" alt="Anime 38" onclick="selectImage('https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0')">
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">One Punch Man</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0" alt="Anime 16" onclick="selectImage('https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es" alt="Anime 29" onclick="selectImage('https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Monster</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain" alt="Anime 32" onclick="selectImage('https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Spy x Family</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0" alt="Anime 31" onclick="selectImage('https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">One Piece</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0" alt="Anime 28" onclick="selectImage('https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg" alt="Anime 36" onclick="selectImage('https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg')">
+                            <img class="imagen-perfil" src="https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg" alt="Anime 37" onclick="selectImage('https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg')">
+        
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Nagatoro-San</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0" alt="Anime 22" onclick="selectImage('https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0')">
+
+                        </div>
+                    </div>
+                    <div class="fila-anime">
+                        <h5 class="titulo-foto-anime">Tensei Shitara Slime Datta Ken</h5>
+                        <div class="img-fotos">
+                            <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain" alt="Anime 41" onclick="selectImage('https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain')">
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
 
+        <div id="banner-modal" class="modal" onclick="closeModal()">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 class="banners-titulo">Banners</h2>
+              <div class="banners-div">
+                <div class="div-banners-img">
+              <img class="banners-opciones" src="https://wallpapercave.com/uwp/uwp4320187.jpeg" alt="">
+            </div>
+            <div class="div-banners-img">
+                <img src="https://i.pinimg.com/originals/16/53/35/16533595d7f56bfd42948a9378b05f9e.png" alt="" class="banners-opciones">
+            </div>
+            </div>
+            </div>
+          </div>
+          
     </div>
 
 
@@ -666,7 +839,9 @@ a{
     </div>
 
     <div id="opcion1" class="tab-content">
-        <div class="favorites-title">Favoritos</div>
+        <div class="favorites-title">
+            <h3>Favoritos</h3>
+        </div>
         <div class="animes">
 
         </div>
@@ -675,7 +850,7 @@ a{
     <div id="opcion2" class="tab-content">
         <div class="favorites-title">
             <h3 class="añadir-favorito">Añadir Favorito</h3>
-            <input id="searchInput" class="buscador" type="text">
+            <input id="searchInput" class="buscador" placeholder="Busca Tu Anime" type="text">
             <div class="animes">
                 <div class="fila">
                     <div class="anime">
@@ -912,6 +1087,86 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+// Obtener el modal de banners
+var bannerModal = document.getElementById("banner-modal");
+
+// Obtener el degradado dentro del div .profile-container
+var gradient = document.querySelector(".profile-container .gradient");
+
+// Obtener el botón para cerrar el modal
+var closeBtn = bannerModal.querySelector(".close");
+
+// Cuando se haga clic en el degradado, mostrar el modal de banners
+gradient.addEventListener("click", function() {
+  bannerModal.style.display = "block";
+});
+
+// Cuando se haga clic en el botón de cerrar, ocultar el modal
+closeBtn.addEventListener("click", function() {
+  bannerModal.style.display = "none";
+});
+
+// Cuando se haga clic fuera del modal, también ocultarlo
+window.addEventListener("click", function(event) {
+  if (event.target == bannerModal) {
+    bannerModal.style.display = "none";
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const imagenesOpciones = document.querySelectorAll(".banners-opciones");
+  const imagenFondo = document.querySelector(".fondo");
+
+  // Función para cerrar el modal
+  const closeModal = function() {
+    const modal = document.getElementById("banner-modal");
+    modal.style.display = "none";
+  };
+
+  imagenesOpciones.forEach(function(imagen) {
+    imagen.addEventListener("click", function() {
+      const nuevaSrc = imagen.getAttribute("src");
+      imagenFondo.setAttribute("src", nuevaSrc);
+      closeModal(); // Ocultar el modal al seleccionar una imagen
+
+      // Guardar la URL del banner seleccionado en el almacenamiento local
+      localStorage.setItem("selectedBannerSrc", nuevaSrc);
+    });
+  });
+
+  // Obtener la URL del banner seleccionado del almacenamiento local
+  const selectedBannerSrc = localStorage.getItem("selectedBannerSrc");
+  if (selectedBannerSrc) {
+    imagenFondo.setAttribute("src", selectedBannerSrc);
+  }
+
+  // Obtener el modal de banners
+  var bannerModal = document.getElementById("banner-modal");
+
+  // Obtener el degradado dentro del div .profile-container
+  var gradient = document.querySelector(".profile-container .gradient");
+
+  // Obtener el botón para cerrar el modal
+  var closeBtn = bannerModal.querySelector(".close");
+
+  // Cuando se haga clic en el degradado, mostrar el modal de banners
+  gradient.addEventListener("click", function() {
+    bannerModal.style.display = "block";
+  });
+
+  // Cuando se haga clic en el botón de cerrar, ocultar el modal
+  closeBtn.addEventListener("click", function() {
+    bannerModal.style.display = "none";
+  });
+
+  // Cuando se haga clic fuera del modal, también ocultarlo
+  window.addEventListener("click", function(event) {
+    if (event.target == bannerModal) {
+      bannerModal.style.display = "none";
+    }
+  });
+
+  // Resto de tu JavaScript...
 });
 
 </script>

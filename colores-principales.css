@@ -71,7 +71,15 @@
                 object-fit: cover;
                 z-index: 1;
             }
-            .Finalizado-emision{
+.Finalizado-emision{
                 color: var(--color-hover-vermas);
                 font-weight: 300;
-            }
+}
+.flecha-salir{
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    margin: 20px 0px 0px 2%;
+    transform: rotate(180deg);
+    z-index: 1;
+}

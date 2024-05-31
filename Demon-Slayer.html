@@ -191,11 +191,35 @@ z-index: 1;
     margin: 10px 0px 10px 0px;
     height: 95px;
 }
+.timer-container{
+    position: absolute;
+    width: 100%;
+    text-align: end;
+
+}
+h1#timer {
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 0px 20px 0px 0px;
+    color: white;
+}
+.d-h-m{
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 10px 20px 0px 0px;
+    color: white;
+    letter-spacing: 5px;
+}
+
     </style>
   <div class="flecha-salir">
     <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
 </div>
     <img src="https://image.tmdb.org/t/p/original/gsq1pCxMHhZDCHEh78sD6yEHoLu.jpg" alt="" class="poster">
+    <div class="timer-container">
+        <h2 class="d-h-m">D:H:M</h2>
+        <h1 id="timer"></h1>
+    </div>
     <div class="poster-grande"> 
         <div class="degradado"></div>
         <img class="banner" src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=94,width=1920/cr/landscape_large/0f64543f-c57d-4271-9750-8e84ddc3aa9d.png" alt="">
@@ -238,6 +262,7 @@ z-index: 1;
             <option value="T2">Temporada 2</option>
             <option value="T3">Temporada 3</option>
             <option value="T4">Temporada 4</option>
+            <option value="T5">Temporada 5</option>
 
         </select>
 
@@ -659,7 +684,7 @@ z-index: 1;
         </div>
     </div>
 
-            <div id="T4" class="tab-content" style="display:none">
+    <div id="T4" class="tab-content" style="display:none">
         <div class="temporada-hijo-episodios">
         <a class="a-episodios" href="https://jkanime.net/um.php?e=NjRZVkI0czk2dVVuWEMyTmlHVkFXcWNyUEFzdE5oZFYvSDdTS21pd2J1UWFKbFZsS1RON0h5cGhmRHRQZ2xIUWhSTzhoZ05UWjFFWitlTVI4aWlkNk5rSDRzb0FabFM0d1JVdzZnQXZmRTg9Ojp3MsJ2aX_NgLABshTqVUjA&t=49fffb39831addd8927601020ae12798">
             <div class="img-episodio">
@@ -762,10 +787,42 @@ z-index: 1;
         </div></a>
         
         </div>
-    </div>}
+    </div>
 
+      
+    <div id="T5" class="tab-content" style="display:none">
+        <div class="temporada-hijo-episodios">
+        <a class="a-episodios" href="https://jkanime.net/um.php?e=blpZRnplUkN6cVdHbTd1SEJSeWNFbWRwQ1E1RnVQcUk1QmtMN2s5Y2NtbW56bUd6dVF4aWlNOGJOeEtCQzFZamd4NHMzUURmRzhHTU83WFFFWk5DTFYvWERFSzdUVEZXKzFIa1dWRUZXa0k9Ojrgefi_UKVxYYHebtcTkm.b&t=7af4005e60a2bc048519574bb14dfec2">
+            <div class="img-episodio">
+                <img src="https://image.tmdb.org/t/p/original/rgDvHS8LHTHuU4Xx64sSVvA39gZ.jpg" alt="Episodio 1">
+            </div>
+            <div class="info-episodio">
+                
+                        <h5>DEMON SLAYER</h5>
+            <p><span class="episodios-titulo">T4 E1 - </span>Para vencer a Muzan Kibutsuji</p>
+        </div></a>
+        <a class="a-episodios" href="https://jkanime.net/um.php?e=Mk4xOTd4cXJUZ1FpRUdSeDRyNEllRjdac0RXVDFxZ1BWcHVRZmVIdDFKTHNDMTZjV3Y3Mkx4a0tLQVZ4aWhHTjNpeTBrTW9Wb2dZRWJsQnpTekdRK0pPZjZrQkM1NndjKzMrTCtNaGtsNFk9OjpUeekZLPI41VCr1Xy1e4U5&t=b9f0ceb7c702db436f5802d2d59bb1a8">
+            <div class="img-episodio">
+                <img src="https://image.tmdb.org/t/p/original/wJPkCpsVFmMS6lAgBbLW5zs8Q3f.jpg" alt="Episodio 1">
+            </div>
+            <div class="info-episodio">
+                
+                        <h5>DEMON SLAYER</h5>
+            <p><span class="episodios-titulo">T4 E2 - </span>El dolor de Hashira Giyu Tomioka de agua</p>
+        </div></a>
+        <a class="a-episodios" href="https://jkanime.net/um.php?e=SHFaU1E0Qjc5S0MxbmFvVFlDYW1HTEdPcFQ3M05Db013RVAyZk5FdWlVSVoydDJXNG9vNFpFUklPcmRwQzlScDd4d05hdThwcGtXVnh2WGZ3K0VjRi9XOG91OEVQWUpCdWJYVEk2NVVaOHM9OjoZ2yDlFyw8RuDyWy6he9Fa">
+            <div class="img-episodio">
+                <img src="https://image.tmdb.org/t/p/original/mNiT7VrfYxQXbgVqEEWtyM2EgRu.jpg" alt="Episodio 1">
+            </div>
+            <div class="info-episodio">
+                
+                        <h5>DEMON SLAYER</h5>
+            <p><span class="episodios-titulo">T4 E3 - </span>¡Tanjiro completamente recuperado se une al entrenamiento de Hashira!</p>
+        </div></a>
 
         
+        </div>
+    </div>
     <script>
         function switchTab() {
             var select = document.getElementById("gender-select");
@@ -789,6 +846,44 @@ z-index: 1;
             switchTab();
         });
         
+        // script.js
+function startTimer(duration, display) {
+    let timer = duration, days, hours, minutes;
+    const interval = setInterval(function () {
+        days = parseInt(timer / (3600 * 24), 10);
+        hours = parseInt((timer % (3600 * 24)) / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+
+        days = days < 10 ? "0" + days : "" + days;
+        hours = hours < 10 ? "0" + hours : "" + hours;
+        minutes = minutes < 10 ? "0" + minutes : "" + minutes;
+
+        display.innerHTML = days + " " + hours + " " + minutes;
+
+        if (--timer < 0) {
+            clearInterval(interval);
+            display.innerHTML = "Episodio Nuevo";
+                    }
+    }, 1000);
+}
+
+window.onload = function () {
+    // Fecha y hora actual del sistema
+    const now = new Date();
+    const currentTimestamp = now.getTime();
+
+    // Fecha y hora objetivo (3 de junio a las 00:00)
+    const targetDate = new Date(now.getFullYear(), 5, 2); // 2 de junio
+    const targetTimestamp = targetDate.getTime();
+
+    // Calculamos la diferencia de tiempo en segundos
+    let remainingTimeInSeconds = Math.floor((targetTimestamp - currentTimestamp) / 1000);
+
+    // Iniciamos el temporizador
+    const display = document.getElementById('timer');
+    startTimer(remainingTimeInSeconds, display);
+};
+
     </script>
 
 </body>

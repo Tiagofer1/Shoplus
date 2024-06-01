@@ -1,6 +1,6 @@
 :root{
-    --color-primario: rgb(255 100 145);
-    --color-hover-vermas: rgb(255 100 145 / 70%);
+    --color-primario: rgb(43 139 205);
+    --color-hover-vermas: rgb(43 139 205 / 70%);
     }
     *{
         margin: 0;

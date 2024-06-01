@@ -137,8 +137,28 @@ img.logo-anime {
         width: 100%;
         height: 350px;
         object-fit: cover;
-       object-position: center;
+       object-position: top;
     }
+    .timer-container{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+
+}
+h1#timer {
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+    color: white;
+}
+.d-h-m{
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 300px 00px 0px 0px;
+    color: white;
+    letter-spacing: 5px;
+}
+
     </style>
 </head>
 <body>
@@ -472,17 +492,20 @@ img.logo-anime {
         </div>
     </div>
 <div class="poster-grande">
-    <img class="logo-anime" src="https://image.tmdb.org/t/p/original/pMECGFjD5oZVnPZ0wQNPUURY5SC.png" alt="">
+    <img class="logo-anime" src="https://image.tmdb.org/t/p/original/v1VZ4C22UcHZ1im6NSas96denor.png" alt="">
     <?xml version="1.0" encoding="UTF-8"?>
 
 
-    <a href="Farming-Life-in-Another-World.html" class="boton-ver-ahora"  ><span>
+    <a  class="boton-ver-ahora"  ><span>
 <!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
-    </span>Ver Ahora</a>
+    </span>Proximamente</a>
 
     <div class="degradado"></div>
-    <img class="banner-principal" src="https://image.tmdb.org/t/p/original/6XJ0XJbL14YkThOe1iU5TJKU5l3.jpg" alt="">
-    
+    <img class="banner-principal" src="https://image.tmdb.org/t/p/original/1YMx2eZs8kr32Y2gxrRN9MdPNr.jpg" alt="">
+    <div class="timer-container">
+        <h2 class="d-h-m"></h2>
+        <h1 id="timer"></h1>
+    </div>
 </div>
 
 <div class="un-ninja-un-camino">
@@ -600,6 +623,46 @@ img.logo-anime {
             });
         });
     });
+
+    function startTimer(duration, display) {
+    let timer = duration, days, hours, minutes, seconds;
+    const interval = setInterval(function () {
+        days = parseInt(timer / (3600 * 24), 10);
+        hours = parseInt((timer % (3600 * 24)) / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        days = days < 10 ? "0" + days : "" + days;
+        hours = hours < 10 ? "0" + hours : "" + hours;
+        minutes = minutes < 10 ? "0" + minutes : "" + minutes;
+        seconds = seconds < 10 ? "0" + seconds : "" + seconds;
+
+        display.innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
+
+        if (--timer < 0) {
+            clearInterval(interval);
+            display.innerHTML = "Episodio Nuevo";
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    // Fecha y hora actual del sistema
+    const now = new Date();
+    const currentTimestamp = now.getTime();
+
+    // Fecha y hora objetivo (3 de junio a las 00:00)
+    const targetDate = new Date(now.getFullYear(), 5, 13); // 2 de junio
+    const targetTimestamp = targetDate.getTime();
+
+    // Calculamos la diferencia de tiempo en segundos
+    let remainingTimeInSeconds = Math.floor((targetTimestamp - currentTimestamp) / 1000);
+
+    // Iniciamos el temporizador
+    const display = document.getElementById('timer');
+    startTimer(remainingTimeInSeconds, display);
+};
+
 </script>
 
 </body>

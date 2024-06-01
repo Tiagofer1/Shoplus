@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>AmPlay | Farming Life in Another World</title>
+</head>
+<body>
+    <style>
+        .info-anime {
+    width: 96%;
+    margin: 20px 2% 0 2%;
+}
+.info-anime h4 {
+    font-size: 1.5rem;
+    color: white;
+    font-family: oswald;
+}
+.nombre-compartir{
+    width: 100%;
+}
+
+.erc-series-tags.tags {
+    color: white;
+    font-family: 'Oswald';
+    margin: 10px 0px 0px 0px;
+}
+
+.meta-tags__tag--W4JTZ:not(:first-child):before {
+    background-color: var(--color-primario);
+    content: "";
+    display: inline-block;
+    height: .25rem;
+    line-height: 1;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: .25rem;
+}
+.estrellas{
+    display: flex;
+    margin: 10px 0px 0px 0px;
+}
+.estrellas svg{
+    width: 30px;
+    
+}
+.estrella-unica{
+ stroke: var(--color-primario);
+stroke-width: 1px;
+fill: none;
+}
+h5.puntuacion-media {
+    color: white;
+    font-family: 'Oswald';
+    margin: 0px 10px 0px 10px;
+    font-size: 18px;
+    text-wrap: nowrap;
+}
+.botones-reproducir-favorito {
+    width: 100%;
+}
+.reproducir-boton {
+    background: var(--color-primario);
+    position: absolute;
+    width: 290px;
+    height: 50px;
+    margin: 20px 20px 0px 0px;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+    font-family: 'Oswald';
+    text-decoration: none;
+    border-radius: 1px;
+    color: white;
+    font-weight: 900;
+}
+.reproducir-boton:hover{
+    background: var(--color-hover-vermas);
+}
+a.añadir-favorito {
+    position: absolute;
+    margin: 20px 0% 0px 300px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-primario);
+}
+svg.favorito-svg {
+    width: 35px;
+    height: 35px;
+    margin: 6px;
+}
+.descripcion {
+    margin: 85px 1% 0px 0px;
+    color: white;
+    text-align: left;
+}
+    p {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 13px;
+    width: 90%;
+    overflow: hidden;
+}
+h5.titulo-descripcion {
+    font-size: x-large;
+    font-family: 'Oswald';
+    color: var(--color-primario);
+    margin: 0px 0px 10px 0px;
+}
+.tab-container {
+        width: 100%;
+        margin: 0 0 80px 0;
+    }
+    select#gender-select {
+    width: 150px;
+    height: 40px;
+    margin: 15px 0px 20px 2%;
+    border-radius: 3px;
+    background: rgb(0 0 0);
+    color: white;
+    border: 2px solid var(--color-primario);
+    outline: none;
+    text-align: center;
+}
+
+
+    .tab-content {
+        display: none;
+        width: 96%;
+        margin: 0px 2% 0px 2%;
+        color: white;
+    }
+    .temporada-padre {
+    width: 100%;
+}
+.temporada-medio {
+    width: 100%;
+}
+.temporada-hijo-episodios {
+    width: 100%;
+}
+.temporada-hijo-episodios img{
+
+    width: 170px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 7px;
+
+}
+.a-episodios h5{
+ 
+    margin: 10px;
+    font-family: 'Oswald';
+    color: #a9a9a99c;
+
+}
+.a-episodios p{
+    margin: 10px;
+    color: white;
+}
+.episodios-titulo{
+    color: var(--color-primario);
+}
+.a-episodios{
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+.info-episodio{
+width: 100%;
+}
+.poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 94px;
+}
+    </style>
+<div class="flecha-salir">
+    <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+</div>
+    <img src="https://image.tmdb.org/t/p/original/pT4OoVQE8zGJ0Z0GZpJotK5Vzsj.jpg" alt="" class="poster">
+    <div class="poster-grande"> 
+        <div class="degradado"></div>
+        <img class="banner" src="https://image.tmdb.org/t/p/original/7jtIGe1NbxPsf5MA9XPPGyD67B3.jpg" alt="">
+        
+    </div>
+    <div class="info-anime">
+        <div class="nombre-compartir">
+        <h4>Farming Life in Another World</h4>
+        <img class="logo" src="https://image.tmdb.org/t/p/original/pMECGFjD5oZVnPZ0wQNPUURY5SC.png" alt="">
+    </div>
+    <div class="erc-series-tags tags"><div class="meta-tags--o8OYw" data-t="meta-tags"><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ" id="GJ0H7QGME" rating="16">12</span><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ">Sub | Dob  |<span class="Finalizado-emision">  Finalizado</span></span>
+    </div>
+
+</div>
+<div class="estrellas">
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path class="estrella-unica" d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <h5 class="puntuacion-media">| Puntuación Media 4</h5>
+</div>
+<div class="botones-reproducir-favorito">
+    <a class="reproducir-boton" href="https://jkanime.net/um.php?e=L09MdEd5c3pnaDk0NEVPWk5xeVVZQklQQXdIQnRva1ExNUc5OXYyRUE5RFFrQjFsdkdrRjNhTWt2MFJMNzRhRkJtUndBWnl2UHoxUUorV0hMV3Z6emc9PTo6Ht.Bh_xz0XtuybTsjytOBA--&t=db0e5909e695b8f0aad01e90b0aaec61"><span></span>Comenzar E1</a>
+    <a class="añadir-favorito" href="#">
+        <span>
+            <svg class="favorito-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path class="favorito-path" d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
+        </span>
+    </a>
+</div>
+<div class="descripcion">
+    <h5 class="titulo-descripcion"></h5>
+    <p>Tras morir por una enfermedad a la edad de 39 años, a Machio Hiraku se le da la oportunidad de ir a otro mundo. Cuando Dios le pregunta cuál es su deseo con la intención de darle fuerza, pide tener un cuerpo sano, le ofrecen un segundo deseo, elige vivir en paz, un tercer deseo, poder conocer el idioma local, y como último deseo, poder ser agricultor.
+    </p>
+</div>
+</div>
+
+    <div class="tab-container">
+        <select id="gender-select" onchange="switchTab()">
+            <option value="T1">Temporada 1</option>
+        </select>
+
+        <div id="T1" class="tab-content">
+            <div class="temporada-padre">
+                <div class="temporada-medio">
+                    <div class="temporada-hijo-episodios">
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=L09MdEd5c3pnaDk0NEVPWk5xeVVZQklQQXdIQnRva1ExNUc5OXYyRUE5RFFrQjFsdkdrRjNhTWt2MFJMNzRhRkJtUndBWnl2UHoxUUorV0hMV3Z6emc9PTo6Ht.Bh_xz0XtuybTsjytOBA--&t=db0e5909e695b8f0aad01e90b0aaec61">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/zhPTCrG9eRA8EBJjWDTQyIPPMrY.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E1 - </span>La herramienta agrícola todopoderosa</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=NEtmNmZrRzZSWGRYYmxIellXekFjbWhJSmpPZVczRXVoVjNGZi9FTWFRQ05QSjE4ZDhZaG43VXlocWRqNng5RGxEZGpUanFFQlBiQWZDdFB6V1pKRXc9PTo6tLHR9WFqsHnpKmprZgGNTg--&t=571a4ae49f279d69ab34faaba0564ca9">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/lFyU2u1vCYu5sDZSElWQaXjKUzY.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E2 - </span>El primer aldeano</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=M3VNazlzUkwrNlVXWEE1cUJ3S0pnMjd3VlAxQVJtV1hNWnZBSkFVd1IwekUwSENOZEpTVTRUM2EzWUNxZnRlRlBlOWxNYlBYbUJ1eWtOazVjdU5IUEE9PTo6mTnd67wbEqp.pf.G9dgCzA--&t=a70c275bf9bd1d4cbc706d1ee0ddfdd7">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/vVt8s9nLurAaQWlhNfr7wawVQ4A.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E3 - </span>Más y más nuevos compañeros de piso</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=L2c3RTVWWGpReDdUckpFQWdta2YxOHdobVhUNEdEb0FwSGdBd25OQTNreFVQRlZpMkRSQXNHeVJSbFk1Umg2NmhlejUyY2p2aUw1OW1XOFhheGJKcFE9PTo6RGIyu_IPrkEFLJ4QzdZUgw--&t=2a131138491a7b940bf7ff8b5a7467c6">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/dGmdQ3MduShw70ePdNxCI3g8CBh.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>TOMO CHAN IS A GIRL!</h5>
+                            <p><span class="episodios-titulo">T1 E4 - </span>Las vías fluviales hacen que la vida se sienta completa</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=ZWc0WTRTdWtPMTZrWk9MUmFyUG5GbmE4aDVTai9peFZ1djd0a2d4V29vMWFzR0djNnBLdmF5WTliVHVhTGtaMFdEVFpWLzlPeGZpSm5XdzJwSGFSdUE9PTo6OKXDFzhIAMd8P_XKYPez_Q--&t=a319e232d909e49766ff5b339a3a83d3">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/yfE334oRuQxO3WSpA4f2EUcsCNm.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E5 - </span>Curry y sobrevivir al invierno</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=SHNVUGc5am5sR01LQmVXRnNCT29TbFkxSzVneTNTbTJ0NzdRUUlyQzRuR2dEVHBlWmNsOGhsRkhwUGdWU2RXZE1xTzdld2ZzSy90MmgzTzVrRVZiZ2c9PTo65bAebzrxNJyJkEjV3118.g--&t=cc17ea15009f75eeab625bbbffa82103">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/lw41KNuRBgkNXL8kjTNRtNMteX3.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E6 - </span>Esto es un pueblo</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=MUhhRk1zUStCYklHckhuWjNQdTUrL29Hb3JYU0Q2Mmh3M1ZLaEU2b2sxQlpzY2pmWG52OTRzbW82dkNQakZZTm5FM1lJUGlvSVZSdmZLUnZYOS9PaXc9PTo6JYp..gmhxCjY9DGniGzBCg--&t=60fd9e5379629150075121f36877ec74">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/pjzjoyM4rDhm0VkoHW0EMSvuMfA.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E7 - </span>Un corazón hospitalario</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=dGZCSngwR1NmU3hITjlpTE01OUFxYTYrOTlKM0dEMjJlMG1zTnNtVTFObHozMUFiajhVM0QzR3pYVkQycURHWTU2dmJSYVl0QkZlUTRjWkZYUTROQlE9PTo695jCIa70qOfBZNu8oYSxTA--&t=a7b0a961f5d12d0a5b88a4ab47e2f650">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/xp15tsvymsGj4VzzC71t58dprp0.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E8 - </span>El investigador y las dos princesas</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=cjZhTGRnNTlSWnpGS2IrSFRvb0dyajYxQkFualFoQy9sdXkxWndnT01LdjNNekVFKy9pWTZjRG9wUnY0dGF2WmVUUGg2TjRsV3U4M0xXMkV0OVo2eXc9PTo6vPXKhT_xVCbTeAcCtMJ29A--&t=cab5c45e6b03de90a728de218d365cfd">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/5Ckr0no7L4aNssmotTusLl5etQ5.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E9 - </span>El mercader y el dragón</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=amJ3UVZxMDdxeHUvQzFXRCtJc3dxNUNBQXIyMlBUeXU2ZXcrMk1PL1JJM1NzMnVYdDJKUHBWbjAxRnlOZjVaTVE3Q3k2OE4rbVNHSHlHZ0ljODN6Q1E9PTo6HCpeIMcATRkehiRcyj1RKA--&t=a93a3f63347ee5afb3976878d5c49465">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/weCQkDgWbCBmcukKiFLWjRpiEij.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E10 - </span>Princesa Yuri</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=YUtyNFc2UzdZWTFwVGhmMW0vdGhZYys3ZDZHNVp6NkFuTXkzdEQvYWlQZzNIdG5RaTZEY1dtTlRSRlQ5VzVCUTBkbVVrT3UzczdEN3prcWFBWlppUHc9PTo6oJ_pIEuM7j9JleBlQ_H8EA--&t=ffbd1c36453ca1ed6353ad7add0cc14c">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/4zevHWcfGyJ6QYSlkBae4LIMcwL.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E11 - </span>La vida cotidiana y el progenitor</p>
+                    </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=M3o3Vm1LdGYwUXRmODNYSU5DTU9YMTdEQlhwWWwxY1Y2blFMUWl1OUNvS09ZRVVwNnBEUnd0RTM0Y0tOa24yUnRYZ1hhNGdVLzlBUU85NFNXYU1GQ2c9PTo6dVCW_sB6JGhQq2n2afPLvw--&t=216af59c9434cee3db3472c316cdd694">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/4YQbbP1PP0lrsxPLZW4he3yuRQ3.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>DARMING LIFE IN ANOTHER WORLD</h5>
+                            <p><span class="episodios-titulo">T1 E12 - </span>Nacimiento</p>
+                    </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        function switchTab() {
+            var select = document.getElementById("gender-select");
+            var selectedValue = select.value;
+            var tabcontent = document.getElementsByClassName("tab-content");
+
+            // Guardar la selección en localStorage
+            localStorage.setItem('selectedTab', selectedValue);
+
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            document.getElementById(selectedValue).style.display = "block";
+        }
+
+        // Mostrar la pestaña seleccionada previamente o la primera por defecto
+        document.addEventListener("DOMContentLoaded", function () {
+            var savedTab = localStorage.getItem('selectedTab') || "T1";
+            document.getElementById("gender-select").value = savedTab;
+            switchTab();
+        });
+        
+    </script>
+
+</body>
+</html>

@@ -346,6 +346,15 @@ h1#timer {
                         <h5>GODS' GAMES WE PLAY</h5>
                         <p><span class="episodios-titulo">T1 E9 - </span>Encuadernador</p>
                     </div></a>
+                    <a class="a-episodios" href="https://jkanime.net/um.php?e=dnpUYytlMkFyYWxwNFBHUm9WcnZYUFFoRmxoUHNxMXRDZUZVT1IzbVlPR01zSGo3R1dQSE50T05jcFYzYkYxZ2Q2SHpOMlVCL2hLNzFBMWFLRlRlWFl0YWNOWGFONTFQSHJkNk9EQVFqbmc9OjqEmQC.jbXUfqzVLEMV_JDT&t=92320ad3a7ebd32aa465091682ddd025">
+                        <div class="img-episodio">
+                            <img src="https://image.tmdb.org/t/p/original/8F8sbGzoDqZTVrToO0Q7wfeFS80.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                        <h5>GODS' GAMES WE PLAY</h5>
+                        <p><span class="episodios-titulo">T1 E10 - </span>Los tres tramposos que trae el dios</p>
+                    </div></a>
                     </div>
                 </div>
             </div>
@@ -394,7 +403,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             clearInterval(interval);
-            display.innerHTML = "Episodio Nuevo";
+            display.innerHTML = "Hoy, Episodio Nuevo";
                     }
     }, 1000);
 }
@@ -405,7 +414,7 @@ window.onload = function () {
     const currentTimestamp = now.getTime();
 
     // Fecha y hora objetivo (3 de junio a las 00:00)
-    const targetDate = new Date(now.getFullYear(), 5, 3); // 3 de junio
+    const targetDate = new Date(now.getFullYear(), 5, 10); // 10 de junio
     const targetTimestamp = targetDate.getTime();
 
     // Calculamos la diferencia de tiempo en segundos

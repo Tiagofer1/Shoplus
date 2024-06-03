@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Página Offline</title>
+    <link rel="stylesheet" href="colores-principales.css">
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .background-image {
+            background-image: url('https://static.crunchyroll.com/cr-acquisition/assets/img/landing/hero/background-desktop@3x.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        div#loginModal {
+            width: 340px;
+            background: #00000078;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 2px solid var(--color-primario);
+        }
+        .modal-content {
+            width: 340px;
+            height: 100%;
+        }
+        h2.h2-login {
+            margin: 30px 0px 30px 0px;
+            font-family: oswald;
+            font-size: xx-large;
+        }
+        .Usuario-contraseña {
+    margin: 60px 0px 20px 0px;
+    font-family: oswald;
+    font-size: large;
+}
+
+
+input#username {
+    width: 80%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    color: white;
+    margin: 15px 0px 15px 0px;
+    outline: none;
+    padding: 0px 0px 5px 0px;
+}
+input#password {
+    width: 80%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-primario);
+    color: white;
+    margin: 15px 0px 15px 0px;
+    outline: none;
+    padding: 0px 0px 5px 0px;
+}
+button#loginButton {
+    margin: 15px 0px 30px 0px;
+    width: 80%;
+    height: 40px;
+    background: var(--color-primario);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: larger;
+    font-family: 'Oswald';
+    cursor: pointer;
+}
+#loginButton:hover{
+    background: var(--color-hover-vermas);
+}
+            </style>
+    <div class="background-image">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2 class="h2-login">No Hay Conexion</h2>
+
+            <a href="index.html"><button id="loginButton">Reintentar</button></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

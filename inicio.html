@@ -14,6 +14,7 @@
             width: 200px;
             background: var(--color-primario);
             height: 40px;
+            text-align: center;
              align-content:center ;
              text-decoration: none;
              color: white;
@@ -25,12 +26,34 @@
              border-radius: 2px;
 
                 }
-            .boton-ver-ahora:hover{
+                .boton-ver-ahora-2{
+            position: absolute;
+            width: 200px;
+            background: rgb(244 197 38);
+            height: 40px;
+            text-align: center;
+             align-content:center ;
+             text-decoration: none;
+             color: white;
+             z-index: 1;
+             margin-top: 200px;
+             font-size: larger;
+             font-family: oswald;
+             font-weight: 900;
+             border-radius: 2px;
+
+                }
+            .boton-ver-ahora:hover {
                 background-color:var(--color-hover-vermas) ;
                 backdrop-filter: blur(1px   );
 
             }
 
+            .boton-ver-ahora:hover {
+                background-color:rgba(244, 196, 38, 0.7) ;
+                backdrop-filter: blur(1px   );
+
+            }
             a.añadir-favorito {
             position: absolute;
             margin: 200px 0px 0px 250px;
@@ -108,8 +131,8 @@ img.logo-anime {
     position: absolute;
     width: 200px;
     z-index: 1;
-
 }
+
 .reproducir-svg{
     width: 30px;
     fill: white;
@@ -157,6 +180,30 @@ h1#timer {
     padding: 300px 00px 0px 0px;
     color: white;
     letter-spacing: 5px;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  display: block;
 }
 
     </style>
@@ -491,7 +538,11 @@ h1#timer {
 
         </div>
     </div>
-<div class="poster-grande">
+    <div class="carousel">
+        <div class="slides">
+
+<div class="slide" class="poster-grande">
+
     <img class="logo-anime" src="https://image.tmdb.org/t/p/original/v1VZ4C22UcHZ1im6NSas96denor.png" alt="">
     <?xml version="1.0" encoding="UTF-8"?>
 
@@ -501,11 +552,32 @@ h1#timer {
     </span>Proximamente</a>
 
     <div class="degradado"></div>
-    <img class="banner-principal" src="https://image.tmdb.org/t/p/original/1YMx2eZs8kr32Y2gxrRN9MdPNr.jpg" alt="">
+    <img class="banner-principal" src="https://images.alphacoders.com/101/1013357.jpg" alt="">
     <div class="timer-container">
         <h2 class="d-h-m"></h2>
         <h1 id="timer"></h1>
     </div>
+</div>
+
+<div class="slide" class="poster-grande">
+
+    <img class="logo-anime" src="https://image.tmdb.org/t/p/original/mvufCOgW8F4llxNGYXtdr7EGNUo.png" alt="">
+    <?xml version="1.0" encoding="UTF-8"?>
+
+
+    <a  class="boton-ver-ahora-2"><span>
+<!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
+    </span>Proximamente</a>
+
+    <div class="degradado"></div>
+    <img class="banner-principal" src="https://image.tmdb.org/t/p/original/2sGHMJqvPY5qgy3bKSzEKfUloGb.jpg" alt="">
+    <div class="timer-container">
+        <h2 class="d-h-m"></h2>
+        <h1 id="timer"></h1>
+    </div>
+</div>
+
+</div>
 </div>
 
 <div class="un-ninja-un-camino">
@@ -676,6 +748,34 @@ window.onload = function () {
     const display = document.getElementById('timer');
     startTimer(remainingTimeInSeconds, display);
 };
+
+let currentIndex = 0;
+
+function showSlide(index) {
+  const slides = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slide').length;
+
+  if (index >= totalSlides) {
+    currentIndex = 0;
+  } else if (index < 0) {
+    currentIndex = totalSlides - 1;
+  } else {
+    currentIndex = index;
+  }
+
+  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide() {
+  showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+  showSlide(currentIndex - 1);
+}
+
+// Auto slide every 5 seconds
+setInterval(nextSlide, 5000);
 
 </script>
 

@@ -43,6 +43,23 @@
              border-radius: 2px;
 
                 }
+                .boton-ver-ahora-3{
+            position: absolute;
+            width: 200px;
+            background: rgb(229 0 127);
+            height: 40px;
+            text-align: center;
+             align-content:center ;
+             text-decoration: none;
+             color: white;
+             z-index: 1;
+             margin-top: 200px;
+             font-size: larger;
+             font-family: oswald;
+             font-weight: 900;
+             border-radius: 2px;
+
+                }
             .boton-ver-ahora:hover {
                 background-color:var(--color-hover-vermas) ;
                 backdrop-filter: blur(1px   );
@@ -51,6 +68,11 @@
 
             .boton-ver-ahora-2:hover {
                 background-color:rgba(244, 196, 38, 0.7) ;
+                backdrop-filter: blur(1px   );
+
+            }
+            .boton-ver-ahora-3:hover {
+                background-color:rgba(229, 0, 127, 0.7) ;
                 backdrop-filter: blur(1px   );
 
             }
@@ -132,7 +154,16 @@ img.logo-anime {
     width: 200px;
     z-index: 1;
 }
-
+img.logo-anime-2 {
+    position: absolute;
+    width: 240px;
+    z-index: 1;
+}
+img.logo-anime-3 {
+    position: absolute;
+    width: 270px;
+    z-index: 1;
+}
 .reproducir-svg{
     width: 30px;
     fill: white;
@@ -206,6 +237,22 @@ h1#timer {
   display: block;
 }
 
+.dots {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span.dot {
+    width: 20px;
+    height: 6px;
+    margin: .5%;
+    border: 1px solid var(--color-primario);
+}
+.active {
+  background-color: var(--color-primario);
+}
     </style>
 </head>
 <body>
@@ -539,6 +586,7 @@ h1#timer {
         </div>
     </div>
     <div class="carousel">
+
         <div class="slides">
 
 <div class="slide" class="poster-grande">
@@ -561,7 +609,7 @@ h1#timer {
 
 <div class="slide" class="poster-grande">
 
-    <img class="logo-anime" src="https://image.tmdb.org/t/p/original/mvufCOgW8F4llxNGYXtdr7EGNUo.png" alt="">
+    <img class="logo-anime-2" src="https://image.tmdb.org/t/p/original/mvufCOgW8F4llxNGYXtdr7EGNUo.png" alt="">
     <?xml version="1.0" encoding="UTF-8"?>
 
 
@@ -577,7 +625,33 @@ h1#timer {
     </div>
 </div>
 
+
+<div class="slide" class="poster-grande">
+
+    <img class="logo-anime-3" src="https://image.tmdb.org/t/p/original/yZ5gE35BnI1GlbkQIOZFcFFA9Dx.png" alt="">
+    <?xml version="1.0" encoding="UTF-8"?>
+
+
+    <a href="Classroom-Of-The-Elite.html"  class="boton-ver-ahora-3"><span>
+<!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
+    </span>Ver Ahora</a>
+
+    <div class="degradado"></div>
+    <img class="banner-principal" src="https://image.tmdb.org/t/p/original/1d3IfH0xDBwHdERm1RDQa1jwVBO.jpg" alt="">
+    <div class="timer-container">
+        <h2 class="d-h-m"></h2>
+        <h1 id="timer"></h1>
+    </div>
 </div>
+
+</div>
+
+<div class="dots">
+    <span class="dot" onclick="currentSlide(0)"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+
+  </div>
 </div>
 
 <div class="un-ninja-un-camino">
@@ -764,6 +838,7 @@ window.onload = function () {
 };
 
 let currentIndex = 0;
+let startX;
 
 function showSlide(index) {
   const slides = document.querySelector('.slides');
@@ -778,6 +853,7 @@ function showSlide(index) {
   }
 
   slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  updateDots();
 }
 
 function nextSlide() {
@@ -788,8 +864,52 @@ function prevSlide() {
   showSlide(currentIndex - 1);
 }
 
+function currentSlide(index) {
+  showSlide(index);
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
 // Auto slide every 5 seconds
 setInterval(nextSlide, 5000);
+
+// Handle touch start event
+function handleTouchStart(event) {
+  startX = event.touches[0].clientX;
+}
+
+// Handle touch move event
+function handleTouchMove(event) {
+  if (!startX) {
+    return;
+  }
+
+  let moveX = event.touches[0].clientX;
+  let diffX = startX - moveX;
+
+  if (diffX > 50) {
+    // Swipe left
+    nextSlide();
+    startX = null;
+  } else if (diffX < -50) {
+    // Swipe right
+    prevSlide();
+    startX = null;
+  }
+}
+
+// Add touch event listeners
+const slider = document.querySelector('.slides');
+slider.addEventListener('touchstart', handleTouchStart);
+slider.addEventListener('touchmove', handleTouchMove);
+
+// Initialize dots
+updateDots();
 
 </script>
 

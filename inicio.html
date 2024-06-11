@@ -785,44 +785,6 @@ span.dot {
         });
     });
 
-    function startTimer(duration, display) {
-    let timer = duration, days, hours, minutes, seconds;
-    const interval = setInterval(function () {
-        days = parseInt(timer / (3600 * 24), 10);
-        hours = parseInt((timer % (3600 * 24)) / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        days = days < 10 ? "0" + days : "" + days;
-        hours = hours < 10 ? "0" + hours : "" + hours;
-        minutes = minutes < 10 ? "0" + minutes : "" + minutes;
-        seconds = seconds < 10 ? "0" + seconds : "" + seconds;
-
-        display.innerHTML = days + " : " + hours + " : " + minutes + " : " + seconds;
-
-        if (--timer < 0) {
-            clearInterval(interval);
-            display.innerHTML = "Episodio Nuevo";
-        }
-    }, 1000);
-}
-
-window.onload = function () {
-    // Fecha y hora actual del sistema
-    const now = new Date();
-    const currentTimestamp = now.getTime();
-
-    // Fecha y hora objetivo (3 de junio a las 00:00)
-    const targetDate = new Date(now.getFullYear(), 5, 18); // 18 de junio
-    const targetTimestamp = targetDate.getTime();
-
-    // Calculamos la diferencia de tiempo en segundos
-    let remainingTimeInSeconds = Math.floor((targetTimestamp - currentTimestamp) / 1000);
-
-    // Iniciamos el temporizador
-    const display = document.getElementById('timer');
-    startTimer(remainingTimeInSeconds, display);
-};
 
 let currentIndex = 0;
 let startX;

@@ -129,15 +129,30 @@
 
             let controlsTimeout;
 
+            // Load video URL
             if (videoUrl) {
                 videoPlayer.src = videoUrl;
             } else {
                 alert('No se ha proporcionado ninguna URL de video.');
             }
 
+            // Load poster URL
             if (posterUrl) {
                 videoPlayer.poster = posterUrl;
             }
+
+            // Check if there is a saved time in localStorage
+            const savedTime = localStorage.getItem('savedTime');
+            if (savedTime) {
+                if (confirm('¿Quieres continuar desde donde lo dejaste?')) {
+                    videoPlayer.currentTime = savedTime;
+                }
+            }
+
+            // Save current time to localStorage before the window unloads
+            window.addEventListener('beforeunload', function () {
+                localStorage.setItem('savedTime', videoPlayer.currentTime);
+            });
 
             videoPlayer.addEventListener('click', function () {
                 if (videoPlayer.paused) {

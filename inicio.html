@@ -201,7 +201,7 @@ span.dot {
 
         .poster-slides {
             display: flex;
-            transition: none;
+  transition: transform 0.5s ease-in-out;
         }
 
         .poster-slide {
@@ -908,80 +908,92 @@ updateDots();
 
 
 document.querySelectorAll('.poster-carousel').forEach(carousel => {
-            const prevButton = carousel.querySelector('.poster-arrow-left');
-            const nextButton = carousel.querySelector('.poster-arrow-right');
-            const slides = carousel.querySelector('.poster-slides');
-            let startX = 0;
-            let currentX = 0;
-            let isDragging = false;
-            let carouselIndex = 0;
-            const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
+    const prevButton = carousel.querySelector('.poster-arrow-left');
+    const nextButton = carousel.querySelector('.poster-arrow-right');
+    const slides = carousel.querySelector('.poster-slides');
+    let startX = 0;
+    let startY = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let carouselIndex = 0;
+    const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
 
-            const updateCarousel = () => {
-                const slideWidth = slides.children[0].getBoundingClientRect().width;
-                slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
+    const updateCarousel = () => {
+        const slideWidth = slides.children[0].getBoundingClientRect().width;
+        slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
 
-                if (carouselIndex === 0) {
-                    prevButton.classList.add('hidden');
-                } else {
-                    prevButton.classList.remove('hidden');
-                }
+        if (carouselIndex === 0) {
+            prevButton.classList.add('hidden');
+        } else {
+            prevButton.classList.remove('hidden');
+        }
 
-                if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
-                    nextButton.classList.add('hidden');
-                } else {
-                    nextButton.classList.remove('hidden');
-                }
-            };
+        if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
+            nextButton.classList.add('hidden');
+        } else {
+            nextButton.classList.remove('hidden');
+        }
+    };
 
-            prevButton.addEventListener('click', () => {
-                if (carouselIndex > 0) {
-                    carouselIndex--;
-                    updateCarousel();
-                }
-            });
-
-            nextButton.addEventListener('click', () => {
-                if (carouselIndex < slides.children.length - 1) {
-                    carouselIndex++;
-                    updateCarousel();
-                }
-            });
-
-            const handleTouchStart = (event) => {
-                startX = event.touches[0].clientX;
-                isDragging = true;
-            };
-
-            const handleTouchMove = (event) => {
-                if (!isDragging) return;
-                currentX = event.touches[0].clientX;
-                const diffX = currentX - startX;
-                slides.style.transition = 'none'; // Sin transición durante el movimiento
-                slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
-            };
-
-            const handleTouchEnd = () => {
-                isDragging = false;
-                const slideWidth = slides.children[0].getBoundingClientRect().width;
-                const diffX = currentX - startX;
-                slides.style.transition = ''; // Restaurar la transición normal
-                if (Math.abs(diffX) > sensitivityThreshold) {
-                    if (diffX > 0 && carouselIndex > 0) {
-                        carouselIndex--;
-                    } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
-                        carouselIndex++;
-                    }
-                }
-                updateCarousel();
-            };
-
-            slides.addEventListener('touchstart', handleTouchStart);
-            slides.addEventListener('touchmove', handleTouchMove);
-            slides.addEventListener('touchend', handleTouchEnd);
-
+    prevButton.addEventListener('click', () => {
+        if (carouselIndex > 0) {
+            carouselIndex--;
             updateCarousel();
-        });    
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (carouselIndex < slides.children.length - 1) {
+            carouselIndex++;
+            updateCarousel();
+        }
+    });
+
+    const handleTouchStart = (event) => {
+        // Verificar que el toque inicial ocurra sobre una imagen
+        if (event.target.tagName.toLowerCase() === 'img') {
+            startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
+            isDragging = true;
+        }
+    };
+
+    const handleTouchMove = (event) => {
+        if (!isDragging) return;
+        currentX = event.touches[0].clientX;
+        const diffX = currentX - startX;
+        const diffY = event.touches[0].clientY - startY;
+
+        // Verificar si el desplazamiento es principalmente horizontal
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            event.preventDefault();
+            slides.style.transition = 'none'; // Sin transición durante el movimiento
+            slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
+        }
+    };
+
+    const handleTouchEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        const slideWidth = slides.children[0].getBoundingClientRect().width;
+        const diffX = currentX - startX;
+        slides.style.transition = ''; // Restaurar la transición normal
+        if (Math.abs(diffX) > sensitivityThreshold) {
+            if (diffX > 0 && carouselIndex > 0) {
+                carouselIndex--;
+            } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
+                carouselIndex++;
+            }
+        }
+        updateCarousel();
+    };
+
+    slides.addEventListener('touchstart', handleTouchStart);
+    slides.addEventListener('touchmove', handleTouchMove);
+    slides.addEventListener('touchend', handleTouchEnd);
+
+    updateCarousel();
+});
 </script>
 
 </body>

@@ -11,6 +11,316 @@
 
             .boton-ver-ahora{
             position: absolute;
+            width: 300px;
+            background: var(--color-primario);
+            height: 60px;
+            text-align: center;
+             align-content:center ;
+             text-decoration: none;
+             color: white;
+             z-index: 1;
+             margin-top: 200px;
+             font-size: x-large;
+             font-family: oswald;
+             font-weight: 900;
+             border-radius: 2px;
+
+                }
+                .boton-ver-ahora-2{
+            position: absolute;
+            width: 300px;
+            background: var(--color-primario);
+            height: 60px;
+            text-align: center;
+             align-content:center ;
+             text-decoration: none;
+             color: white;
+             z-index: 1;
+             margin-top: 200px;
+             font-size: x-large;
+             font-family: oswald;
+             font-weight: 900;
+             border-radius: 2px;
+
+                }
+                .boton-ver-ahora-3{
+            position: absolute;
+            width: 300px;
+            background: rgb(229 0 127);
+            height: 60px;
+            text-align: center;
+             align-content:center ;
+             text-decoration: none;
+             color: white;
+             z-index: 1;
+             margin-top: 200px;
+             font-size: x-large;
+             font-family: oswald;
+             font-weight: 900;
+             border-radius: 2px;
+
+                }
+            .boton-ver-ahora:hover {
+                background-color:var(--color-hover-vermas) ;
+                backdrop-filter: blur(1px   );
+
+            }
+
+            .boton-ver-ahora-2:hover {
+                background-color:rgba(244, 196, 38, 0.7) ;
+                backdrop-filter: blur(1px   );
+
+            }
+            .boton-ver-ahora-3:hover {
+                background-color:rgba(229, 0, 127, 0.7) ;
+                backdrop-filter: blur(1px   );
+
+            }
+            a.añadir-favorito {
+            position: absolute;
+            margin: 200px 0px 0px 250px;
+            z-index: 2;
+            border: 2px solid var(--color-primario);
+            height: 40px;
+            width: 40px;
+            border-radius: 2px;
+        }
+        a.añadir-favorito:hover{
+            border:2px solid white;
+        }
+        .favorito-svg{
+            width: 30px;
+            height: 30px;
+            margin-top: 5px;
+            margin-bottom: 4px;
+        }
+
+        .un-ninja-un-camino{
+            width: 100%;
+            margin: 30px 0px 30px 0px;
+            font-family: oswald;
+            overflow: hidden;
+        }
+        .Generos{
+            width: 98%;
+            font-family: oswald;
+            display: flex;
+            margin: 0px 1% 0px 1%;
+        }
+        .fila-un-ninja-un-camino{
+            display: flex;
+            width: 98%;
+            margin: 0px 1% 0px 1%;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .fila-un-ninja-un-camino .anime , .Generos .anime{
+            width: 215px;
+            height: 100%;
+            margin: 0px 5px 0px 5px;
+            color: white;
+            position: relative;
+        }
+        .img-anime{
+            width: 215px;
+            object-fit: cover;
+        }
+        .hover-anime {
+            width: 150px;
+            height: 250px;
+            position: absolute;
+            z-index: 1;
+            border-radius: 3px;
+            color: white;
+            opacity: 1;
+        }
+        .hover-anime:hover{
+            background: linear-gradient(223deg, #000000ab, transparent);
+
+        }
+.botones-hover svg {
+    width: 25px;
+    margin: 10px 0px 0px 120px;
+    
+}
+img.logo-anime {
+    position: absolute;
+    width: 330px;
+    z-index: 1;
+}
+img.logo-anime-2 {
+    position: absolute;
+    width: 330px;
+    z-index: 1;
+}
+img.logo-anime-3 {
+    position: absolute;
+    width: 330px;
+    z-index: 1;
+}
+.reproducir-svg{
+    width: 30px;
+    fill: white;
+    position: absolute;
+    margin: 0px 0px 0px 80px;
+}
+.titulo-div {
+    width: 98%;
+    margin: 0px 1% 10px 1%;
+    color: white;
+    display: flex;
+}
+.flecha{
+    width: 18px;
+}
+.link-anime{
+    text-decoration: none;
+    color: white;
+}
+.separacion {
+    width: 100%;
+    height: 80px;
+}
+.banner-principal{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+       object-position: center;
+    }
+    .timer-container{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+
+}
+h1#timer {
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+    color: white;
+}
+.d-h-m{
+    font-family: 'Oswald';
+    font-size: 20px;
+    padding: 300px 00px 0px 0px;
+    color: white;
+    letter-spacing: 5px;
+}
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.menu-abajo{
+    width: 100%;
+    height: 70px;
+    background: rgb(0 0 0 / 44%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    backdrop-filter: blur(6px);
+
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  display: block;
+}
+
+.dots {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span.dot {
+    width: 20px;
+    height: 6px;
+    margin: .5%;
+    border: 1px solid var(--color-primario);
+}
+.active {
+  background-color: var(--color-primario);
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.degradado-principal{
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(0deg, black, transparent);
+            }
+@media (max-width: 1023px) {
+    .menu-abajo{
+        width: 100%;
+        height: 70px;
+        background: rgb(0, 0, 0);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        backdrop-filter: blur(6px);
+
+    }
+    .carousel{
+
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.degradado-principal{
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        background: linear-gradient(0deg, black, transparent);
+            }
+            .banner-principal{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+       object-position: center;
+    }
+    img.logo-anime {
+    position: absolute;
+    width: 200px;
+    z-index: 1;
+}
+img.logo-anime-2 {
+    position: absolute;
+    width: 240px;
+    z-index: 1;
+}
+img.logo-anime-3 {
+    position: absolute;
+    width: 270px;
+    z-index: 1;
+}
+    .boton-ver-ahora{
+            position: absolute;
             width: 200px;
             background: var(--color-primario);
             height: 40px;
@@ -76,182 +386,6 @@
                 backdrop-filter: blur(1px   );
 
             }
-            a.añadir-favorito {
-            position: absolute;
-            margin: 200px 0px 0px 250px;
-            z-index: 2;
-            border: 2px solid var(--color-primario);
-            height: 40px;
-            width: 40px;
-            border-radius: 2px;
-        }
-        a.añadir-favorito:hover{
-            border:2px solid white;
-        }
-        .favorito-svg{
-            width: 30px;
-            height: 30px;
-            margin-top: 5px;
-            margin-bottom: 4px;
-        }
-
-        .un-ninja-un-camino{
-            width: 100%;
-            height: 300px;
-            margin: 20px 0px 30px 0px;
-            font-family: oswald;
-        }
-        .Generos{
-            width: 98%;
-            height: 300px;
-            font-family: oswald;
-            display: flex;
-            overflow: auto;
-            margin: 0px 1% 0px 1%;
-        }
-        .fila-un-ninja-un-camino{
-            display: flex;
-            width: 98%;
-            height: 280px;
-            margin: 0px 1% 0px 1%;
-            overflow-x: auto;
-            overflow-y: hidden;
-        }
-        .fila-un-ninja-un-camino .anime , .Generos .anime{
-            width: 150px;
-            height: 100%;
-            margin: 0px 5px 0px 5px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        .img-anime{
-            width: 150px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 3px;
-        }
-        .hover-anime {
-            width: 150px;
-            height: 250px;
-            position: absolute;
-            z-index: 1;
-            border-radius: 3px;
-            color: white;
-            opacity: 1;
-        }
-        .hover-anime:hover{
-            background: linear-gradient(223deg, #000000ab, transparent);
-
-        }
-.botones-hover svg {
-    width: 25px;
-    margin: 10px 0px 0px 120px;
-    
-}
-img.logo-anime {
-    position: absolute;
-    width: 200px;
-    z-index: 1;
-}
-img.logo-anime-2 {
-    position: absolute;
-    width: 240px;
-    z-index: 1;
-}
-img.logo-anime-3 {
-    position: absolute;
-    width: 270px;
-    z-index: 1;
-}
-.reproducir-svg{
-    width: 30px;
-    fill: white;
-    position: absolute;
-    margin: 0px 0px 0px 80px;
-}
-.titulo-div {
-    width: 98%;
-    margin: 0px 1% 10px 1%;
-    color: white;
-    display: flex;
-}
-.flecha{
-    width: 18px;
-}
-.link-anime{
-    text-decoration: none;
-    color: white;
-}
-.separacion {
-    width: 100%;
-    height: 80px;
-}
-.banner-principal{
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-       object-position: center;
-    }
-    .timer-container{
-    position: absolute;
-    width: 100%;
-    text-align: center;
-
-}
-h1#timer {
-    font-family: 'Oswald';
-    font-size: 20px;
-    padding: 0px 0px 0px 0px;
-    color: white;
-}
-.d-h-m{
-    font-family: 'Oswald';
-    font-size: 20px;
-    padding: 300px 00px 0px 0px;
-    color: white;
-    letter-spacing: 5px;
-}
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slide img {
-  display: block;
-}
-
-.dots {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-span.dot {
-    width: 20px;
-    height: 6px;
-    margin: .5%;
-    border: 1px solid var(--color-primario);
-}
-.active {
-  background-color: var(--color-primario);
 }
     </style>
 </head>
@@ -601,7 +735,7 @@ span.dot {
 <!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
     </span>Ver Ahora</a>
 
-    <div class="degradado"></div>
+    <div class="degradado-principal"></div>
     <img class="banner-principal" src="https://image.tmdb.org/t/p/original/2sGHMJqvPY5qgy3bKSzEKfUloGb.jpg" alt="">
     <div class="timer-container">
         <h2 class="d-h-m"></h2>
@@ -620,7 +754,7 @@ span.dot {
 <!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
     </span>Ver Ahora</a>
 
-    <div class="degradado"></div>
+    <div class="degradado-principal"></div>
     <img class="banner-principal" src="https://image.tmdb.org/t/p/original/1d3IfH0xDBwHdERm1RDQa1jwVBO.jpg" alt="">
     <div class="timer-container">
         <h2 class="d-h-m"></h2>
@@ -651,32 +785,36 @@ span.dot {
 
 <div class="un-ninja-un-camino">
     <div class="titulo-div">
-    <h4>Amores Divertidos</h4>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+        <h4>Amores Divertidos</h4>
     </div>
-    <div class="fila-un-ninja-un-camino">
-        <div class="anime">
-            <a class="link-anime" href="Nagatoro-San.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
-            <h5>Nagatoro-san</h5>
-        </div></a>
-        <div class="anime">
-            <a class="link-anime" href="Horimiya.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/k61vVOnVjyfjgvEG0d2G8K8Mi5c.jpg" alt="">
-            <h5>Orimiya</h5>
-        </div></a>
-        <div class="anime">
-            <a class="link-anime" href="Tomo-chan-Is-a-Girl!.html">
-        <img class="img-anime" src="https://image.tmdb.org/t/p/original/qqqQXLydaC9WgEUrQV7dIZjMcgP.jpg" alt="">
-        <h5>Tomo-chan Is a Girl!</h5>
-        </div></a>
-        <div class="anime">
-            <a class="link-anime" href="Nisekoi.html">
-        <img class="img-anime" src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt="">
-        <h5>Nisekoi</h5>
-        </div></a>
-    </div>
-</div>
+        <div class="fila-un-ninja-un-camino">
+            <div class="anime">
+                <a class="link-anime" href="Nagatoro-San.html">
+                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
+                    <h5>Nagatoro-san</h5>
+                </a>
+            </div>
+            <div class="anime">
+                <a class="link-anime" href="Horimiya.html">
+                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/k61vVOnVjyfjgvEG0d2G8K8Mi5c.jpg" alt="">
+                    <h5>Horimiya</h5>
+                </a>
+            </div>
+            <div class="anime">
+                <a class="link-anime" href="Tomo-chan-Is-a-Girl!.html">
+                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/qqqQXLydaC9WgEUrQV7dIZjMcgP.jpg" alt="">
+                    <h5>Tomo-chan Is a Girl!</h5>
+                </a>
+            </div>
+            <div class="anime">
+                <a class="link-anime" href="Nisekoi.html">
+                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt="">
+                    <h5>Nisekoi</h5>
+                </a>
+            </div>
+        </div>
+ </div>
+
 <div class="un-ninja-un-camino">
     <div class="titulo-div">
     <h4>Almas En Juego</h4>
@@ -859,6 +997,8 @@ slider.addEventListener('touchmove', handleTouchMove);
 
 // Initialize dots
 updateDots();
+
+
 
 </script>
 

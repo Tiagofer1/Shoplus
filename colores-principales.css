@@ -8,6 +8,7 @@
         box-sizing: border-box;
         transition: 300ms;
         -webkit-tap-highlight-color: transparent;
+        text-decoration: none;
 
     }
 

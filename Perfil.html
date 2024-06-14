@@ -346,6 +346,37 @@ img.fondo {
     object-fit: cover;
     border-radius: 20px;
 }
+.menu-abajo{
+    width: 100%;
+    height: 70px;
+    background: rgb(0 0 0 / 44%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    backdrop-filter: blur(6px);
+    margin-top: -20px;
+
+}
+@media (max-width: 1023px) {
+    .menu-abajo{
+        width: 100%;
+        height: 70px;
+        background: rgb(0, 0, 0);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        backdrop-filter: blur(6px);
+
+    }
+    .carousel{
+        margin: 0px;
+    }
+}
     </style>
 </head>
 <body>

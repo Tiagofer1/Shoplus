@@ -76,73 +76,7 @@
                 backdrop-filter: blur(1px   );
 
             }
-            a.añadir-favorito {
-            position: absolute;
-            margin: 200px 0px 0px 250px;
-            z-index: 2;
-            border: 2px solid var(--color-primario);
-            height: 40px;
-            width: 40px;
-            border-radius: 2px;
-        }
-        a.añadir-favorito:hover{
-            border:2px solid white;
-        }
-        .favorito-svg{
-            width: 30px;
-            height: 30px;
-            margin-top: 5px;
-            margin-bottom: 4px;
-        }
 
-        .un-ninja-un-camino{
-            width: 100%;
-            margin: 30px 0px 30px 0px;
-            font-family: oswald;
-            overflow: hidden;
-        }
-        .Generos{
-            width: 98%;
-            font-family: oswald;
-            display: flex;
-            margin: 0px 1% 0px 1%;
-        }
-        .fila-un-ninja-un-camino{
-            display: flex;
-            width: 98%;
-            margin: 0px 1% 0px 1%;
-            overflow-x: auto;
-            overflow-y: hidden;
-        }
-        .fila-un-ninja-un-camino .anime , .Generos .anime{
-            width: 215px;
-            height: 100%;
-            margin: 0px 5px 0px 5px;
-            color: white;
-            position: relative;
-        }
-        .img-anime{
-            width: 215px;
-            object-fit: cover;
-        }
-        .hover-anime {
-            width: 150px;
-            height: 250px;
-            position: absolute;
-            z-index: 1;
-            border-radius: 3px;
-            color: white;
-            opacity: 1;
-        }
-        .hover-anime:hover{
-            background: linear-gradient(223deg, #000000ab, transparent);
-
-        }
-.botones-hover svg {
-    width: 25px;
-    margin: 10px 0px 0px 120px;
-    
-}
 img.logo-anime {
     position: absolute;
     width: 330px;
@@ -158,29 +92,7 @@ img.logo-anime-3 {
     width: 330px;
     z-index: 1;
 }
-.reproducir-svg{
-    width: 30px;
-    fill: white;
-    position: absolute;
-    margin: 0px 0px 0px 80px;
-}
-.titulo-div {
-    width: 98%;
-    margin: 0px 1% 10px 1%;
-    color: white;
-    display: flex;
-}
-.flecha{
-    width: 18px;
-}
-.link-anime{
-    text-decoration: none;
-    color: white;
-}
-.separacion {
-    width: 100%;
-    height: 80px;
-}
+
 .banner-principal{
         width: 100%;
         height: 500px;
@@ -209,7 +121,7 @@ h1#timer {
 .carousel {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 520px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -254,6 +166,7 @@ span.dot {
     height: 6px;
     margin: .5%;
     border: 1px solid var(--color-primario);
+    border-radius: 30px;
 }
 .active {
   background-color: var(--color-primario);
@@ -270,6 +183,78 @@ span.dot {
         height: 500px;
         background: linear-gradient(0deg, black, transparent);
             }
+            .poster-carousel {
+            position: relative;
+            width: 98%;
+            margin: auto;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .poster-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .poster-slide {
+            margin: 0px 5px;
+            box-sizing: border-box;
+            width: 230px;
+            height: 380px;
+
+        }
+
+        .poster-slide img {
+            height: 340px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .poster-arrow-left, .poster-arrow-right {
+            cursor: pointer;
+            font-size: 2em;
+            user-select: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .poster-arrow-left {
+            width: 70px;
+            height: 375px;
+            align-items: center;
+            display: flex;
+            background: linear-gradient(90deg, black, transparent);
+        }
+
+        .poster-arrow-right {
+            right: 0px;
+            width: 70px;
+            height: 375px;
+            align-items: center;
+            display: flex;
+            background: linear-gradient(270deg, black, transparent);
+            justify-content: end;
+
+        }
+
+        .poster-title {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .titulo-anime {
+    font-family: 'Oswald';
+    color: white;
+    padding: 10px 0px 0px 5px;
+    font-size: revert;
+    font-weight: 400;
+}
 @media (max-width: 1023px) {
     .menu-abajo{
         width: 100%;
@@ -284,108 +269,131 @@ span.dot {
         backdrop-filter: blur(6px);
 
     }
+    .poster-arrow-left, .poster-arrow-right{
+        display: none;
+    }
+    .poster-slide img {
+            height: 280px;
+            display: block;
+            object-fit: cover;
+        }
+        .poster-slide {
+            margin: 0px 5px;
+            box-sizing: border-box;
+            width: 185px;
+            height: 330px;
+
+        }
+}
+@media (max-width: 599px) {
     .carousel{
 
-  position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+position: relative;
+width: 100%;
+height: 520px;
+overflow: hidden;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .degradado-principal{
-        position: absolute;
-        width: 100%;
-        height: 350px;
-        background: linear-gradient(0deg, black, transparent);
-            }
-            .banner-principal{
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-       object-position: center;
-    }
-    img.logo-anime {
-    position: absolute;
-    width: 200px;
-    z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(0deg, black, transparent);
+          }
+          .banner-principal{
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+     object-position: center;
+  }
+  img.logo-anime {
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  margin-top: 90px;
 }
 img.logo-anime-2 {
-    position: absolute;
-    width: 240px;
-    z-index: 1;
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  margin-top: 90px;
+
 }
 img.logo-anime-3 {
-    position: absolute;
-    width: 270px;
-    z-index: 1;
+  position: absolute;
+  width: 300px;
+  z-index: 1;
+  margin-top: 90px;
+
 }
-    .boton-ver-ahora{
-            position: absolute;
-            width: 200px;
-            background: var(--color-primario);
-            height: 40px;
-            text-align: center;
-             align-content:center ;
-             text-decoration: none;
-             color: white;
-             z-index: 1;
-             margin-top: 200px;
-             font-size: larger;
-             font-family: oswald;
-             font-weight: 900;
-             border-radius: 2px;
+  .boton-ver-ahora{
+          position: absolute;
+          width: 80%;
+          background: var(--color-primario);
+          height: 50px;
+          text-align: center;
+           align-content:center ;
+           text-decoration: none;
+           color: white;
+           z-index: 1;
+           margin-top: 300px;
+           font-size: x-large;
+           font-family: oswald;
+           font-weight: 900;
+           border-radius: 2px;
 
-                }
-                .boton-ver-ahora-2{
-            position: absolute;
-            width: 200px;
-            background: rgb(244 197 38);
-            height: 40px;
-            text-align: center;
-             align-content:center ;
-             text-decoration: none;
-             color: white;
-             z-index: 1;
-             margin-top: 200px;
-             font-size: larger;
-             font-family: oswald;
-             font-weight: 900;
-             border-radius: 2px;
+              }
+              .boton-ver-ahora-2{
+          position: absolute;
+          width: 80%;
+          background: rgb(244 197 38);
+          height: 50px;
+          text-align: center;
+           align-content:center ;
+           text-decoration: none;
+           color: white;
+           z-index: 1;
+           margin-top: 300px;
+           font-size: x-large;
+           font-family: oswald;
+           font-weight: 900;
+           border-radius: 2px;
 
-                }
-                .boton-ver-ahora-3{
-            position: absolute;
-            width: 200px;
-            background: rgb(229 0 127);
-            height: 40px;
-            text-align: center;
-             align-content:center ;
-             text-decoration: none;
-             color: white;
-             z-index: 1;
-             margin-top: 200px;
-             font-size: larger;
-             font-family: oswald;
-             font-weight: 900;
-             border-radius: 2px;
+              }
+              .boton-ver-ahora-3{
+          position: absolute;
+          width: 80%;
+          background: rgb(229 0 127);
+          height: 50px;
+          text-align: center;
+           align-content:center ;
+           text-decoration: none;
+           color: white;
+           z-index: 1;
+           margin-top: 300px;
+           font-size: x-large;
+           font-family: oswald;
+           font-weight: 900;
+           border-radius: 2px;
 
-                }
-            .boton-ver-ahora:hover {
-                background-color:var(--color-hover-vermas) ;
-                backdrop-filter: blur(1px   );
+              }
+          .boton-ver-ahora:hover {
+              background-color:var(--color-hover-vermas) ;
+              backdrop-filter: blur(1px   );
 
-            }
+          }
 
-            .boton-ver-ahora-2:hover {
-                background-color:rgba(244, 196, 38, 0.7) ;
-                backdrop-filter: blur(1px   );
+          .boton-ver-ahora-2:hover {
+              background-color:rgba(244, 196, 38, 0.7) ;
+              backdrop-filter: blur(1px   );
 
-            }
-            .boton-ver-ahora-3:hover {
-                background-color:rgba(229, 0, 127, 0.7) ;
-                backdrop-filter: blur(1px   );
+          }
+          .boton-ver-ahora-3:hover {
+              background-color:rgba(229, 0, 127, 0.7) ;
+              backdrop-filter: blur(1px   );
 
-            }
+          }
+    
 }
     </style>
 </head>
@@ -771,157 +779,29 @@ img.logo-anime-3 {
   </div>
 </div>
 
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-        <h4>Reciente</h4>
-        <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512">
-            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
-        </svg>
-    </div>
-    <div class="fila-un-ninja-un-camino" id="fila-reciente">
-    </div>
-</div>
-
-
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-        <h4>Amores Divertidos</h4>
-    </div>
-        <div class="fila-un-ninja-un-camino">
-            <div class="anime">
-                <a class="link-anime" href="Nagatoro-San.html">
-                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="">
-                    <h5>Nagatoro-san</h5>
-                </a>
-            </div>
-            <div class="anime">
-                <a class="link-anime" href="Horimiya.html">
-                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/k61vVOnVjyfjgvEG0d2G8K8Mi5c.jpg" alt="">
-                    <h5>Horimiya</h5>
-                </a>
-            </div>
-            <div class="anime">
-                <a class="link-anime" href="Tomo-chan-Is-a-Girl!.html">
-                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/qqqQXLydaC9WgEUrQV7dIZjMcgP.jpg" alt="">
-                    <h5>Tomo-chan Is a Girl!</h5>
-                </a>
-            </div>
-            <div class="anime">
-                <a class="link-anime" href="Nisekoi.html">
-                    <img class="img-anime" src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt="">
-                    <h5>Nisekoi</h5>
-                </a>
-            </div>
-        </div>
- </div>
-
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-    <h4>Almas En Juego</h4>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-    </div>
-    <div class="Generos">
-        <div class="anime">
-            <a class="link-anime" href="Classroom-Of-The-Elite.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/6m0DaxNVYATG8YrzHl38fuUkwlz.jpg" alt="">
-            <h5>Classroom Of The Elite</h5>
-        </div></a>
-    </div>
-</div>
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-    <h4>Hazañas y Batallas Legendarias</h4>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-    </div>
-    <div class="Generos">
-        <div class="anime">
-            <a class="link-anime" href="Demon-Slayer.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/gsq1pCxMHhZDCHEh78sD6yEHoLu.jpg" alt="">
-            <h5>Demon Slayer</h5>
-        </div></a>
-        <div class="anime">
-            <a class="link-anime" href="Gods'-Games-We-Play.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/gkpFc791zeyQEO7Ds7mlnaC1cmj.jpg" alt="">
-            <h5>Gods' Games We Play</h5>
-        </div></a>
-    </div>
-</div>
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-    <h4>Risas y Mas</h4>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-    </div>
-    <div class="Generos">
-        <div class="anime">
-            <a class="link-anime" href="Farming-Life-in-Another-World.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/pT4OoVQE8zGJ0Z0GZpJotK5Vzsj.jpg" alt="">
-            <h5>Farming Life in Another World</h5>
-        </div></a>
+<div class="poster-carousel">
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides">
+        <a href="Nagatoro-San.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Nagatoro-San</h5></div></a>
+        <a href="Horimiya.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/k61vVOnVjyfjgvEG0d2G8K8Mi5c.jpg" alt="Imagen 2"><h5 class="titulo-anime">Horimiya</h5></div></a>
+        <a href="Tomo-chan-Is-a-Girl!.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/qqqQXLydaC9WgEUrQV7dIZjMcgP.jpg" alt="Imagen 3"> <h5 class="titulo-anime">Tomo chan Is a Girl!</h5></div></a>
+        <a href="Nisekoi.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt="Imagen 4"><h5 class="titulo-anime">Nisekoi</h5></div></a>
 
     </div>
+    <div class="poster-arrow-right">&#9654;</div>
 </div>
-<div class="un-ninja-un-camino">
-    <div class="titulo-div">
-    <h4>Accion</h4>
-    <svg xmlns="http://www.w3.org/2000/svg" class="flecha" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+
+<div class="poster-carousel">
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides">
+
     </div>
-    <div class="Generos">
-        <div class="anime">
-            <a class="link-anime" href="One-punch-Man.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/9gw8qENoERTHS88BnqIZpjYRc9s.jpg" alt="">
-            <h5>One Punch Man</h5>
-        </div></a>
-        <div class="anime">
-            <a class="link-anime" href="Dragon-Ball-Episodio-de-Bardock.html">
-            <img class="img-anime" src="https://image.tmdb.org/t/p/original/f9a79aC4CaaUKZt4el5Ncnt24sM.jpg" alt="">
-            <h5>Dragon Ball Episodio de Bardock</h5>
-        </div></a>
-    </div>
+    <div class="poster-arrow-right">&#9654;</div>
 </div>
 <div class="separacion"></div>
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let recientesGuardados = JSON.parse(localStorage.getItem('recientes')) || [];
-        const filaReciente = document.getElementById('fila-reciente');
-
-        // Renderizar divs guardados
-        recientesGuardados.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'anime';
-            div.innerHTML = item;
-            filaReciente.appendChild(div);
-        });
-
-        // Agregar evento de clic a cada div.anime
-        document.querySelectorAll('.anime').forEach(anime => {
-            anime.addEventListener('click', () => {
-                const animeContent = anime.innerHTML;
-                const index = recientesGuardados.findIndex(item => item === animeContent);
-
-                // Si el anime ya existe, lo movemos al principio
-                if (index !== -1) {
-                    recientesGuardados.splice(index, 1);
-                }
-
-                // Agregar al principio de la lista
-                recientesGuardados.unshift(animeContent);
-
-                // Actualizar localStorage
-                localStorage.setItem('recientes', JSON.stringify(recientesGuardados));
-
-                // Volver a renderizar la fila
-                filaReciente.innerHTML = '';
-                recientesGuardados.forEach(item => {
-                    const div = document.createElement('div');
-                    div.className = 'anime';
-                    div.innerHTML = item;
-                    filaReciente.appendChild(div);
-                });
-            });
-        });
-    });
 
 
 let currentIndex = 0;
@@ -999,7 +879,82 @@ slider.addEventListener('touchmove', handleTouchMove);
 updateDots();
 
 
+document.querySelectorAll('.poster-carousel').forEach(carousel => {
+            const prevButton = carousel.querySelector('.poster-arrow-left');
+            const nextButton = carousel.querySelector('.poster-arrow-right');
+            const slides = carousel.querySelector('.poster-slides');
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            let carouselIndex = 0;
 
+            const updateCarousel = () => {
+                const slideWidth = slides.children[0].getBoundingClientRect().width;
+                slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
+
+                if (carouselIndex === 0) {
+                    prevButton.classList.add('hidden');
+                } else {
+                    prevButton.classList.remove('hidden');
+                }
+
+                if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
+                    nextButton.classList.add('hidden');
+                } else {
+                    nextButton.classList.remove('hidden');
+                }
+            };
+
+            prevButton.addEventListener('click', () => {
+                if (carouselIndex > 0) {
+                    carouselIndex--;
+                    updateCarousel();
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (carouselIndex < slides.children.length - 1) {
+                    carouselIndex++;
+                    updateCarousel();
+                }
+            });
+
+            const handleTouchStart = (event) => {
+                startX = event.touches[0].clientX;
+                isDragging = true;
+            };
+
+            const handleTouchMove = (event) => {
+                if (!isDragging) return;
+                currentX = event.touches[0].clientX;
+                const diffX = currentX - startX;
+                slides.style.transition = 'none'; // Sin transición durante el movimiento
+                slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
+            };
+
+            const handleTouchEnd = () => {
+                isDragging = false;
+                const slideWidth = slides.children[0].getBoundingClientRect().width;
+                const diffX = currentX - startX;
+                const threshold = slideWidth / 4;
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX > 0 && carouselIndex > 0) {
+                        carouselIndex--;
+                    } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
+                        carouselIndex++;
+                    }
+                }
+                slides.style.transition = ''; // Restaurar la transición normal
+                updateCarousel();
+            };
+
+            slides.addEventListener('touchstart', handleTouchStart);
+            slides.addEventListener('touchmove', handleTouchMove);
+            slides.addEventListener('touchend', handleTouchEnd);
+
+            updateCarousel();
+        });
+        
 </script>
 
 </body>

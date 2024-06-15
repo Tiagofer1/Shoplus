@@ -29,7 +29,7 @@
                 .boton-ver-ahora-2{
             position: absolute;
             width: 300px;
-            background: var(--color-primario);
+            background: rgb(244 197 38);
             height: 60px;
             text-align: center;
              align-content:center ;
@@ -100,13 +100,19 @@ img.logo-anime-3 {
     margin-bottom: 120px;
 
 }
-
+.banner-principal{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+       object-position: bottom;
+    }
 .banner-principal-2{
         width: 100%;
         height: 500px;
         object-fit: cover;
        object-position: center;
-    }.banner-principal-3{
+    }
+    .banner-principal-3{
         width: 100%;
         height: 500px;
         object-fit: cover;
@@ -837,7 +843,23 @@ img.logo-anime-3 {
 
         <div class="slides">
 
+            <div class="slide" class="poster-grande">
 
+                <img class="logo-anime" src="https://image.tmdb.org/t/p/original/hjTOkgpiprPGod6vpVfIek8uE5W.png" alt="">
+                <?xml version="1.0" encoding="UTF-8"?>
+            
+            
+                <a   class="boton-ver-ahora"><span>
+            <!--<svg class="reproducir-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="play-svg" aria-labelledby="play-svg" aria-hidden="true" role="img"><title id="play-svg">Reproducir</title><path class="reproducir-svg" d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006"></path></svg>-->
+                </span>Proximamente</a>
+            <p class="descripcion">Hace mucho tiempo, en las montañas, el maestro de artes marciales Gohan descubrió a un excepcional niño durante una noche tormentosa, al que llamó Goku. Sin saber nada de su pasado, Gohan le crió como su nieto hasta los ocho años y le entrenó en artes marciales.</p>
+                <div class="degradado-principal"></div>
+                <img class="banner-principal" src="https://images7.alphacoders.com/637/thumb-1920-637789.jpg" alt="">
+                <div class="timer-container">
+                    <h2 class="d-h-m"></h2>
+                    <h1 id="timer"></h1>
+                </div>
+            </div>
 
 <div class="slide" class="poster-grande">
 
@@ -881,6 +903,7 @@ img.logo-anime-3 {
 <div class="dots">
     <span class="dot" onclick="currentSlide(0)"></span>
     <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
 
   </div>
 </div>
@@ -919,6 +942,7 @@ img.logo-anime-3 {
     </div>
     <div class="poster-arrow-right">&#9654;</div>
 </div>
+
 
 <div class="poster-carousel">
     <h4 class="Titulo-genero">Accion / Aventura</h4>

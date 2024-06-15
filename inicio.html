@@ -216,6 +216,7 @@ span.dot {
         .poster-slides {
             display: flex;
   transition: transform 0.5s ease-in-out;
+  height: 380px;
         }
 
         .poster-slide {
@@ -372,9 +373,6 @@ p.descripcion-recomendado {
     .carousel{
         margin-top: -70px;
     }
-    .poster-arrow-left, .poster-arrow-right{
-        display: none;
-    }
     .poster-slide img {
             height: 280px;
             display: block;
@@ -437,6 +435,11 @@ img.logo-anime-3 {
     height: 70px;
     display: flex;
 }
+.poster-slides {
+            display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 330px;
+        }
 .poster-carousel {
             position: relative;
             width: 98%;
@@ -491,6 +494,9 @@ height: 520px;
 overflow: hidden;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+.poster-arrow-left, .poster-arrow-right{
+        display: none;
+    }
 .degradado-principal{
       position: absolute;
       width: 100%;
@@ -1052,7 +1058,7 @@ p.descripcion-recomendado{
     <h4 class="Titulo-genero">Recientes</h4>
     <div class="poster-arrow-left hidden">&#9664;</div>
     <div class="poster-slides recientes-slides">
-        <!-- Aquí se agregarán dinámicamente los elementos recientes -->
+
     </div>
     <div class="poster-arrow-right">&#9654;</div>
 </div>

@@ -202,10 +202,9 @@ span.dot {
             }
             .poster-carousel {
             position: relative;
-            width: 98%;
+            width: 90%;
             margin: auto;
             overflow: hidden;
-            margin-bottom: 20px;
         }
 
         .poster-slides {
@@ -225,6 +224,7 @@ span.dot {
             height: 340px;
             display: block;
             object-fit: cover;
+            width: 226px;
         }
 
         .poster-arrow-left, .poster-arrow-right {
@@ -245,6 +245,7 @@ span.dot {
             align-items: center;
             display: flex;
             background: linear-gradient(90deg, black, transparent);
+            margin-top: 25px;
         }
 
         .poster-arrow-right {
@@ -255,7 +256,7 @@ span.dot {
             display: flex;
             background: linear-gradient(270deg, black, transparent);
             justify-content: end;
-
+            margin-top: 25px;
         }
 
         .poster-title {
@@ -275,6 +276,7 @@ span.dot {
 .separacion {
     width: 100%;
     height: 70px;
+    display: none;
 }
 h4.Titulo-genero {
     color: white;
@@ -319,6 +321,7 @@ p.descripcion {
             height: 280px;
             display: block;
             object-fit: cover;
+            width: 186px;
         }
         .poster-slide {
             margin: 0px 5px;
@@ -371,6 +374,17 @@ img.logo-anime-3 {
     margin-bottom: 0px;
 
 }
+.separacion {
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+.poster-carousel {
+            position: relative;
+            width: 98%;
+            margin: auto;
+            overflow: hidden;
+        }
 }
 @media (max-width: 599px) {
     .carousel{
@@ -874,7 +888,7 @@ img.logo-anime-3 {
 <div class="posters">
 
 <div class="poster-carousel">
-    <h4 class="Titulo-genero">Romance / Amor</h4>
+    <h4 class="Titulo-genero">Dosis De Amores Chistosos</h4>
     <div class="poster-arrow-left hidden">&#9664;</div>
     <div class="poster-slides">
         <a href="Nagatoro-San.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/ogXmggjfiDHBOBwA3JyuEzCr814.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Nagatoro-San</h5></div></a>
@@ -886,6 +900,14 @@ img.logo-anime-3 {
     <div class="poster-arrow-right">&#9654;</div>
 </div>
 
+<div class="poster-carousel">
+    <h4 class="Titulo-genero">Recientes</h4>
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides recientes-slides">
+        <!-- Aquí se agregarán dinámicamente los elementos recientes -->
+    </div>
+    <div class="poster-arrow-right">&#9654;</div>
+</div>
 
 <div class="poster-carousel">
     <h4 class="Titulo-genero">Manipulacion</h4>
@@ -898,6 +920,38 @@ img.logo-anime-3 {
     <div class="poster-arrow-right">&#9654;</div>
 </div>
 
+<div class="poster-carousel">
+    <h4 class="Titulo-genero">Accion / Aventura</h4>
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides">
+        <a href="Demon-Slayer.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/ctR9Kv2MNhuIjgb96wARbT1BNts.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Demon Slayer: Kimetsu no Yaiba</h5></div></a>
+
+
+    </div>
+    <div class="poster-arrow-right">&#9654;</div>
+</div>
+
+<div class="poster-carousel">
+    <h4 class="Titulo-genero">Fantasia</h4>
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides">
+        <a href="Gods'-Games-We-Play.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/gkpFc791zeyQEO7Ds7mlnaC1cmj.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Gods' Games We Play</h5></div></a>
+        <a href="Farming-Life-in-Another-World.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/pT4OoVQE8zGJ0Z0GZpJotK5Vzsj.jpg" alt=""><h5 class="titulo-anime">Farming Life in Another World</h5></div></a>
+
+    </div>
+    <div class="poster-arrow-right">&#9654;</div>
+</div>
+
+<div class="poster-carousel">
+    <h4 class="Titulo-genero">Furias En El Filo</h4>
+    <div class="poster-arrow-left hidden">&#9664;</div>
+    <div class="poster-slides">
+        <a href="One-punch-Man.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/jbYJuxfZMpYDalkiOnBcCv9TaL.jpg" alt="Imagen 1"> <h5 class="titulo-anime">One Punch Man</h5></div></a>
+        <a href="Dragon-Ball-Episodio-de-Bardock.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/fqf19zUVaUEYySCzxK5We31YbkQ.jpg" alt=""><h5 class="titulo-anime">Dragon Ball: El Episodio De Bardock</h5></div></a>
+
+    </div>
+    <div class="poster-arrow-right">&#9654;</div>
+</div>
 </div>
 
 <div class="separacion"></div>
@@ -981,93 +1035,142 @@ slider.addEventListener('touchmove', handleTouchMove);
 updateDots();
 
 
-document.querySelectorAll('.poster-carousel').forEach(carousel => {
-    const prevButton = carousel.querySelector('.poster-arrow-left');
-    const nextButton = carousel.querySelector('.poster-arrow-right');
-    const slides = carousel.querySelector('.poster-slides');
-    let startX = 0;
-    let startY = 0;
-    let currentX = 0;
-    let isDragging = false;
-    let carouselIndex = 0;
-    const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
+document.addEventListener('DOMContentLoaded', () => {
+    const recentSlides = document.querySelector('.recientes-slides');
 
-    const updateCarousel = () => {
-        const slideWidth = slides.children[0].getBoundingClientRect().width;
-        slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
-
-        if (carouselIndex === 0) {
-            prevButton.classList.add('hidden');
-        } else {
-            prevButton.classList.remove('hidden');
-        }
-
-        if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
-            nextButton.classList.add('hidden');
-        } else {
-            nextButton.classList.remove('hidden');
-        }
+    // Función para cargar los recientes desde localStorage
+    const loadRecentSlides = () => {
+        const recentData = JSON.parse(localStorage.getItem('recentSlides')) || [];
+        recentData.forEach(slideData => {
+            const slideContainer = document.createElement('div');
+            slideContainer.classList.add('poster-slide');
+            slideContainer.innerHTML = slideData;
+            recentSlides.appendChild(slideContainer);
+        });
     };
 
-    prevButton.addEventListener('click', () => {
-        if (carouselIndex > 0) {
-            carouselIndex--;
-            updateCarousel();
-        }
-    });
-
-    nextButton.addEventListener('click', () => {
-        if (carouselIndex < slides.children.length - 1) {
-            carouselIndex++;
-            updateCarousel();
-        }
-    });
-
-    const handleTouchStart = (event) => {
-        // Verificar que el toque inicial ocurra sobre una imagen
-        if (event.target.tagName.toLowerCase() === 'img') {
-            startX = event.touches[0].clientX;
-            startY = event.touches[0].clientY;
-            isDragging = true;
-        }
+    // Función para guardar los recientes en localStorage
+    const saveRecentSlides = () => {
+        const slidesData = Array.from(recentSlides.querySelectorAll('a')).map(a => a.outerHTML);
+        localStorage.setItem('recentSlides', JSON.stringify(slidesData));
     };
 
-    const handleTouchMove = (event) => {
-        if (!isDragging) return;
-        currentX = event.touches[0].clientX;
-        const diffX = currentX - startX;
-        const diffY = event.touches[0].clientY - startY;
+    // Cargar los recientes al cargar la página
+    loadRecentSlides();
 
-        // Verificar si el desplazamiento es principalmente horizontal
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            event.preventDefault();
-            slides.style.transition = 'none'; // Sin transición durante el movimiento
-            slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
-        }
-    };
+    document.querySelectorAll('.poster-carousel').forEach(carousel => {
+        const prevButton = carousel.querySelector('.poster-arrow-left');
+        const nextButton = carousel.querySelector('.poster-arrow-right');
+        const slides = carousel.querySelector('.poster-slides');
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let carouselIndex = 0;
+        const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
 
-    const handleTouchEnd = () => {
-        if (!isDragging) return;
-        isDragging = false;
-        const slideWidth = slides.children[0].getBoundingClientRect().width;
-        const diffX = currentX - startX;
-        slides.style.transition = ''; // Restaurar la transición normal
-        if (Math.abs(diffX) > sensitivityThreshold) {
-            if (diffX > 0 && carouselIndex > 0) {
-                carouselIndex--;
-            } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
-                carouselIndex++;
+        const updateCarousel = () => {
+            const slideWidth = slides.children[0].getBoundingClientRect().width;
+            slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
+
+            if (carouselIndex === 0) {
+                prevButton.classList.add('hidden');
+            } else {
+                prevButton.classList.remove('hidden');
             }
-        }
+
+            if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
+                nextButton.classList.add('hidden');
+            } else {
+                nextButton.classList.remove('hidden');
+            }
+        };
+
+        prevButton.addEventListener('click', () => {
+            if (carouselIndex > 0) {
+                carouselIndex--;
+                updateCarousel();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (carouselIndex < slides.children.length - 1) {
+                carouselIndex++;
+                updateCarousel();
+            }
+        });
+
+        slides.addEventListener('click', (event) => {
+            const slideLink = event.target.closest('a');
+            if (slideLink) {
+                const selectedSlide = slideLink.cloneNode(true);
+                const selectedSlideHTML = selectedSlide.outerHTML;
+
+                // Verificar si el slide ya está en la lista de recientes y eliminar duplicados
+                Array.from(recentSlides.querySelectorAll('a')).forEach((slide) => {
+                    if (slide.outerHTML === selectedSlideHTML) {
+                        recentSlides.removeChild(slide.parentElement);
+                    }
+                });
+
+                // Crear un contenedor para el nuevo slide
+                const slideContainer = document.createElement('div');
+                slideContainer.classList.add('poster-slide');
+                slideContainer.appendChild(selectedSlide);
+
+                // Añadir el nuevo slide al principio
+                recentSlides.insertBefore(slideContainer, recentSlides.firstChild);
+
+                saveRecentSlides(); // Guardar en localStorage
+                updateCarousel();
+            }
+        });
+
+        const handleTouchStart = (event) => {
+            if (event.target.tagName.toLowerCase() === 'img') {
+                startX = event.touches[0].clientX;
+                startY = event.touches[0].clientY;
+                isDragging = true;
+            }
+        };
+
+        const handleTouchMove = (event) => {
+            if (!isDragging) return;
+            currentX = event.touches[0].clientX;
+            const diffX = currentX - startX;
+            const diffY = event.touches[0].clientY - startY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                event.preventDefault();
+                slides.style.transition = 'none'; // Sin transición durante el movimiento
+                slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
+            }
+        };
+
+        const handleTouchEnd = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            const slideWidth = slides.children[0].getBoundingClientRect().width;
+            const diffX = currentX - startX;
+            slides.style.transition = ''; // Restaurar la transición normal
+            if (Math.abs(diffX) > sensitivityThreshold) {
+                if (diffX > 0 && carouselIndex > 0) {
+                    carouselIndex--;
+                } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
+                    carouselIndex++;
+                }
+            }
+            updateCarousel();
+        };
+
+        slides.addEventListener('touchstart', handleTouchStart);
+        slides.addEventListener('touchmove', handleTouchMove);
+        slides.addEventListener('touchend', handleTouchEnd);
+
         updateCarousel();
-    };
-
-    slides.addEventListener('touchstart', handleTouchStart);
-    slides.addEventListener('touchmove', handleTouchMove);
-    slides.addEventListener('touchend', handleTouchEnd);
-
-    updateCarousel();
+    });
 });
+
 </script>
 
 </body>

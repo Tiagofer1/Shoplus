@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 </head>
 <body>
-
+    <div class="background-image">
     <div class="menu-abajo">
         <div class="izquierda">
             <?xml version="1.0" encoding="UTF-8"?>
@@ -337,91 +337,66 @@
 <a href="Perfil.html"><h6 class="explorar-pc-menu">Perfil</h6></a>
         </div>
     </div> 
-    <div class="container">
+
+    <div class="form-container">
         <h1>Recomienda un Anime</h1>
         <form id="recommendation-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="user_name" required>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="user_name" required>
+            </div>
             
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="user_email" required>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="user_email" required>
+            </div>
             
-            <label for="anime">Nombre del Anime:</label>
-            <input type="text" id="anime" name="anime_name" required>
+            <div class="form-group">
+                <label for="anime">Nombre del Anime:</label>
+                <input type="text" id="anime" name="anime_name" required>
+            </div>
             
-            <label for="reason">¿Por qué lo recomiendas?</label>
-            <textarea id="reason" name="reason" required></textarea>
+            <div class="form-group">
+                <label for="reason">¿Por qué lo recomiendas?</label>
+                <textarea id="reason" name="reason" required></textarea>
+            </div>
 
-            <label for="file">Adjuntar Imagen del Anime:</label>
-            <input type="file" id="file" name="file">
+            <div class="form-group-display-none">
+                <label for="file">Adjuntar Imagen del Anime:</label>
+                <input type="file" id="file" name="file">
+            </div>
 
             <button type="submit">Enviar</button>
         </form>
     </div>
-
+    </div>
 <style>
-    /* styles.css */
+/* styles.css */
 
 body {
-    background-color: #1c1c1c;
-    color: #fff;
+    background-color: #000000;
+    color: #333;
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     height: 100vh;
     margin: 0;
+    align-items: center;
 }
-
-.container {
-    background-color: #2b2b2b;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    width: 350px;
-    text-align: center;
-    margin: 90px 2%;
-    height: 85%;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    color: #e91e63;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input, textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    max-width: 310px;
-    min-width: 310px;
-}
-
-button {
-    background-color: #e91e63;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #d81b60;
-}
-
+.background-image {
+            background-image: url('https://static.crunchyroll.com/cr-acquisition/assets/img/landing/hero/background-desktop@3x.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
 .menu-abajo{
     width: 100%;
     height: 70px;
@@ -432,6 +407,89 @@ button:hover {
     position: fixed;
     z-index: 99;
     backdrop-filter: blur(6px);
+    top: 0;
+
+}
+.form-container {
+    width: 400px;
+    height: 65%;
+    background: #0000008c;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+}
+form#recommendation-form {
+    padding-top: 20px;
+    padding-left: 10px;
+    flex-direction: column;
+    display: flex;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+h1 {
+    margin: -70px 0px 50px 0px;
+    color: white;
+}
+.form-group-display-none{
+    display: none;
+}
+label {
+    text-align: justify;
+    padding: 5px 0px;
+    color: white;
+    font-family: 'Oswald';
+}
+input {
+    width: 98%;
+    height: 26px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-primario);
+    padding: 5px 0px;
+    color: white;
+    outline: none;
+    margin: 0px 0px 5px;
+    font-family: 'Oswald';
+}
+textarea#reason {
+    margin: 5px 0px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid red;
+    width: 98%;
+    max-width: 98%;
+    min-width: 98%;
+    outline: none;
+    color: white;
+    max-height: 52px;
+    min-height: 52px;
+    font-family: 'Oswald';
+}
+button {
+    width: 98%;
+    height: 40px;
+    margin: 20px 0px 0px 0px;
+    color: white;
+    border-radius: 5px;
+    background: var(--color-primario);
+    border: none;
+    font-family: 'Oswald';
+
+}
+button:hover {
+    width: 98%;
+    height: 40px;
+    margin: 20px 0px 0px 0px;
+    color: white;
+    border-radius: 5px;
+    background: var(--color-hover-vermas);
+    border: none;
+}
+h1{
+    font-family: 'Oswald';
 }
 @media (max-width: 1023px) {
     .menu-abajo{
@@ -443,15 +501,23 @@ button:hover {
         align-items: center;
         position: fixed;
         z-index: 99;
-        bottom:  0;
+        bottom: 0;
         backdrop-filter: blur(6px);
+        top: inherit;
+        bottom: 0;
 
-    
     }
-    .container {
-margin: 2% 2%;
+    h1 {
+    margin: -70px 0px 70px 0px;
+    color: white;
+    font-size: 20px;
+}
+.form-group-display-none{
+    display: none;
 }
 }
+
+
 
 </style>
 <script>

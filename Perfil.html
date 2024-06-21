@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 10% 0px 10%;
+    margin: 90px 10% 0px 10%;
     border-radius: 20px;
 }
 .profile-image {
@@ -353,7 +353,7 @@ img.fondo {
     position: fixed;
     z-index: 99;
     backdrop-filter: blur(6px);
-    margin-top: -20px;
+    top: 0;
 
 }
 @media (max-width: 1023px) {
@@ -367,12 +367,23 @@ img.fondo {
         position: fixed;
         z-index: 99;
         bottom: 0;
+        top: inherit;
         backdrop-filter: blur(6px);
 
     }
     .carousel{
         margin: 0px;
     }
+    .profile-container {
+    width: 80%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10% 0px 10%;
+    border-radius: 20px;
+}
 }
     </style>
 </head>

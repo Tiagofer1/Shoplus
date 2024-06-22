@@ -36,6 +36,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .favorito-item {
@@ -439,6 +440,21 @@ img.fondo {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
+button {
+    width: 70%;
+    height: 50px;
+    font-family: 'Oswald';
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    margin: 10px 0px 0px 0px;
+    background: linear-gradient(45deg, var(--color-primario), var(--color-hover-vermas));
+    color: white;
+    transition: 300ms;
+}
+button:hover {
+    background: linear-gradient(200deg, var(--color-primario), var(--color-hover-vermas));
+}
 @media (max-width: 1023px) {
     .menu-abajo{
         width: 100%;
@@ -475,8 +491,12 @@ h1 {
 @media (max-width: 495px){
     .favorito-item {
 
-    width: 90%;
+    width: 50%;
+    margin: 0px;
 
+}
+.posterr{
+    width: 190%;
 }
 .favorito-link{
 width: 50%;
@@ -1173,40 +1193,70 @@ width: 50%;
     // Resto del código...
 });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const favoritosContainer = document.getElementById('favoritos-container');
-            const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-    
-            if (favoritos.length === 0) {
-                favoritosContainer.innerHTML = '<p>No hay favoritos añadidos.</p>';
-            } else {
-                const uniqueFavoritos = [];
-    
-                favoritos.forEach(favorito => {
-                    if (favorito.poster && favorito.nombre) { // Validación para evitar undefined
-                        if (!uniqueFavoritos.some(uniqueFavorito => uniqueFavorito.nombre === favorito.nombre)) {
-                            uniqueFavoritos.push(favorito);
-                        }
+document.addEventListener('DOMContentLoaded', function() {
+        const favoritosContainer = document.getElementById('favoritos-container');
+        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+        if (favoritos.length === 0) {
+            favoritosContainer.innerHTML = '<p>No hay favoritos añadidos.</p>';
+        } else {
+            const uniqueFavoritos = [];
+
+            favoritos.forEach(favorito => {
+                if (favorito.poster && favorito.nombre) { // Validación para evitar undefined
+                    if (!uniqueFavoritos.some(uniqueFavorito => uniqueFavorito.nombre === favorito.nombre)) {
+                        uniqueFavoritos.push(favorito);
                     }
-                });
-    
-                uniqueFavoritos.forEach(favorito => {
-                    const urlNombre = favorito.nombre.replace(/\s+/g, '-').toLowerCase() + '.html';
-                    const a = document.createElement('a');
-                    a.href = urlNombre;
-                    a.classList.add('favorito-link');
-                    
-                    const div = document.createElement('div');
-                    div.classList.add('favorito-item');
-                    div.innerHTML = `
-                        <img src="${favorito.poster}" alt="Poster" class="posterr">
-                        <h4>${favorito.nombre}</h4>
-                    `;
-                    a.appendChild(div);
-                    favoritosContainer.appendChild(a);
-                });
-            }
-        });
+                }
+            });
+
+            uniqueFavoritos.forEach(favorito => {
+                const urlNombre = favorito.nombre.replace(/\s+/g, '-').toLowerCase() + '.html';
+                const a = document.createElement('a');
+                a.href = urlNombre;
+                a.classList.add('favorito-link');
+                
+                const img = document.createElement('img');
+                img.src = favorito.poster;
+                img.alt = 'Poster';
+                img.classList.add('posterr');
+                a.appendChild(img);
+                
+                const div = document.createElement('div');
+                div.classList.add('favorito-item');
+                
+                const h4 = document.createElement('h4');
+                h4.textContent = favorito.nombre;
+                
+                const button = document.createElement('button');
+                button.textContent = 'Eliminar de Favoritos';
+                button.onclick = function() {
+                    removeFromFavorites(favorito.nombre);
+                };
+                
+                div.appendChild(a); // Mover el elemento <a> dentro del <div>
+                div.appendChild(h4);
+                div.appendChild(button);
+                
+                favoritosContainer.appendChild(div);
+            });
+        }
+    });
+
+    function removeFromFavorites(name) {
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        favoritos = favoritos.filter(favorito => favorito.nombre !== name);
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
+        location.reload();
+    }
+
+    function removeFromFavorites(name) {
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        favoritos = favoritos.filter(favorito => favorito.nombre !== name);
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
+        location.reload();
+    }
+   
         function obtenerNombreAnime(posterSrc) {
     // Aquí puedes implementar la lógica para obtener el nombre del anime desde la URL del poster
     // En esta función de ejemplo, se obtiene el nombre del anime del elemento .anime correspondiente

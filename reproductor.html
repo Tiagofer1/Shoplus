@@ -140,6 +140,7 @@
             </div>
             <div class="time-display" id="time-display">00:00 / 00:00</div>
             <i id="mute-unmute" class="fas fa-volume-up"></i>
+            <i id="audio-track" class="fas fa-globe"></i>
             <i id="fullscreen" class="fas fa-expand"></i>
         </div>
         <div id="continue-modal">
@@ -157,6 +158,7 @@
             const videoPlayer = document.getElementById('video-player');
             const playPauseBtn = document.getElementById('play-pause');
             const muteUnmuteBtn = document.getElementById('mute-unmute');
+            const audioTrackBtn = document.getElementById('audio-track');
             const fullscreenBtn = document.getElementById('fullscreen');
             const progressBarContainer = document.querySelector('.progress-bar-container');
             const progressBar = document.querySelector('.progress');
@@ -183,7 +185,7 @@
             }
 
             // Check if there is a saved time in localStorage
-            const savedTime = localStorage.getItem('savedTime');
+            const savedTime = localStorage.getItem(`savedTime_${videoUrl}`);
             if (savedTime) {
                 continueModal.style.display = 'block';
                 continueYesBtn.addEventListener('click', function() {
@@ -197,7 +199,7 @@
 
             // Save current time to localStorage before the window unloads
             window.addEventListener('beforeunload', function () {
-                localStorage.setItem('savedTime', videoPlayer.currentTime);
+                localStorage.setItem(`savedTime_${videoUrl}`, videoPlayer.currentTime);
             });
 
             videoPlayer.addEventListener('click', function () {
@@ -243,6 +245,15 @@
                     videoPlayer.muted = true;
                     muteUnmuteBtn.classList.remove('fa-volume-up');
                     muteUnmuteBtn.classList.add('fa-volume-mute');
+                }
+            });
+
+            audioTrackBtn.addEventListener('click', function () {
+                if (videoPlayer.audioTracks && videoPlayer.audioTracks.length > 1) {
+                    const currentTrackIndex = Array.from(videoPlayer.audioTracks).findIndex(track => track.enabled);
+                    const nextTrackIndex = (currentTrackIndex + 1) % videoPlayer.audioTracks.length;
+                    videoPlayer.audioTracks[currentTrackIndex].enabled = false;
+                    videoPlayer.audioTracks[nextTrackIndex].enabled = true;
                 }
             });
 
@@ -344,39 +355,40 @@
             showControls();
         });
         document.addEventListener('keydown', function(event) {
-    switch(event.key) {
-        case ' ':
-            event.preventDefault();
-            if (videoPlayer.paused) {
-                videoPlayer.play();
-                playPauseBtn.classList.remove('fa-play');
-                playPauseBtn.classList.add('fa-pause');
-            } else {
-                videoPlayer.pause();
-                playPauseBtn.classList.remove('fa-pause');
-                playPauseBtn.classList.add('fa-play');
+            const videoPlayer = document.getElementById('video-player');
+            switch(event.key) {
+                case ' ':
+                    event.preventDefault();
+                    if (videoPlayer.paused) {
+                        videoPlayer.play();
+                        document.getElementById('play-pause').classList.remove('fa-play');
+                        document.getElementById('play-pause').classList.add('fa-pause');
+                    } else {
+                        videoPlayer.pause();
+                        document.getElementById('play-pause').classList.remove('fa-pause');
+                        document.getElementById('play-pause').classList.add('fa-play');
+                    }
+                    break;
+                case 'm':
+                    videoPlayer.muted = !videoPlayer.muted;
+                    document.getElementById('mute-unmute').classList.toggle('fa-volume-up', !videoPlayer.muted);
+                    document.getElementById('mute-unmute').classList.toggle('fa-volume-mute', videoPlayer.muted);
+                    break;
+                case 'f':
+                    if (!document.fullscreenElement) {
+                        videoPlayer.requestFullscreen();
+                    } else {
+                        document.exitFullscreen();
+                    }
+                    break;
+                case 'ArrowLeft':
+                    videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 10);
+                    break;
+                case 'ArrowRight':
+                    videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 10);
+                    break;
             }
-            break;
-        case 'm':
-            videoPlayer.muted = !videoPlayer.muted;
-            muteUnmuteBtn.classList.toggle('fa-volume-up', !videoPlayer.muted);
-            muteUnmuteBtn.classList.toggle('fa-volume-mute', videoPlayer.muted);
-            break;
-        case 'f':
-            if (!document.fullscreenElement) {
-                videoPlayer.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
-            break;
-        case 'ArrowLeft':
-            videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 10);
-            break;
-        case 'ArrowRight':
-            videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 10);
-            break;
-    }
-});
+        });
 
     </script>
 </body>

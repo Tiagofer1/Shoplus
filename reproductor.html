@@ -51,10 +51,11 @@
             flex-grow: 1;
             margin: 0 10px;
             position: relative;
+            height: 10px;
         }
         .progress-bar {
             width: 100%;
-            height: 5px;
+            height: 10px;
             background: #444;
             cursor: pointer;
         }
@@ -110,6 +111,26 @@
         #continue-modal button:hover {
             background: #444;
         }
+        #video-player::-webkit-media-controls {
+    display: none !important;
+}
+
+#video-player::-moz-media-controls {
+    display: none !important;
+}
+
+#video-player::-ms-media-controls {
+    display: none !important;
+}
+
+#video-player::media-controls {
+    display: none !important;
+}
+
+.controls {
+    display: flex !important;
+}
+
         @media (max-width: 768px) {
             body.landscape #video-container {
                 transform: rotate(90deg);

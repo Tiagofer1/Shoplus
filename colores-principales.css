@@ -159,3 +159,14 @@ h6:hover {
             }
 
 }
+.poster {
+    background: #1b122d;
+    height: 255px;
+}
+            
+
+.poster-mismo-genero-img{
+    background: #1b122b;
+    height: 100%;
+
+}

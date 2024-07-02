@@ -194,44 +194,111 @@ width: 100%;
 .Mismo-Genero {
     width: 92%;
     height: auto;
-    margin-top: 20px;
-    border-top: 1px solid #ffffff3b;
     margin-left: 4%;
     overflow: hidden;
-    padding: 40px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 .poster-mismo-genero{
     width: 31%;
-    margin: 0px .5% .5%;
+    margin: 0px .5% 1%;
 }
 .poster-mismo-genero-img{
     width: 100%;
     filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
+}
+.tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f000;
+    width: 46%;
+    border: none;
+    border-bottom: 1px solid #ffffff3b;
+    color: white;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+        .tab-button.active {
+            border-bottom: 1px solid #ffffff;
+        }
+        .Tabs-button {
+    padding: 10px 0px 40px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.a-video-play {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.play-video{
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+}
+h6.video-trailer-clip-tiempo {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+    font-size: smaller;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.video-trailer-clip-tiempo:hover{
+color: white;
+}
+.capa-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #120b1f, transparent);
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.capa-hover:hover {
+    opacity: 1;
 }
 @media (max-width: 775px){
     .poster-mismo-genero{
     width: 300%;
     margin: 0px .5% .5%;
 }
-.poster-mismo-genero-img{
-    width: 300px;
-    filter: drop-shadow(2px 4px 6px black);
-}
+.poster-mismo-genero-img {
+        width: 300px;
+        height: 168px;
+        filter: drop-shadow(2px 4px 6px black);
+        object-fit: cover;
+    }
 .Mismo-Genero {
     width: 92%;
     height: auto;
-    margin-top: 20px;
-    border-top: 1px solid #ffffff3b;
     margin-left: 4%;
     overflow: auto;
-    padding: 40px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: normal;
 }
+h6.video-trailer-clip-tiempo , .capa-hover {
+display: none;
+}
+
 }
     </style>
 <div class="flecha-salir">
@@ -279,18 +346,66 @@ width: 100%;
 </div>
 </div>
 
-
-<div class="Mismo-Genero">
-    <div class="poster-mismo-genero">
-        <a href="Interestelar.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/huD4cMhHtLkxcdM6PbKBcivBZuE.jpg" alt=""></a>
-    </div>
-    <div class="poster-mismo-genero">
-        <a href="El-Origen.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/d3ctC23USr9mibTKl8B553GJbJW.jpg" alt=""></a>
-    </div>
-    <div class="poster-mismo-genero">
-        <a href="Mision-Rescate.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/7AJ375DVPCdgY3bGFVHLpzubb6j.jpg" alt=""></a>
+<div class="Tabs-button">
+    <button class="tab-button" onclick="openTab('tab1')">Recomendado</button>
+    <button class="tab-button" onclick="openTab('tab2')">Avances</button>
+</div>
+<div id="tab1" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a href="Interestelar.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/huD4cMhHtLkxcdM6PbKBcivBZuE.jpg" alt=""></a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="El-Origen.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/d3ctC23USr9mibTKl8B553GJbJW.jpg" alt=""></a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="Mision-Rescate.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/7AJ375DVPCdgY3bGFVHLpzubb6j.jpg" alt=""></a>
+        </div>
     </div>
 </div>
+<div id="tab2" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/4_20240702_20240702_0421/1.mp4&poster=https://m.media-amazon.com/images/M/MV5BYzZmZTdiNWUtYzE5MC00ZjU1LWI3MWYtNDJlYzg5NDAzY2FkXkEyXkFqcGdeQWFsZWxvZw@@._V1_.jpg" class="a-video-play">
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BYzZmZTdiNWUtYzE5MC00ZjU1LWI3MWYtNDJlYzg5NDAzY2FkXkEyXkFqcGdeQWFsZWxvZw@@._V1_.jpg" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Clip 6:10</h6>
+            </div>
+        </a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/4_20240702_20240702_0421/2.mp4&poster=https://m.media-amazon.com/images/M/MV5BNGJjNTIzMDktZGRhNy00NmUwLTlkYjMtNDhmOWIwMTQ3OWQyXkEyXkFqcGdeQWFybm8@._V1_.jpg" class="a-video-play"> 
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BNGJjNTIzMDktZGRhNy00NmUwLTlkYjMtNDhmOWIwMTQ3OWQyXkEyXkFqcGdeQWFybm8@._V1_.jpg" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Trailer 2:21</h6>
+            </div>
+        </a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/4_20240702_20240702_0421/3.mp4&poster=https://m.media-amazon.com/images/M/MV5BNzUwMWI1YjgtYzYzNS00MzIyLTgzZmUtNjljMWVhNDhjNWMyXkEyXkFqcGdeQWpnYW1i._V1_.jpg" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BNzUwMWI1YjgtYzYzNS00MzIyLTgzZmUtNjljMWVhNDhjNWMyXkEyXkFqcGdeQWpnYW1i._V1_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Trailer 0:56</h6>
+                </div>
+            </a>
+            </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/4_20240702_20240702_0421/4.mp4&poster=https://m.media-amazon.com/images/M/MV5BZTVmZTVjNjAtOTI0Ny00M2EzLWIwOTgtMGFjZjhmYzdkZjM1XkEyXkFqcGdeQWFybm8@._V1_QL75_UY281_CR18" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BZTVmZTVjNjAtOTI0Ny00M2EzLWIwOTgtMGFjZjhmYzdkZjM1XkEyXkFqcGdeQWFybm8@._V1_QL75_UY281_CR18" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Video 18:54</h6>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
 
 
     </div>
@@ -312,6 +427,25 @@ width: 100%;
 
             alert('Añadido a favoritos');
         }
+        function openTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var buttons = document.querySelectorAll('.tab-button');
+            
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.tab-button[onclick="openTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+
+        // Abrir la primera pestaña por defecto
+        openTab('tab1');
+
 </script>
 
 </body>

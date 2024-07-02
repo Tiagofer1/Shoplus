@@ -112,6 +112,21 @@ h6:hover {
     object-fit: cover;
     object-position: center;
 }
+.poster {
+    background: #1b122d;
+    height: 255px;
+}
+            
+
+.poster-mismo-genero-img{
+    background: #1b122b;
+    height: 100%;
+
+}
+.temporada-hijo-episodios img {
+    background: #1b122d;
+}
+
 @media (max-width: 1023px){
 
     .centro,.izquierda,.derecha{
@@ -159,14 +174,4 @@ h6:hover {
             }
 
 }
-.poster {
-    background: #1b122d;
-    height: 255px;
-}
-            
 
-.poster-mismo-genero-img{
-    background: #1b122b;
-    height: 100%;
-
-}

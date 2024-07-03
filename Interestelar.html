@@ -274,6 +274,7 @@ color: white;
 }.capa-hover:hover {
     opacity: 1;
 }
+
 @media (max-width: 775px){
     .poster-mismo-genero{
     width: 300%;
@@ -301,6 +302,10 @@ display: none;
 
 }
     </style>
+        <div id="loading">
+            <div class="spinner"></div>
+            <h5 class="cargando-recursos">Cargando Recursos...</h5>
+            </div>
 <div class="flecha-salir">
     <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
 </div>
@@ -460,7 +465,13 @@ display: none;
 
         // Abrir la primera pestaña por defecto
         openTab('tab1');
-
+        window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
 </script>
 
 </body>

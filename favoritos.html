@@ -518,6 +518,10 @@ h4 {
 }
 }
     </style>
+    <div id="loading">
+        <div class="spinner"></div>
+        <h5 class="cargando-recursos">Cargando Recursos...</h5>
+        </div>
         <div class="background-image">
 
             <div class="profile-container">
@@ -1441,7 +1445,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Resto de tu JavaScript...
 });
-
+window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
     </script>
     
 </body>

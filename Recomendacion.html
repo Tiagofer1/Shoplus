@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 </head>
 <body>
+    <div id="loading">
+        <div class="spinner"></div>
+        <h5 class="cargando-recursos">Cargando Recursos...</h5>
+        </div>
     <div class="background-image">
     <div class="menu-abajo">
         <div class="izquierda">
@@ -824,7 +828,13 @@ h1{
             });
     }
 })();
-
+window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
 </script>
 </body>
 </html>

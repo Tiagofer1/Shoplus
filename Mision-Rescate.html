@@ -194,24 +194,86 @@ width: 100%;
 .Mismo-Genero {
     width: 92%;
     height: auto;
-    margin-top: 20px;
-    border-top: 1px solid #ffffff3b;
     margin-left: 4%;
     overflow: hidden;
-    padding: 40px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 .poster-mismo-genero{
     width: 31%;
-    margin: 0px .5% .5%;
+    margin: 0px .5% 1%;
 }
 .poster-mismo-genero-img{
     width: 100%;
     filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
 }
-
+.tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f000;
+    width: 46%;
+    border: none;
+    border-bottom: 1px solid #ffffff3b;
+    color: white;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+        .tab-button.active {
+            border-bottom: 1px solid #ffffff;
+        }
+        .Tabs-button {
+    padding: 10px 0px 40px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.a-video-play {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.play-video{
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+}
+h6.video-trailer-clip-tiempo {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+    font-size: smaller;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.video-trailer-clip-tiempo:hover{
+color: white;
+}
+.capa-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #120b1f, transparent);
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.capa-hover:hover {
+    opacity: 1;
+}
 @media (max-width: 775px){
     .poster-mismo-genero{
     width: 300%;
@@ -222,17 +284,15 @@ width: 100%;
     filter: drop-shadow(2px 4px 6px black);
 }
 .Mismo-Genero {
-    width: 92%;
-    height: auto;
-    margin-top: 20px;
-    border-top: 1px solid #ffffff3b;
-    margin-left: 4%;
-    overflow: auto;
-    padding: 40px 0px 20px 0px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: normal;
-}
+        width: 92%;
+        height: auto;
+        margin-left: 4%;
+        overflow: auto;
+        padding: 0px 0px 20px 0px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: normal;
+    }
 }
     </style>
             <div id="loading">
@@ -285,19 +345,85 @@ width: 100%;
 </div>
 </div>
 
+<div class="Tabs-button">
+    <button class="tab-button" onclick="openTab('tab1')">Recomendado</button>
+    <button class="tab-button" onclick="openTab('tab2')">Avances</button>
+</div>
+<div id="tab1" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a href="Interestelar.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/huD4cMhHtLkxcdM6PbKBcivBZuE.jpg" alt=""></a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="El-Origen.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/d3ctC23USr9mibTKl8B553GJbJW.jpg" alt=""></a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="Cómplices-del-engaño.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/bKIOgSRCKdZj6tddF6gTazvouIb.jpg" alt=""></a>
+        </div>
+    </div>
 
-<div class="Mismo-Genero">
-    <div class="poster-mismo-genero">
-        <a href="Interestelar.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/huD4cMhHtLkxcdM6PbKBcivBZuE.jpg" alt=""></a>
-    </div>
-    <div class="poster-mismo-genero">
-        <a href="El-Origen.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/d3ctC23USr9mibTKl8B553GJbJW.jpg" alt=""></a>
-    </div>
-    <div class="poster-mismo-genero">
-        <a href="Cómplices-del-engaño.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/bKIOgSRCKdZj6tddF6gTazvouIb.jpg" alt=""></a>
+</div>
+<div id="tab2" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/1.mp4&poster=https://m.media-amazon.com/images/M/MV5BMjIwMzM4Njg3Nl5BMl5BanBnXkFtZTgwOTQ1NTI5NTE@._V1_.jpg" class="a-video-play">
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMjIwMzM4Njg3Nl5BMl5BanBnXkFtZTgwOTQ1NTI5NTE@._V1_.jpg" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Trailer 3:16</h6>
+            </div>
+        </a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/2.mp4&poster=https://m.media-amazon.com/images/M/MV5BODEyMTM5MzYxNF5BMl5BanBnXkFtZTgwOTc1Mjg3NjE@._V1_QL75_UX500_CR0" class="a-video-play"> 
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BODEyMTM5MzYxNF5BMl5BanBnXkFtZTgwOTc1Mjg3NjE@._V1_QL75_UX500_CR0" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Entrevista 5:54</h6>
+            </div>
+        </a>
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/3.mp4&poster=https://m.media-amazon.com/images/M/MV5BMTYzMTQ3MDUwMF5BMl5BanBnXkFtZTgwMzY1Mjg3NjE@._V1_QL75_UX500_CR0" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMTYzMTQ3MDUwMF5BMl5BanBnXkFtZTgwMzY1Mjg3NjE@._V1_QL75_UX500_CR0" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Entrevista 5:12</h6>
+                </div>
+            </a>
+            </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/4.mp4&poster=https://m.media-amazon.com/images/M/MV5BMzU5MDA0MTMxOF5BMl5BanBnXkFtZTgwNDA2Mjg3NjE@._V1_.jpg" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMzU5MDA0MTMxOF5BMl5BanBnXkFtZTgwNDA2Mjg3NjE@._V1_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Entrevista 4:02</h6>
+                </div>
+            </a>
+
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/5.mp4&poster=https://m.media-amazon.com/images/M/MV5BMTEwNzk4MzM4MDFeQTJeQWpwZ15BbWU4MDQ1NTI4NzYx._V1_.jpg" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMTEwNzk4MzM4MDFeQTJeQWpwZ15BbWU4MDQ1NTI4NzYx._V1_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Entrevista 4:49</h6>
+                </div>
+            </a>
+
+        </div>
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/marte_202406/6.mp4&poster=https://m.media-amazon.com/images/M/MV5BNTQ5NjAzNzUxMF5BMl5BanBnXkFtZTgwNjM1Mjg3NjE@._V1_.jpg" class="a-video-play"> 
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BNTQ5NjAzNzUxMF5BMl5BanBnXkFtZTgwNjM1Mjg3NjE@._V1_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Entrevista 4:38</h6>
+                </div>
+            </a>
+
+        </div>
     </div>
 </div>
-
 
     </div>
 <script>

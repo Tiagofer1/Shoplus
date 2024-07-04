@@ -201,6 +201,11 @@ display: none;
 }
 }
     </style>
+            <div id="loading">
+                <div class="spinner"></div>
+                <h5 class="cargando-recursos">Cargando Recursos...</h5>
+
+            </div>
     <div class="menu-abajo">
         <div class="izquierda">
             <?xml version="1.0" encoding="UTF-8"?>
@@ -924,7 +929,13 @@ document.getElementById('category').addEventListener('change', filterAnimes);
 document.getElementById('Año').addEventListener('change', filterAnimes);
 document.getElementById('Tipo').addEventListener('change', filterAnimes);
 document.getElementById('Estado').addEventListener('change', filterAnimes);
-
+window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
     </script>
 </body>
 </html>

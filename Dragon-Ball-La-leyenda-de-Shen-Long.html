@@ -196,6 +196,127 @@ width: 100%;
 .temporada-hijo-episodios img:hover {
     opacity: 0.4;
 }
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: hidden;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.poster-mismo-genero{
+    width: 31%;
+    margin: 0px .5% 1%;
+}
+.poster-mismo-genero-img{
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
+}
+.tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f000;
+    width: 46%;
+    border: none;
+    border-bottom: 1px solid #ffffff3b;
+    color: white;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+        .tab-button.active {
+            border-bottom: 1px solid #ffffff;
+        }
+        .Tabs-button {
+    padding: 10px 0px 40px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.a-video-play {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.play-video{
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+}
+h6.video-trailer-clip-tiempo {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+    font-size: smaller;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.video-trailer-clip-tiempo:hover{
+color: white;
+}
+.capa-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #120b1f, transparent);
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.capa-hover:hover {
+    opacity: 1;
+}
+.\31-detalles {
+    display: flex;
+}
+.detalles-fila-1 {
+    width: 31%;
+    margin: 0px 1% 0px;
+    padding: 20px;
+}
+h5.titulo-detalles {
+    margin: 10px;
+    color: #ffffff94;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: larger;
+}
+p.descripcion-detalles {
+    color: white;
+    margin: 0px 10px;
+    font-weight: 300;
+    font-size: larger;
+}
+.sigue-la-serie-logo svg {
+    width: 30px;
+    height: 30px;
+}
+.sigue-la-serie-logo a {
+    margin: 0px 5px;
+}
+.sigue-la-serie-logo svg path {
+    fill: white;
+}
+.sigue-la-serie-logo {
+    margin: 0px 10px;
+    display: flex;
+}
+#mismo-genero-2{
+    display: none;
+}
 @media (max-width:1080px){
     .a-episodios{
     text-decoration: none;
@@ -237,6 +358,40 @@ width: 100%;
     height: auto;
     overflow: auto;
 }
+#detalles,.detalles-todo{
+    display: none;
+}
+#mismo-genero-2{
+    display: flex;
+}
+.tab-button{
+    border-bottom: 1px solid #ffffff;
+}
+}
+@media (max-width: 775px){
+    .poster-mismo-genero{
+    width: 300%;
+    margin: 0px .5% .5%;
+}
+.poster-mismo-genero-img {
+        width: 300px;
+        height: 168px;
+        filter: drop-shadow(2px 4px 6px black);
+        object-fit: cover;
+    }
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: auto;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: normal;
+}
+h6.video-trailer-clip-tiempo , .capa-hover {
+display: none;
+}
 }
             img.logo {
     margin: 10px 0px 10px 0px;
@@ -246,7 +401,7 @@ width: 100%;
                             <div id="loading">
                                 <div class="spinner"></div>
                                 <h5 class="cargando-recursos">Cargando Recursos...</h5>
-                            </div>
+</div>
 <div class="flecha-salir">
     <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
 </div>
@@ -313,7 +468,113 @@ width: 100%;
             </div>
         </div>
 
+        <div class="Tabs-button">
+            <button class="tab-button" id="detalles" onclick="openTab('tab1')">Detalles</button>
+            <button class="tab-button" onclick="openTab('tab2')">Avances</button>
+        </div>
+        <div id="tab1"  class="tab">
+    <div class="detalles-todo">
+        <div class="1-detalles">
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Ver online</h5>
+                <p class="descripcion-detalles">Ve AmPlay Donde Vayas</p>
+            </div>
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Géneros</h5>
+                <p class="descripcion-detalles">Animación, Acción, Aventura, Fantasía, Artes Marciales</p>
+            </div>
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Este Título Es</h5>
+                <p class="descripcion-detalles">Intrigante, Emocionante, Clásico</p>
+            </div>
+    
+    
+        </div>
+        <div class="1-detalles">
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Sigue la serie</h5>
+                <!--<div class="sigue-la-serie-logo">
+                    <a href="https://www.facebook.com/DemonSlayer.anime" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="14.2222in" height="14.2222in" version="1.1"viewBox="0 0 14222 14222"><path class="fil0" d="M14222 7111c0,-3927 -3184,-7111 -7111,-7111 -3927,0 -7111,3184 -7111,7111 0,3549 2600,6491 6000,7025l0 -4969 -1806 0 0 -2056 1806 0 0 -1567c0,-1782 1062,-2767 2686,-2767 778,0 1592,139 1592,139l0 1750 -897 0c-883,0 -1159,548 -1159,1111l0 1334 1972 0 -315 2056 -1657 0 0 4969c3400,-533 6000,-3475 6000,-7025z"/></svg></a>
+                    <a href=""><svg aria-label="Instagram" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M12 2.982c2.937 0 3.285.011 4.445.064a6.087 6.087 0 0 1 2.042.379 3.408 3.408 0 0 1 1.265.823 3.408 3.408 0 0 1 .823 1.265 6.087 6.087 0 0 1 .379 2.042c.053 1.16.064 1.508.064 4.445s-.011 3.285-.064 4.445a6.087 6.087 0 0 1-.379 2.042 3.643 3.643 0 0 1-2.088 2.088 6.087 6.087 0 0 1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087 6.087 0 0 1-2.043-.379 3.408 3.408 0 0 1-1.264-.823 3.408 3.408 0 0 1-.823-1.265 6.087 6.087 0 0 1-.379-2.042c-.053-1.16-.064-1.508-.064-4.445s.011-3.285.064-4.445a6.087 6.087 0 0 1 .379-2.042 3.408 3.408 0 0 1 .823-1.265 3.408 3.408 0 0 1 1.265-.823 6.087 6.087 0 0 1 2.042-.379c1.16-.053 1.508-.064 4.445-.064M12 1c-2.987 0-3.362.013-4.535.066a8.074 8.074 0 0 0-2.67.511 5.392 5.392 0 0 0-1.949 1.27 5.392 5.392 0 0 0-1.269 1.948 8.074 8.074 0 0 0-.51 2.67C1.012 8.638 1 9.013 1 12s.013 3.362.066 4.535a8.074 8.074 0 0 0 .511 2.67 5.392 5.392 0 0 0 1.27 1.949 5.392 5.392 0 0 0 1.948 1.269 8.074 8.074 0 0 0 2.67.51C8.638 22.988 9.013 23 12 23s3.362-.013 4.535-.066a8.074 8.074 0 0 0 2.67-.511 5.625 5.625 0 0 0 3.218-3.218 8.074 8.074 0 0 0 .51-2.67C22.988 15.362 23 14.987 23 12s-.013-3.362-.066-4.535a8.074 8.074 0 0 0-.511-2.67 5.392 5.392 0 0 0-1.27-1.949 5.392 5.392 0 0 0-1.948-1.269 8.074 8.074 0 0 0-2.67-.51C15.362 1.012 14.987 1 12 1Zm0 5.351A5.649 5.649 0 1 0 17.649 12 5.649 5.649 0 0 0 12 6.351Zm0 9.316A3.667 3.667 0 1 1 15.667 12 3.667 3.667 0 0 1 12 15.667Zm5.872-10.859a1.32 1.32 0 1 0 1.32 1.32 1.32 1.32 0 0 0-1.32-1.32Z"></path></svg>
+                        <a href="https://twitter.com/kimetsu_off" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-k200y r-1nao33i r-5sfk15 r-kzbkwu"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg></a>
+                    </div>-->
+            </div>
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Acerca de La leyenda de Shen Long</h5>
+                <p class="descripcion-detalles">Goku y Bulma buscan las siete Esferas del Dragón, enfrentando diversos enemigos y aventuras para reunirlas y cumplir cualquier deseo.</p>
+            </div>
+        </div>
+        <div class="1-detalles">
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">Elenco</h5>
+                <p class="descripcion-detalles">
+                    Masako Nozawa <br>
+                    Mayumi Tanaka
+                    Hiromi Tsuru <br>
+                    Tōru Furuya <br>
+                    Naoko Watanabe <br>
+                    Naoki Tatsuta <br>
+                    Naoko Matsui <br>
+                    Kōhei Miyauchi <br>
+                </p>
+            </div>
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">‎ </h5>
+                <p class="descripcion-detalles">
+                    Daisuke Gori <br>
+                    Shigeru Chiba <br>
+                    Tesshō Genda <br>
+                    Jōji Yanami <br>
+                    Kenji Utsumi <br>
+                    Mami Koyama <br>
+                    Yūko Mita <br>
+                    Keiko Yamamoto <br>
+                </p>
+            </div>
+            <div class="detalles-fila-1">
+                <h5 class="titulo-detalles">‎</h5>
+                <p class="descripcion-detalles">
+                    Kazuko Sugiyama <br>
+                    Eiko Yamada <br>
+                    Junpei Takiguchi <br>
+                    Yasuhiko Kawazu <br>
+                    Kōji Yada <br>
+                    Kazuya Nakai <br>
+                    Ryūsei Nakao <br>
+                    Yukimasa Kishino <br>
+                </p>
+            </div>
+    
+    
+        </div>
+    </div>
+    <div class="Mismo-Genero" id="mismo-genero-2">
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/horimiya-trailer/Dragon%20ball%20la%20leyenda%20de%20shen%20long-trailer.mp4&poster=https://m.media-amazon.com/images/M/MV5BODQyZTU1NTQtN2FkZC00M2RhLThkMGMtNmY2NTEyZWM0YTk3XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" class="a-video-play">
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BODQyZTU1NTQtN2FkZC00M2RhLThkMGMtNmY2NTEyZWM0YTk3XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Trailer 1:00</h6>
+            </div>
+        </a>
+        </div>
 
+    </div>
+        </div>
+        <div id="tab2" class="tab">
+            <div class="Mismo-Genero">
+                <div class="poster-mismo-genero">
+                    <a  href="reproductor.html?video=https://archive.org/download/horimiya-trailer/Dragon%20ball%20la%20leyenda%20de%20shen%20long-trailer.mp4&poster=https://m.media-amazon.com/images/M/MV5BODQyZTU1NTQtN2FkZC00M2RhLThkMGMtNmY2NTEyZWM0YTk3XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" class="a-video-play">
+                    <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                    <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BODQyZTU1NTQtN2FkZC00M2RhLThkMGMtNmY2NTEyZWM0YTk3XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" alt="">
+                    <div class="capa-hover">
+                        <h6 class="video-trailer-clip-tiempo">Trailer 1:00</h6>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+    
 
     </div>
 <script>
@@ -334,6 +595,31 @@ width: 100%;
 
             alert('Añadido a favoritos');
         }
+        window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
+function openTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var buttons = document.querySelectorAll('.tab-button');
+            
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.tab-button[onclick="openTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+
+        // Abrir la primera pestaña por defecto
+        openTab('tab1');
         window.addEventListener('load', function () {
     var loading = document.getElementById('loading');
     var content = document.getElementById('content');

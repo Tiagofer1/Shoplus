@@ -19,6 +19,7 @@
     font-size: 1.5rem;
     color: white;
     font-family: oswald;
+    display: none;
 }
 .nombre-compartir{
     width: 100%;
@@ -80,6 +81,7 @@ h5.puntuacion-media {
     border-radius: 1px;
     color: white;
     font-weight: 900;
+    border-radius: 200px;
 }
 .reproducir-boton:hover{
     background: var(--color-hover-vermas);
@@ -92,11 +94,12 @@ a.añadir-favorito {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--color-primario);
+    border-radius: 200px;
 }
 svg.favorito-svg {
-    width: 35px;
-    height: 35px;
-    margin: 6px;
+    width: 30px;
+    height: 30px;
+    margin: 9px;
 }
 .descripcion {
     margin: 85px 1% 0px 0px;
@@ -130,7 +133,23 @@ h5.titulo-descripcion {
     outline: none;
     text-align: center;
 }
-
+.banner{
+    width: 100%;
+        height: 950px;
+        object-fit: cover;
+        object-position: top;
+        background-image: url(https://image.tmdb.org/t/p/original/5CS5s9LJUWT52jl0QBI9cUpPCBA.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 150px;
+    background-position-x: center;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+ }
 
     .tab-content {
         width: 96%;
@@ -185,11 +204,13 @@ width: 100%;
                 z-index: 1;
                 object-fit: cover;
                 z-index: 1;
+                display: none;
             }
 
-            img.logo {
+img.logo {
     margin: 10px 0px 10px 0px;
-    width: 350px;
+    height: 105px;
+    padding: 35px 0px;
 }
 .Mismo-Genero {
     width: 92%;
@@ -274,8 +295,44 @@ color: white;
 }.capa-hover:hover {
     opacity: 1;
 }
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: right;    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 90px;
+    padding: 32px 0px;
 
+}
+}
 @media (max-width: 775px){
+    .banner {
+        background-image: url(https://image.tmdb.org/t/p/original/8CQOK1RyhUAZGUfiea0aAw3nCub.jpg);
+        background-position-x: center;
+        background-position-y: 0px;
+    }
+
     .poster-mismo-genero{
     width: 300%;
     margin: 0px .5% .5%;
@@ -312,7 +369,7 @@ display: none;
     <img src="https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="" class="poster">
     <div class="poster-grande"> 
         <div class="degradado"></div>
-        <video muted autoplay loop poster="https://image.tmdb.org/t/p/original/5CS5s9LJUWT52jl0QBI9cUpPCBA.jpg" src="https://archive.org/download/dragon-ball-z-episodio-de-bardock-espanol-latino-completo/Interestelar.mkv" class="banner"></video>        
+        <img src="" class="banner" alt="">
         
     </div>
     <div class="info-anime">

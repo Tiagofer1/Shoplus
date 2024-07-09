@@ -19,6 +19,7 @@
     font-size: 1.5rem;
     color: white;
     font-family: oswald;
+    display: none;
 }
 .nombre-compartir{
     width: 100%;
@@ -78,6 +79,7 @@ h5.puntuacion-media {
     border-radius: 1px;
     color: white;
     font-weight: 900;
+    border-radius: 200px;
 }
 .reproducir-boton:hover{
     background: var(--color-hover-vermas);
@@ -90,11 +92,12 @@ a.añadir-favorito {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--color-primario);
+    border-radius: 200px;
 }
 svg.favorito-svg {
-    width: 35px;
-    height: 35px;
-    margin: 6px;
+    width: 30px;
+    height: 30px;
+    margin: 9px;
 }
 .descripcion {
     margin: 85px 1% 0px 0px;
@@ -128,6 +131,23 @@ h5.titulo-descripcion {
     outline: none;
     text-align: center;
 }
+.banner{
+    width: 100%;
+        height: 950px;
+        object-fit: cover;
+        object-position: top;
+    background-image: url(https://image.tmdb.org/t/p/original/3GQKYh6Trm8pxd2AypovoYQf4Ay.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 300px;
+    background-position-x: center;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+ }
 
 
     .tab-content {
@@ -191,6 +211,12 @@ width: 100%;
                 z-index: 1;
                 object-fit: cover;
                 z-index: 1;
+                display: none;
+            }
+
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 105px;
 }
 .temporada-hijo-episodios img:hover {
     opacity: 0.4;
@@ -325,7 +351,37 @@ p.descripcion-detalles {
 }
 
 }
-
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: center;
+        background-position-y: 200px;
+    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 90px;
+}
+}
 @media (max-width: 1000px){
     .temporada-hijo-episodios {
                 width: 100%;
@@ -369,6 +425,11 @@ p.descripcion-detalles {
 }
 }
 @media (max-width: 775px){
+    .banner{
+        background-image: url(https://image.tmdb.org/t/p/original/wHexjIPR4VM6QNiuqMCTVO6iqaT.jpg);
+        background-position-y: 0px;
+    }
+
     .poster-mismo-genero{
     width: 300%;
     margin: 0px .5% .5%;
@@ -394,10 +455,7 @@ display: none;
 }
 
 }
- img.logo {
-    margin: 10px 0px 10px 0px;
-    height: 95px;
-}
+
 .timer-container{
     position: absolute;
     width: 100%;
@@ -433,12 +491,12 @@ h1#timer {
     </div>
     <div class="poster-grande"> 
         <div class="degradado"></div>
-        <video muted autoplay loop poster="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=94,width=1920/cr/landscape_large/0f64543f-c57d-4271-9750-8e84ddc3aa9d.png" src="https://archive.org/download/horimiya-trailer/Demon%20Slayer%20trailer.mp4" class="banner"></video>        
+        <img src="" class="banner" alt="">
         
     </div>
     <div class="info-anime">
         <div class="nombre-compartir">
-        <h4>Demon Slayer</h4>
+            <h4>Demon Slayer</h4>
         <img class="logo" src="https://image.tmdb.org/t/p/original/bF3FBqZhinTIkXKoWcl4m7YX4yu.png" alt="">
     </div>
     <div class="erc-series-tags tags"><div class="meta-tags--o8OYw" data-t="meta-tags"><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ" id="GJ0H7QGME" rating="16">16</span><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ">sub  |<span class="Finalizado-emision">  Reestreno</span></span>

@@ -19,6 +19,7 @@
     font-size: 1.5rem;
     color: white;
     font-family: oswald;
+    display: none;
 }
 .nombre-compartir{
     width: 100%;
@@ -80,7 +81,7 @@ h5.puntuacion-media {
     border-radius: 1px;
     color: white;
     font-weight: 900;
-}
+    border-radius: 200px;}
 .reproducir-boton:hover{
     background: var(--color-hover-vermas);
 }
@@ -92,11 +93,12 @@ a.añadir-favorito {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--color-primario);
+    border-radius: 200px;
 }
 svg.favorito-svg {
-    width: 35px;
-    height: 35px;
-    margin: 6px;
+    width: 30px;
+    height: 30px;
+    margin: 9px;
 }
 .descripcion {
     margin: 85px 1% 0px 0px;
@@ -130,7 +132,23 @@ h5.titulo-descripcion {
     outline: none;
     text-align: center;
 }
-
+.banner{
+    width: 100%;
+        height: 950px;
+        object-fit: cover;
+        object-position: top;
+        background-image: url(https://image.tmdb.org/t/p/original/wqlZu8WBRRSvYOL3wzzgU7wmJ4u.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 50px;
+    background-position-x: center;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+ }
 
     .tab-content {
         width: 96%;
@@ -185,11 +203,11 @@ width: 100%;
                 z-index: 1;
                 object-fit: cover;
                 z-index: 1;
-            }
+                display: none; }
 
-            img.logo {
+img.logo {
     margin: 10px 0px 10px 0px;
-    height: 94px;
+    height: 105px;
 }
 .Mismo-Genero {
     width: 92%;
@@ -274,28 +292,67 @@ color: white;
 }.capa-hover:hover {
     opacity: 1;
 }
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: right;    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 90px;
+
+}
+}
 @media (max-width: 775px){
+    .banner {
+        background-image: url(https://image.tmdb.org/t/p/original/lOUPwhoAShAcXwT6AoarsNz6B24.jpg);
+        background-position-x: center;
+        background-position-y: 230px;
+    }
+
     .poster-mismo-genero{
     width: 300%;
     margin: 0px .5% .5%;
 }
-.poster-mismo-genero-img{
-    width: 300px;
-    filter: drop-shadow(2px 4px 6px black);
-}
-.Mismo-Genero {
-        width: 92%;
-        height: auto;
-        margin-left: 4%;
-        overflow: auto;
-        padding: 0px 0px 20px 0px;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: normal;
+.poster-mismo-genero-img {
+        width: 300px;
+        height: 168px;
+        filter: drop-shadow(2px 4px 6px black);
+        object-fit: cover;
     }
-    h6.video-trailer-clip-tiempo , .capa-hover {
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: auto;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: normal;
+}
+h6.video-trailer-clip-tiempo , .capa-hover {
 display: none;
 }
+
 }
     </style>
             <div id="loading">
@@ -308,7 +365,7 @@ display: none;
     <img src="https://image.tmdb.org/t/p/original/msYMYlbTnrRWf0sxGxdBYOkPWrc.jpg" alt="" class="poster">
     <div class="poster-grande"> 
         <div class="degradado"></div>
-        <video muted autoplay loop poster="https://image.tmdb.org/t/p/original/lzMS0CI3FLQYC5EgJoWeIaEt0lm.jpg" src="https://archive.org/download/horimiya-trailer/Misi%C3%B3n%20rescate%20_%20Traile.mp4" class="banner"></video>        
+        <img src="" class="banner" alt="">
         
     </div>
     <div class="info-anime">

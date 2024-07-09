@@ -19,6 +19,7 @@
     font-size: 1.5rem;
     color: white;
     font-family: oswald;
+    display: none;
 }
 .nombre-compartir{
     width: 100%;
@@ -80,6 +81,7 @@ h5.puntuacion-media {
     border-radius: 1px;
     color: white;
     font-weight: 900;
+    border-radius: 200px;
 }
 .reproducir-boton:hover{
     background: var(--color-hover-vermas);
@@ -92,11 +94,12 @@ a.añadir-favorito {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--color-primario);
+    border-radius: 200px;
 }
 svg.favorito-svg {
-    width: 35px;
-    height: 35px;
-    margin: 6px;
+    width: 30px;
+    height: 30px;
+    margin: 9px;
 }
 .descripcion {
     margin: 85px 1% 0px 0px;
@@ -130,7 +133,23 @@ h5.titulo-descripcion {
     outline: none;
     text-align: center;
 }
-
+.banner{
+    width: 100%;
+        height: 950px;
+        object-fit: cover;
+        object-position: top;
+    background-image: url(https://image.tmdb.org/t/p/original/29qCD0QtncS9wUAm1kOlXd0Kbgw.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 300px;
+    background-position-x: center;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
 
     .tab-content {
         width: 96%;
@@ -185,11 +204,12 @@ width: 100%;
                 z-index: 1;
                 object-fit: cover;
                 z-index: 1;
+                display: none;
             }
 
             img.logo {
     margin: 10px 0px 10px 0px;
-    height: 94px;
+    height: 105px;
 }
 .Mismo-Genero {
     width: 92%;
@@ -274,7 +294,42 @@ color: white;
 }.capa-hover:hover {
     opacity: 1;
 }
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: center;
+        background-position-y: 200px;
+    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 90px;
+}
+}
 @media (max-width: 775px){
+    .banner{
+        background-image: url(https://image.tmdb.org/t/p/original/tbPVN9jUvgc7LqB0Bwv5OESCta2.jpg);
+    
+    }
     .poster-mismo-genero{
     width: 300%;
     margin: 0px .5% .5%;
@@ -311,12 +366,12 @@ display: none;
     <img src="https://image.tmdb.org/t/p/original/y1oMTK0MwLS4gfpAou7o5s7KNM3.jpg" alt="" class="poster">
     <div class="poster-grande"> 
         <div class="degradado"></div>
-        <video muted autoplay loop poster="https://image.tmdb.org/t/p/original/36g54UwtRdoCf6A2rKujBWS17gE.jpg" src="https://archive.org/download/horimiya-trailer/C%C3%B3mplices%20Del%20Enga%C3%B1o%20%20Tr%C3%A1iler%20.mp4" class="banner"></video>        
+        <img src="" class="banner" alt="">
         
     </div>
     <div class="info-anime">
         <div class="nombre-compartir">
-        <h4>Cómplices del engaño</h4>
+            <h4>Cómplices del engaño</h4>
         <img class="logo" src="https://image.tmdb.org/t/p/original/78hEyYgTniUjbyyF77Tu9JA4apU.png" alt="">
 
     </div>

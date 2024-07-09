@@ -55,12 +55,6 @@
         object-fit: cover;
         object-position: top;
     }
-    .degradado{
-        position: absolute;
-        width: 100%;
-        height: 650px;
-        background: linear-gradient(0deg, #120b1f, transparent);
-            }
 .poster {
                 width: 170px;
                 position: absolute;
@@ -106,15 +100,11 @@
 h6:hover {
     color: var(--color-primario);
 }
-.banner-especial{
-    width: 100%;
-    height: 650px;
-    object-fit: cover;
-    object-position: center;
-}
+
 .poster {
     background: #1b122d;
     height: 255px;
+    
 }
             
 
@@ -157,6 +147,7 @@ h5.cargando-recursos {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
 @media (max-width: 1023px){
 
     .centro,.izquierda,.derecha{
@@ -184,24 +175,8 @@ h5.cargando-recursos {
     .izquierda-a,.derecha-a{
         display: flex;
     }
-    .banner{
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-        object-position: top;
-    }
-    .banner-especial{
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-        object-position: top;
-    }
-    .degradado{
-        position: absolute;
-        width: 100%;
-        height: 350px;
-        background: linear-gradient(0deg, #120b1f, transparent);
-            }
+
+
 
 }
 

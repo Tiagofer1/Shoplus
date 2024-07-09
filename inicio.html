@@ -570,7 +570,6 @@ overflow: hidden;
 }
 .poster-slides{
     overflow: auto;
-    width: fit-content;
 }
 .poster-carousel {
             position: relative;
@@ -1267,83 +1266,6 @@ p.descripcion-recomendado{
 
 
 <script>
-
-
-let currentIndex = 0;
-let startX;
-
-function showSlide(index) {
-  const slides = document.querySelector('.slides');
-  const totalSlides = document.querySelectorAll('.slide').length;
-
-  if (index >= totalSlides) {
-    currentIndex = 0;
-  } else if (index < 0) {
-    currentIndex = totalSlides - 1;
-  } else {
-    currentIndex = index;
-  }
-
-  slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-  updateDots();
-}
-
-function nextSlide() {
-  showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-  showSlide(currentIndex - 1);
-}
-
-function currentSlide(index) {
-  showSlide(index);
-}
-
-function updateDots() {
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentIndex);
-  });
-}
-
-// Auto slide every 5 seconds
-setInterval(nextSlide, 5000);
-
-// Handle touch start event
-function handleTouchStart(event) {
-  startX = event.touches[0].clientX;
-}
-
-// Handle touch move event
-function handleTouchMove(event) {
-  if (!startX) {
-    return;
-  }
-
-  let moveX = event.touches[0].clientX;
-  let diffX = startX - moveX;
-
-  if (diffX > 50) {
-    // Swipe left
-    nextSlide();
-    startX = null;
-  } else if (diffX < -50) {
-    // Swipe right
-    prevSlide();
-    startX = null;
-  }
-}
-
-// Add touch event listeners
-const slider = document.querySelector('.slides');
-slider.addEventListener('touchstart', handleTouchStart);
-slider.addEventListener('touchmove', handleTouchMove);
-
-// Initialize dots
-updateDots();
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const recentSlides = document.querySelector('.recientes-slides');
 
@@ -1367,16 +1289,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar los recientes al cargar la página
     loadRecentSlides();
 
+    const isSmallScreen = window.innerWidth <= 599;
+
     document.querySelectorAll('.poster-carousel').forEach(carousel => {
         const prevButton = carousel.querySelector('.poster-arrow-left');
         const nextButton = carousel.querySelector('.poster-arrow-right');
         const slides = carousel.querySelector('.poster-slides');
-        let startX = 0;
-        let startY = 0;
-        let currentX = 0;
-        let isDragging = false;
+        
         let carouselIndex = 0;
-        const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
 
         const updateCarousel = () => {
             const slideWidth = slides.children[0].getBoundingClientRect().width;
@@ -1435,46 +1355,54 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const handleTouchStart = (event) => {
-            if (event.target.tagName.toLowerCase() === 'img') {
-                startX = event.touches[0].clientX;
-                startY = event.touches[0].clientY;
-                isDragging = true;
-            }
-        };
+        if (!isSmallScreen) {
+            let startX = 0;
+            let startY = 0;
+            let currentX = 0;
+            let isDragging = false;
+            const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
 
-        const handleTouchMove = (event) => {
-            if (!isDragging) return;
-            currentX = event.touches[0].clientX;
-            const diffX = currentX - startX;
-            const diffY = event.touches[0].clientY - startY;
-
-            if (Math.abs(diffX) > Math.abs(diffY)) {
-                event.preventDefault();
-                slides.style.transition = 'none'; // Sin transición durante el movimiento
-                slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
-            }
-        };
-
-        const handleTouchEnd = () => {
-            if (!isDragging) return;
-            isDragging = false;
-            const slideWidth = slides.children[0].getBoundingClientRect().width;
-            const diffX = currentX - startX;
-            slides.style.transition = ''; // Restaurar la transición normal
-            if (Math.abs(diffX) > sensitivityThreshold) {
-                if (diffX > 0 && carouselIndex > 0) {
-                    carouselIndex--;
-                } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
-                    carouselIndex++;
+            const handleTouchStart = (event) => {
+                if (event.target.tagName.toLowerCase() === 'img') {
+                    startX = event.touches[0].clientX;
+                    startY = event.touches[0].clientY;
+                    isDragging = true;
                 }
-            }
-            updateCarousel();
-        };
+            };
 
-        slides.addEventListener('touchstart', handleTouchStart);
-        slides.addEventListener('touchmove', handleTouchMove);
-        slides.addEventListener('touchend', handleTouchEnd);
+            const handleTouchMove = (event) => {
+                if (!isDragging) return;
+                currentX = event.touches[0].clientX;
+                const diffX = currentX - startX;
+                const diffY = event.touches[0].clientY - startY;
+
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    event.preventDefault();
+                    slides.style.transition = 'none'; // Sin transición durante el movimiento
+                    slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
+                }
+            };
+
+            const handleTouchEnd = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                const slideWidth = slides.children[0].getBoundingClientRect().width;
+                const diffX = currentX - startX;
+                slides.style.transition = ''; // Restaurar la transición normal
+                if (Math.abs(diffX) > sensitivityThreshold) {
+                    if (diffX > 0 && carouselIndex > 0) {
+                        carouselIndex--;
+                    } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
+                        carouselIndex++;
+                    }
+                }
+                updateCarousel();
+            };
+
+            slides.addEventListener('touchstart', handleTouchStart);
+            slides.addEventListener('touchmove', handleTouchMove);
+            slides.addEventListener('touchend', handleTouchEnd);
+        }
 
         updateCarousel();
     });
@@ -1486,6 +1414,7 @@ window.addEventListener('load', function () {
     loading.style.display = 'none';
     content.style.display = 'block';
 });
+
 
 </script>
 

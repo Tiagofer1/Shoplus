@@ -16,7 +16,14 @@
         background-color: #120b1f;
 
     }
-
+select{
+    appearance: none; /* Elimina el estilo por defecto */
+    -webkit-appearance: none; /* Elimina el estilo por defecto en Webkit (iOS, Safari) */
+    -moz-appearance: none; /* Elimina el estilo por defecto en Firefox */
+}
+option{
+    background-color: #120b1f;
+}
     .centro,.izquierda,.derecha{
         width: 100%;
         height: 30px;

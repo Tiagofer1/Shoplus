@@ -16,6 +16,9 @@
         background-color: #120b1f;
 
     }
+    .descripcion p{
+        padding: 10px 0px;
+    }
 
     .centro,.izquierda,.derecha{
         width: 100%;

@@ -614,6 +614,17 @@
         </form>
     </div>
     </div>
+    <div class="proximamente">
+        <h5 class="titulo-proximamente">Proximamentes</h5>
+        <div class="img-proximamentes">
+            <img src="https://image.tmdb.org/t/p/original/qGjChVF43jXhANS7qsWFm0zil5e.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/original/oLVbSoakI3LhZ8Y8lb3qrB4vyoO.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/original/rzgmx3BAFLDvU23FS095R7uagx1.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/original/2x7pgXAEKiGCNN34fdp7ffcLdOc.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/original/q90Uzd45xPAHtjEm0QObjcluRut.jpg" alt="">
+            <img src="https://image.tmdb.org/t/p/original/3GPVJOkXqkeMKuxmKPXhkkfwtq0.jpg" alt="">
+        </div>
+    </div>
 <style>
 /* styles.css */
 
@@ -621,7 +632,6 @@ body {
     background-color: #000000;
     color: #333;
     font-family: 'Arial', sans-serif;
-    display: flex;
     justify-content: center;
     height: 100vh;
     margin: 0;
@@ -750,6 +760,53 @@ button:hover {
 h1{
     font-family: 'Oswald';
 }
+.proximamente {
+    width: 100%;
+    background: #120b1f;
+    border-top: 10px solid #3f51b526;
+}
+h5.titulo-proximamente {
+    width: 96%;
+    margin: 0px 2%;
+    padding: 20px;
+    color: white;
+    font-size: x-large;
+    font-family: 'Oswald';
+}
+.img-proximamentes {
+    width: 96%;
+    margin: 0px 2%;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.img-proximamentes img {
+    width: 33%;
+    min-width: 330px;
+    padding: 10px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+@media (max-width: 1052px) {
+    .proximamente {
+    width: 100%;
+    background: #120b1f;
+    border-top: 10px solid #3f51b526;
+    height: 370px;
+}
+.img-proximamentes {
+    width: 96%;
+    margin: 0px 2%;
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+
+}
 @media (max-width: 1023px) {
     .menu-abajo{
         width: 100%;
@@ -777,7 +834,10 @@ h1{
 .form-container{
     margin: 0px 0px 0px 0px;
 }
+
+
 }
+
 
 
 

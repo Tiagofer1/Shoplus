@@ -70,7 +70,22 @@ img.banner-anime {
     filter: drop-shadow(2px 4px 6px black);
     border-radius: 5px;
 }
+p.p-descripcion::-webkit-scrollbar {
+    width: 3px; /* Ancho del scrollbar vertical */
+    height: 12px; /* Altura del scrollbar horizontal */
+    background: #181717; 
+    border-radius: 0px;
 
+}
+
+/* Fondo del scrollbar */
+p.p-descripcion::-webkit-scrollbar-track {
+    background: rgb(30, 29, 29);
+
+}
+::-webkit-scrollbar-thumb {
+    background:var(--color-hover-vermas); 
+}
 .anime {
     width: 31%;
     margin: 0px 1%;
@@ -173,7 +188,7 @@ p.p-descripcion {
     font-family: 'Oswald';
     margin: 0px 10px;
     height: 116.76px;
-    overflow: hidden;
+    overflow: auto;
 }
 #animes-cel{
     display: none;

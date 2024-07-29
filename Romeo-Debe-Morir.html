@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>AmPlay | Romeo Debe Morir</title>
+</head>
+<body>
+    <style>
+        .info-anime {
+    width: 96%;
+    margin: 20px 2% 0 2%;
+    position: relative;
+    z-index: 1;
+}
+.info-anime h4 {
+    font-size: 1.5rem;
+    color: white;
+    font-family: oswald;
+    display: none;
+}
+.nombre-compartir{
+    width: 100%;
+}
+
+.erc-series-tags.tags {
+    color: white;
+    font-family: 'Oswald';
+    margin: 10px 0px 0px 0px;
+}
+
+.meta-tags__tag--W4JTZ:not(:first-child):before {
+    background-color: var(--color-primario);
+    content: "";
+    display: inline-block;
+    height: .25rem;
+    line-height: 1;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: .25rem;
+}
+.estrellas{
+    display: flex;
+    margin: 10px 0px 0px 0px;
+}
+.estrellas svg{
+    width: 30px;
+    
+}
+.estrella-unica{
+    stroke: var(--color-primario);
+stroke-width: 1px;
+fill: none;
+
+}
+h5.puntuacion-media {
+    color: white;
+    font-family: 'Oswald';
+    margin: 0px 10px 0px 10px;
+    font-size: 18px;
+    text-wrap: nowrap;
+}
+.botones-reproducir-favorito {
+    width: 100%;
+}
+.reproducir-boton {
+    background: var(--color-primario);
+    position: absolute;
+    width: 290px;
+    height: 50px;
+    margin: 20px 20px 0px 0px;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+    font-family: 'Oswald';
+    text-decoration: none;
+    border-radius: 1px;
+    color: white;
+    font-weight: 900;
+    border-radius: 200px;
+}
+.reproducir-boton:hover{
+    background: var(--color-hover-vermas);
+}
+a.añadir-favorito {
+    position: absolute;
+    margin: 20px 0% 0px 300px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-primario);
+    border-radius: 200px;
+}
+svg.favorito-svg {
+    width: 30px;
+    height: 30px;
+    margin: 9px;
+}
+.descripcion {
+    margin: 85px 1% 0px 0px;
+    color: white;
+    text-align: left;
+}
+    p {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 13px;
+    width: 90%;
+    overflow: hidden;
+}
+h5.titulo-descripcion {
+    font-size: x-large;
+    font-family: 'Oswald';
+    color: var(--color-primario);
+    margin: 0px 0px 10px 0px;
+}
+.tab-container {
+        width: 100%;
+        margin: 0 0 80px 0;
+    }
+    select#gender-select {
+    width: 150px;
+    height: 40px;
+    margin: 15px 0px 20px 2%;
+    border-radius: 3px;
+    background: #120b1f;
+    color: white;
+    outline: none;
+    text-align: center;
+}
+.banner{
+    width: 100%;
+        height: 950px;
+        object-fit: cover;
+        object-position: top;
+        background-image: url(https://image.tmdb.org/t/p/original/fwP2w0TAwwSxiCk4s6agDGFoKNm.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 250px;
+    background-position-x: left;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+ }
+
+
+
+    .tab-content {
+        width: 96%;
+        margin: 40px 2% 0px 2%;
+        color: white;
+    }
+    .temporada-padre {
+    width: 100%;
+}
+.temporada-medio {
+    width: 100%;
+}
+.temporada-hijo-episodios {
+    width: 100%;
+}
+.temporada-hijo-episodios img{
+
+    width: 170px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 7px;
+
+}
+.a-episodios h5{
+ 
+    margin: 10px;
+    font-family: 'Oswald';
+    color: #a9a9a99c;
+
+}
+.a-episodios p{
+    margin: 10px;
+    color: white;
+}
+.episodios-titulo{
+    color: var(--color-primario);
+}
+.a-episodios{
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+.info-episodio{
+width: 100%;
+}
+.poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: none;
+            }
+
+            img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 105px;
+
+}
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: hidden;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.poster-mismo-genero{
+    width: 31%;
+    margin: 0px .5% 1%;
+}
+.poster-mismo-genero-img{
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
+}
+.tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f000;
+    width: 46%;
+    border: none;
+    border-bottom: 1px solid #ffffff3b;
+    color: white;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+        .tab-button.active {
+            border-bottom: 1px solid #ffffff;
+        }
+        .Tabs-button {
+    padding: 10px 0px 40px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.a-video-play {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.play-video{
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+}
+h6.video-trailer-clip-tiempo {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+    font-size: smaller;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.video-trailer-clip-tiempo:hover{
+color: white;
+}
+.capa-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #120b1f, transparent);
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.capa-hover:hover {
+    opacity: 1;
+}
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: left;
+        background-position-y: 200px;
+    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #120b1f, transparent);
+            }
+            img.logo {
+        margin: 10px 0px 10px 0px;
+        height: 90px;
+        padding: 15px 0px;}
+}
+@media (max-width: 775px){
+    .banner{
+        background-image: url(https://image.tmdb.org/t/p/original/2vvKYlDwOPyzhzbRQMVqH645ASy.jpg);
+        background-position-y: 200px;
+        background-position-x: right;
+    }
+
+    .poster-mismo-genero{
+    width: 300%;
+    margin: 0px .5% .5%;
+}
+.poster-mismo-genero-img {
+        width: 300px;
+        height: 168px;
+        filter: drop-shadow(2px 4px 6px black);
+        object-fit: cover;
+    }
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: auto;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: normal;
+}
+h6.video-trailer-clip-tiempo , .capa-hover {
+display: none;
+}
+
+}
+    </style>
+<div id="loading">
+<div class="spinner"></div>
+<h5 class="cargando-recursos">Cargando Recursos...</h5>
+</div>
+<div class="flecha-salir">
+    <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+</div>
+    <img src="https://image.tmdb.org/t/p/original/qiN9QGs9XZQ0R5D02hwNE66CXpB.jpg" alt="" class="poster">
+    <div class="poster-grande"> 
+        <div class="degradado"></div>
+        <img src="" class="banner" alt="">
+        
+    </div>
+    <div class="info-anime">
+        <div class="nombre-compartir">
+            <h4>Romeo Debe Morir</h4>
+        <img class="logo" src="https://image.tmdb.org/t/p/original/cYu9C9wwwJsbH8MgBApFiXomlLs.png" alt="">
+
+    </div>
+    <div class="erc-series-tags tags"><div class="meta-tags--o8OYw" data-t="meta-tags"><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ" id="GJ0H7QGME" title="los menores de 17 años requieren acompañamiento de un adulto." rating="16">R</span><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ">Dob  | 2000  |<span class="Genero">Accion / Crimen / Suspenso</span></span>
+    </div>
+
+</div>
+<div class="estrellas">
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path class="estrella-unica" d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path class="estrella-unica" d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path class="estrella-unica" d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <h5 class="puntuacion-media">| Puntuación Media 2.2</h5>
+</div>
+<div class="botones-reproducir-favorito">
+    <a class="reproducir-boton" href="reproductor.html?video=https://digcorp.xyz/priv/levix.php?page=WXNqUFI4WjIzOVhwYWdRVFRlSEk3eGJsNkNDMVVRVHlyNVkwRGl6bwk=&poster=https://image.tmdb.org/t/p/original/xadVWxrnN217FKR1nqe8PmJ7eo4.jpg"><span></span>Comenzar a Ver</a>
+    <a class="añadir-favorito" onclick="addToFavorites(event)" href="#">
+        <span>
+            <svg class="favorito-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path class="favorito-path" d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
+        </span>
+    </a>
+</div>
+<div class="descripcion">
+    <h5 class="titulo-descripcion"></h5>
+    <p>Dos bandas (Asiática y afroamericana) enzarzadas en una "guerra de mafias" están disputándose el control de los muelles. La situación se vuelve aún más peligrosa cuando el hijo del capo asiático es asesinado; es entonces cuando su hermano Han, ex policía encarcelado en Hong Kong, escapa de la cárcel para vengar su muerte, convirtiéndose él en objetivo de las bandas, lo que le lleva a declarar la guerra por su cuenta.
+
+
+    </p>
+</div>
+</div>
+
+<div class="Tabs-button">
+    <button class="tab-button" onclick="openTab('tab1')">Recomendado</button>
+    <button class="tab-button" onclick="openTab('tab2')">Avances</button>
+</div>
+<div id="tab1" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a href="Nacer-Para-Morir.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/49recDHBmFkOzeqkF06tYVJkRfs.png" alt=""></a>
+
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="Mulan.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/rGh13CtWZpmfMX4nzWYTCN3WHga.jpg" alt=""></a>
+
+        </div>
+        <div class="poster-mismo-genero">
+            <a href="Jet-Li-Rey-De-Asesinos.html"><img class="poster-mismo-genero-img" src="https://image.tmdb.org/t/p/original/xZL4BX3joxBkw6EbZwQmXDqGwya.jpg" alt=""></a>
+
+        </div>
+    </div>
+</div>
+<div id="tab2" class="tab">
+    <div class="Mismo-Genero">
+        <div class="poster-mismo-genero">
+            <a  href="reproductor.html?video=https://archive.org/download/horimiya-trailer/Romeo%20debe%20morir-Trailer.mp4&poster=https://m.media-amazon.com/images/M/MV5BYmIwMmI2ZmUtMWRjOS00NzJhLTg2YTgtMWJkMjU0YmM1YzQ2XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" class="a-video-play">
+            <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+            <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BYmIwMmI2ZmUtMWRjOS00NzJhLTg2YTgtMWJkMjU0YmM1YzQ2XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" alt="">
+            <div class="capa-hover">
+                <h6 class="video-trailer-clip-tiempo">Trailer 2:08</h6>
+            </div>
+        </a>
+        </div>
+
+    </div>
+</div>
+    </div>
+<script>
+            function addToFavorites(event) {
+            event.preventDefault();
+            
+            const poster = document.querySelector('.poster').src;
+            const nombre = document.querySelector('.nombre-compartir h4').innerText;
+
+            const favorito = {
+                poster: poster,
+                nombre: nombre
+            };
+
+            let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+            favoritos.push(favorito);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+
+            alert('Añadido a favoritos');
+        }
+        function openTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var buttons = document.querySelectorAll('.tab-button');
+            
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.tab-button[onclick="openTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+
+        // Abrir la primera pestaña por defecto
+        openTab('tab1');
+        window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
+</script>
+
+</body>
+</html>
+

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="colores-principales.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>Favoritos | AmPlay</title>
@@ -25,9 +24,11 @@
 
 h1 {
     color: rgb(255 255 255);
-    margin-top: 440px;
     font-family: 'Oswald';
     font-weight: 400;
+    font-size: x-large;
+    text-align: justify;
+    margin: 99px 4% 10px;
 }
 
 
@@ -35,7 +36,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
     margin-bottom: 30px;
     flex-flow: wrap-reverse;
     flex-direction: row-reverse;
@@ -95,7 +95,6 @@ h4 {
     align-items: center;
     position: fixed;
     z-index: 99;
-    backdrop-filter: blur(6px);
     top: 0;
 
 }
@@ -481,7 +480,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
     margin-bottom: 90px;
     flex-flow: wrap-reverse;
     flex-direction: row-reverse;
@@ -493,7 +491,7 @@ button:hover {
 }
 h1 {
 
-    margin-top: 390px;
+    margin:4% 4% 10px ;
 
 }
 }
@@ -522,223 +520,12 @@ h4 {
 }
 }
     </style>
-    <div id="loading">
-        <div class="spinner"></div>
-        <h5 class="cargando-recursos">Cargando Recursos...</h5>
-        </div>
-        <div class="background-image">
 
-            <div class="profile-container">
-                <img src="https://wallpapercave.com/uwp/uwp4320187.jpeg" alt="" class="fondo">
-                <div  class="gradient"></div>
-                <div class="profile-image" onclick="openModal()">
-                
-                    <img class="foto-perfil"  src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Foto de perfil" >
-                    <div class="username" id="usernameDisplay">Nombre de Usuario</div>
-                    <div class="AmPlay">AmPlay</div>
+        <div class="background-image">
+            <div id="loading">
+                <div class="spinner"></div>
+                <h5 class="cargando-recursos">Cargando Recursos...</h5>
                 </div>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <p class="seleccion-personaje-p">Selecciona un personaje</p>
-                        <div id="imageOptions">
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Dragon Ball</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg" alt="Anime 1" onclick="selectImage('https://i.pinimg.com/originals/54/fa/6f/54fa6f27037419629c7d503bff497448.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain" alt="Anime 3" onclick="selectImage('https://th.bing.com/th/id/OIP.dkXSSlr56SojRsZ_QiIMRQHaHa?rs=1&pid=ImgDetMain')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg" alt="Anime 6" onclick="selectImage('https://i.pinimg.com/originals/49/ef/44/49ef448fd356d6b7a4985f9e4f9466f7.jpg')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg" alt="Anime 19" onclick="selectImage('https://i.pinimg.com/736x/be/1c/36/be1c367946327889335cb881ae794d25.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0" alt="Anime 23" onclick="selectImage('https://th.bing.com/th/id/R.a12eeb755f08f64346e60651b01c43d5?rik=xycGjXFwRnlW1w&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain" alt="Anime 24" onclick="selectImage('https://th.bing.com/th/id/OIP.f-_qNmZL9JzAi3UV9jvXIQHaHa?rs=1&pid=ImgDetMain')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Anime 40" onclick="selectImage('https://th.bing.com/th/id/R.0cf8bcd8ca61884f59e01dae08e37b38?rik=i4zzRWdBt85Crw&riu=http%3a%2f%2fpm1.narvii.com%2f6250%2fb5258d59ba0399155142c5bc3e5525d7a9a13a6a_00.jpg&ehk=2Q1KQx4cHPsido%2f796DWDfhJ1iZAUgRT0xOjc%2bLyq9Y%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Naruto</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0" alt="Anime 2" onclick="selectImage('https://th.bing.com/th/id/R.b776a36e16660fbc1e9dda2af2f4dbab?rik=eJocNygE%2bEqnwg&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://wallpaperaccess.com/full/4695547.jpg" alt="Anime 5" onclick="selectImage('https://wallpaperaccess.com/full/4695547.jpg')">
-                                    <img class="imagen-perfil" src="https://images4.alphacoders.com/678/678569.jpg" alt="Anime 25" onclick="selectImage('https://images4.alphacoders.com/678/678569.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0" alt="Anime 39" onclick="selectImage('https://th.bing.com/th/id/R.96a61e95f5cc76153888b660777e947c?rik=yOIL6B92LpGvvg&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0" alt="Anime 33" onclick="selectImage('https://th.bing.com/th/id/R.eb88ccc7e17a94566393c3cb3801e413?rik=WzHTjGW9hVAvIQ&pid=ImgRaw&r=0')">
-                                    <img src="https://i.pinimg.com/originals/02/2a/5b/022a5b0ccb97e43a1ecff5c9ed2d8c4e.jpg" alt=""  onclick="selectImage('https://i.pinimg.com/originals/02/2a/5b/022a5b0ccb97e43a1ecff5c9ed2d8c4e.jpg')" class="imagen-perfil">
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Saint Seiya</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg" alt="Anime 13" onclick="selectImage('https://i.pinimg.com/736x/96/ee/90/96ee90960ce377325926314184502ef4.jpg')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg" alt="Anime 14" onclick="selectImage('https://i.pinimg.com/originals/96/c2/f1/96c2f18c3bf3b9a8e02d10ad31c484d4.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/R.4cef1c7a6dcde0e9c573c8e158fd8621?rik=2OnxEDdVnHTjIg&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140124220334%2fsaintseiya%2fes%2fimages%2f5%2f56%2fFenix_Ikki_Hades_Saga.png&ehk=nh%2bowtcUNr865DCFHYWVMwRV1DfL3gcLzapKI8jQSE0%3d&risl=&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg" alt="Anime 34" onclick="selectImage('https://i.pinimg.com/474x/b0/03/a7/b003a780f92f12e1be960b4c71e25616.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain" alt="Anime 35" onclick="selectImage('https://th.bing.com/th/id/OIP.vXHMIEnsQ-zVF42tta3OdAHaJQ?rs=1&pid=ImgDetMain')">
-                
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Classroom Of The Elite</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg" alt="Anime 4" onclick="selectImage('https://i.pinimg.com/originals/bf/65/2d/bf652dd2ddf8ca1c73ca04c79fff15ce.jpg')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg" alt="Anime 20" onclick="selectImage('https://i.pinimg.com/originals/4d/6c/a5/4d6ca51b0ff1524f1f791ef3f646a921.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain" alt="Anime 21" onclick="selectImage('https://th.bing.com/th/id/OIP.y___ckUyZOSuNfc8jwWe1gAAAA?w=474&h=475&rs=1&pid=ImgDetMain')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg" alt="Anime 27" onclick="selectImage('https://i.pinimg.com/736x/6c/9d/66/6c9d6622449c1fb7d75323a5e18b1768.jpg')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">My Hero Academia</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain" alt="Anime 7" onclick="selectImage('https://th.bing.com/th/id/OIP.qQkCCNKeghZy9lkcg-Ac0AAAAA?rs=1&pid=ImgDetMain')">
-                                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg" alt="Anime 26" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-81.jpg')">
-                                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg" alt="Anime 17" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-3.jpg')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Darling in the Franxx</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg" alt="Anime 8" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-24.jpg')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Demon Slayer</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg" alt="Anime 9" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-78.jpg')">
-                                    <img class="imagen-perfil" src="https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg" alt="Anime 11" onclick="selectImage('https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-51.jpg')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Mob Pyycho 100</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg" alt="Anime 15" onclick="selectImage('https://i.pinimg.com/736x/89/47/e8/8947e84327b4044d163f54bda40eb519.jpg')">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0" alt="Anime 38" onclick="selectImage('https://th.bing.com/th/id/R.1e5246de98082698b93e3da253fd027b?rik=BxrmAjLUrCfHgw&pid=ImgRaw&r=0')">
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">One Punch Man</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0" alt="Anime 16" onclick="selectImage('https://th.bing.com/th/id/R.2bdb6b2a1a62ce375ce4ee0ffdcc9714?rik=nyd2N2nhqz0p%2bQ&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es" alt="Anime 29" onclick="selectImage('https://vignette.wikia.nocookie.net/doblaje/images/6/69/Genos_profile_anime.png/revision/latest?cb=20170718000249&path-prefix=es')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Monster</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain" alt="Anime 32" onclick="selectImage('https://th.bing.com/th/id/OIP.edYcyxqLEiHEgTKUURi07wHaHa?w=500&h=500&rs=1&pid=ImgDetMain')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Spy x Family</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0" alt="Anime 31" onclick="selectImage('https://th.bing.com/th/id/R.a8def94eb3789f2cf87aa2600c504c3f?rik=GAlapQTyF84eXg&pid=ImgRaw&r=0')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">One Piece</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0" alt="Anime 28" onclick="selectImage('https://th.bing.com/th/id/R.825607db79ecf25d89463a98a1aeda5a?rik=2MTj3O%2fobFed6w&pid=ImgRaw&r=0')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg" alt="Anime 36" onclick="selectImage('https://i.pinimg.com/originals/50/be/03/50be03315e93a5ce7adc9a8ee9ae94f2.jpg')">
-                                    <img class="imagen-perfil" src="https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg" alt="Anime 37" onclick="selectImage('https://i.pinimg.com/originals/10/f2/f2/10f2f28dfaeb74364ec55768c53fadc9.jpg')">
-                
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Nagatoro-San</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0" alt="Anime 22" onclick="selectImage('https://th.bing.com/th/id/R.b260e6e3c64ecb8dd7018481259d0e22?rik=Q2ES8djlVZ8gRw&pid=ImgRaw&r=0')">
-        
-                                </div>
-                            </div>
-                            <div class="fila-anime">
-                                <h5 class="titulo-foto-anime">Tensei Shitara Slime Datta Ken</h5>
-                                <div class="img-fotos">
-                                    <img class="imagen-perfil" src="https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain" alt="Anime 41" onclick="selectImage('https://th.bing.com/th/id/OIP.Uwcakq9ya1yq7F2Ei9j_sAHaF6?w=650&h=519&rs=1&pid=ImgDetMain')">
-        
-                                </div>
-                            </div>
-        
-                        </div>
-                    </div>
-                </div>
-        
-                <div id="banner-modal" class="modal" onclick="closeModal()">
-                    <div class="modal-content">
-                      <span class="close">&times;</span>
-                      <h2 class="banners-titulo">Banners</h2>
-                      <div class="banners-div">
-                        <div class="div-banners-img">
-                      <img class="banners-opciones" src="https://wallpapercave.com/uwp/uwp4320187.jpeg" alt="">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.pinimg.com/originals/16/53/35/16533595d7f56bfd42948a9378b05f9e.png" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.pinimg.com/originals/b4/af/4e/b4af4e2853ee1770677dda24649caf11.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://th.bing.com/th/id/R.6ed16859e04d772d2238bdb3315fedcd?rik=NlsVTRT2eAI02g&pid=ImgRaw&r=0" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images5.alphacoders.com/114/1141106.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images5.alphacoders.com/766/766368.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images8.alphacoders.com/129/1292725.png" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://wallpaperaccess.com/full/1212568.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.pinimg.com/originals/03/b5/3d/03b53ddb3698df8cbbc2df12a932e0c7.jpg
-                        " alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://cuevadelobo.com/wp-content/uploads/2015/11/29-A7gaYH4-2.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://wallpaperaccess.com/full/2593450.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images4.alphacoders.com/129/1293106.png" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images5.alphacoders.com/127/1274267.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.imgur.com/IQeCW29.jpeg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://images4.alphacoders.com/661/661705.jpg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.imgur.com/IG9JFyp.jpeg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.imgur.com/rOoJzQU.jpeg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.imgur.com/lkPg4sl.jpeg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://i.imgur.com/gxLjWLG.jpeg" alt="" class="banners-opciones">
-                    </div>
-                    <div class="div-banners-img">
-                        <img src="https://wallpapercrafter.com/desktop1/675198-Anime-Mob-Psycho-100-1080P.jpg" alt="" class="banners-opciones">
-                    </div>
-                    </div>
-                    </div>
-                  </div>
-                  
-            </div>
 
     <div class="menu-abajo">
         <div class="izquierda">
@@ -1073,97 +860,6 @@ h4 {
         <!-- Aquí se agregarán los elementos favoritos -->
     </div>
 
-    <div id="opcion2" class="tab-content">
-        <div class="favorites-title">
-            <h3 class="añadir-favorito">Añadir Favorito</h3>
-            <input id="searchInput" class="buscador" placeholder="Busca Tu Anime" type="text">
-            <div class="animes">
-                <div class="fila">
-                    <div class="anime">
-        
-                        <a class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/6m0DaxNVYATG8YrzHl38fuUkwlz.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Classroom Of The Elite</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/5FMsT2WzniLgELATUlXpE8zi6NM.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Nagatoro-San</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/iSOKGl5KIeOCAtigUDCfFZe2cOi.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Horimiya</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/55YOpgycwAX7KZhFOT9gObKwNIi.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Tomo-chan Is a Girl!</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster"><img class="banner-anime" src="https://image.tmdb.org/t/p/original/x15LnCbRgRlZFnq2kQdbW9tlheZ.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Nisekoi</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/gsq1pCxMHhZDCHEh78sD6yEHoLu.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Demon slayer</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Reestreno</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster"><img class="banner-anime" src="https://image.tmdb.org/t/p/original/gkpFc791zeyQEO7Ds7mlnaC1cmj.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Gods' Games We Play</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Estreno</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/pT4OoVQE8zGJ0Z0GZpJotK5Vzsj.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Farming Life in Another World</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/9gw8qENoERTHS88BnqIZpjYRc9s.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">One punch Man</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                    <div class="anime">
-                        <a  class="a-abajo-poster" ><img class="banner-anime" src="https://image.tmdb.org/t/p/original/f9a79aC4CaaUKZt4el5Ncnt24sM.jpg" alt=""></a>
-                        <h5 class="Titulo-anime">Dragon Ball Episodio de Bardock</h5>
-                        <div class="perla-finalizado">
-                            <div class="perla"></div>
-                            <h5 class="finalizado-emision-h5">Finalizado</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1239,13 +935,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
         location.reload();
     }
-
-    function removeFromFavorites(name) {
-        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-        favoritos = favoritos.filter(favorito => favorito.nombre !== name);
-        localStorage.setItem('favoritos', JSON.stringify(favoritos));
-        location.reload();
-    }
    
         function obtenerNombreAnime(posterSrc) {
     // Aquí puedes implementar la lógica para obtener el nombre del anime desde la URL del poster
@@ -1269,186 +958,6 @@ function eliminarDeFavoritos(posterSrc, elementoPadre) {
     elementoPadre.remove();
 }
 
-var modal = document.getElementById("myModal");
-
-function openModal() {
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    modal.style.display = "none";
-}
-
-function selectImage(imageUrl) {
-    var profileImage = document.querySelector('.profile-image img');
-    profileImage.src = imageUrl;
-    
-    // Guardar la URL de la imagen seleccionada en el almacenamiento local
-    localStorage.setItem('selectedImage', imageUrl);
-    
-    closeModal();
-}
-
-function openTab(tabName) {
-    // Ocultar todos los contenidos de las tabs
-    var i, tabcontent;
-    tabcontent = document.getElementsByClassName("tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Mostrar el contenido de la tab seleccionada
-    document.getElementById(tabName).style.display = "block";
-}
-
-// Mostrar por defecto la primera tab
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementsByClassName("tab-button")[0].click();
-});
-
-document.getElementById('searchInput').addEventListener('input', function() {
-    const searchValue = this.value.toLowerCase();
-    const animes = document.querySelectorAll('.anime');
-
-    animes.forEach(anime => {
-        const title = anime.querySelector('.Titulo-anime').textContent.toLowerCase();
-        if (title.includes(searchValue)) {
-            anime.style.display = 'inline-block';
-        } else {
-            anime.style.display = 'none';
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const contenedorFavoritos = document.querySelector('.animes'); // Contenedor de favoritos
-
-    const banners = document.querySelectorAll('.banner-anime');
-
-    banners.forEach(banner => {
-        banner.addEventListener('click', function() {
-            const posterSrc = this.src; // Obtener la URL del póster del banner
-
-            if (!localStorage.getItem('favoritos')) {
-                localStorage.setItem('favoritos', JSON.stringify([]));
-            }
-
-            let favoritos = JSON.parse(localStorage.getItem('favoritos'));
-
-            if (!favoritos.includes(posterSrc)) {
-                favoritos.push(posterSrc);
-                localStorage.setItem('favoritos', JSON.stringify(favoritos));
-
-                const nuevoFavorito = document.createElement('div');
-                nuevoFavorito.classList.add('anime-poster-info');
-
-                const nombreAnime = obtenerNombreAnime(posterSrc); // Obtener el nombre del anime desde la URL del poster
-
-                const nuevaImagen = document.createElement('a'); // Elemento de enlace
-                nuevaImagen.href = nombreAnime.replace(/ /g, '-') + '.html'; // Configurar el href con el nombre del anime y ".html", reemplazando espacios por guiones
-                nuevaImagen.style.display = ''; // Ocultar el enlace
-                nuevaImagen.textContent = ''; // No hay texto visible en el enlace
-
-                const imagenPoster = document.createElement('img');
-                imagenPoster.classList.add('poster-anime');
-                imagenPoster.src = posterSrc;
-                nuevaImagen.appendChild(imagenPoster);
-
-                // Botón para eliminar de favoritos
-                const botonEliminar = document.createElement('button');
-                botonEliminar.textContent = 'Eliminar de Favoritos';
-                botonEliminar.classList.add('eliminar-button');
-                botonEliminar.addEventListener('click', function() {
-                    eliminarDeFavoritos(posterSrc, nuevoFavorito);
-                });
-
-                nuevoFavorito.appendChild(nuevaImagen);
-                nuevoFavorito.appendChild(botonEliminar);
-                contenedorFavoritos.appendChild(nuevoFavorito);
-            }
-        });
-    });
-});
-// Obtener el modal de banners
-var bannerModal = document.getElementById("banner-modal");
-
-// Obtener el degradado dentro del div .profile-container
-var gradient = document.querySelector(".profile-container .gradient");
-
-// Obtener el botón para cerrar el modal
-var closeBtn = bannerModal.querySelector(".close");
-
-// Cuando se haga clic en el degradado, mostrar el modal de banners
-gradient.addEventListener("click", function() {
-  bannerModal.style.display = "block";
-});
-
-// Cuando se haga clic en el botón de cerrar, ocultar el modal
-closeBtn.addEventListener("click", function() {
-  bannerModal.style.display = "none";
-});
-
-// Cuando se haga clic fuera del modal, también ocultarlo
-window.addEventListener("click", function(event) {
-  if (event.target == bannerModal) {
-    bannerModal.style.display = "none";
-  }
-});
-document.addEventListener('DOMContentLoaded', function() {
-  const imagenesOpciones = document.querySelectorAll(".banners-opciones");
-  const imagenFondo = document.querySelector(".fondo");
-
-  // Función para cerrar el modal
-  const closeModal = function() {
-    const modal = document.getElementById("banner-modal");
-    modal.style.display = "none";
-  };
-
-  imagenesOpciones.forEach(function(imagen) {
-    imagen.addEventListener("click", function() {
-      const nuevaSrc = imagen.getAttribute("src");
-      imagenFondo.setAttribute("src", nuevaSrc);
-      closeModal(); // Ocultar el modal al seleccionar una imagen
-
-      // Guardar la URL del banner seleccionado en el almacenamiento local
-      localStorage.setItem("selectedBannerSrc", nuevaSrc);
-    });
-  });
-
-  // Obtener la URL del banner seleccionado del almacenamiento local
-  const selectedBannerSrc = localStorage.getItem("selectedBannerSrc");
-  if (selectedBannerSrc) {
-    imagenFondo.setAttribute("src", selectedBannerSrc);
-  }
-
-  // Obtener el modal de banners
-  var bannerModal = document.getElementById("banner-modal");
-
-  // Obtener el degradado dentro del div .profile-container
-  var gradient = document.querySelector(".profile-container .gradient");
-
-  // Obtener el botón para cerrar el modal
-  var closeBtn = bannerModal.querySelector(".close");
-
-  // Cuando se haga clic en el degradado, mostrar el modal de banners
-  gradient.addEventListener("click", function() {
-    bannerModal.style.display = "block";
-  });
-
-  // Cuando se haga clic en el botón de cerrar, ocultar el modal
-  closeBtn.addEventListener("click", function() {
-    bannerModal.style.display = "none";
-  });
-
-  // Cuando se haga clic fuera del modal, también ocultarlo
-  window.addEventListener("click", function(event) {
-    if (event.target == bannerModal) {
-      bannerModal.style.display = "none";
-    }
-  });
-
-  // Resto de tu JavaScript...
-});
 window.addEventListener('load', function () {
     var loading = document.getElementById('loading');
     var content = document.getElementById('content');
@@ -1456,6 +965,7 @@ window.addEventListener('load', function () {
     loading.style.display = 'none';
     content.style.display = 'block';
 });
+
     </script>
     
 </body>

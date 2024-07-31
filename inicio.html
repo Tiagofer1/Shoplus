@@ -1191,12 +1191,12 @@ p.descripcion-recomendado{
         <h4 class="Titulo-genero">Noticias</h4>
         <div class="poster-arrow-left hidden">&#9664;</div>
         <div class="poster-slides-noticias">
-            <a id="noticia-1"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Betty - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
+            <a id="noticia-2"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/cKVI3X6DGhzfAtNbZDyj8RcTWBq.jpg"> <h5 class="titulo-anime">Gravity Falls - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
+            <a id="noticia-1"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg"> <h5 class="titulo-anime">Betty - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
 
         </div>
         <div class="poster-arrow-right">&#9654;</div>
     </div>
-
 <div class="poster-carousel">
     <h4 class="Titulo-genero">Comedia / Romance</h4>
     <div class="poster-arrow-left hidden">&#9664;</div>
@@ -1332,7 +1332,6 @@ p.descripcion-recomendado{
 </div>
 
 <div class="separacion"></div>
-
 
 <script>
 
@@ -1513,6 +1512,129 @@ document.getElementById('noticia-1').addEventListener('click', function() {
             Ana María Orozco retoma su papel de Betty junto a Jorge Enrique Abella como Armando Mendoza Sáenz. Julián Arango, Natalia Ramírez, Lorna Cepeda, Luces Velásquez, Marcela Posada, Mario Duarte, Julio César Herrera, Ricardo Vélez, Alberto León Jaramillo, entre otros, también regresan para esta esperada continuación.
         </div>
     </div>
+</body>
+</html>
+
+    `;
+    var newWindow = window.open();
+    newWindow.document.write(newsPage);
+    newWindow.document.close();
+});
+
+document.getElementById('noticia-2').addEventListener('click', function() {
+    var newsPage = `
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <title>Centro de Noticias</title>
+    <style>
+        body {
+            background-color: #120b1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .noticia {
+            border-radius: 10px;
+            overflow: auto;
+            width: 100%;
+            height: 100vh;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #120b1f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0px;
+            background: #673AB7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .noticias, .fin {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .noticias:last-of-type, .fin {
+            margin-bottom: 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .back-button:hover {
+            color: #cccccc;
+        }
+        .back-button svg {
+            width: 40px;
+            height: 40px;
+        }
+a.comprar {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-family: monospace;
+    color: white;
+    border: 1px solid white;
+}
+    </style>
+</head>
+<body>
+    <a href="inicio.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+    <div class="noticia">
+        <h1>Siguiendo a 'Hillbilly Elegy', un triángulo malvado y sensible domina actualmente las listas de éxitos</h1>
+        <div class="noticias">
+Basada en la serie animada 'Gravity Falls', el creador Alex Hirsch trae el humor negro con 'The Book of Bill', que se ha disparado a la cima de la lista de los más vendidos de Amazon
+<img src="https://www.rollingstone.com/wp-content/uploads/2024/07/lf.webp?w=600&h=344&crop=1" alt="">
+
+</div>
+        <hr>
+        <div class="noticias">
+Bill Cipher ha vuelto, mortales tontos, y las cosas están a punto de ponerse aún más raras por aquí. Con el objetivo de contar el lado "real" del villano de la historia que sucedió en la clásica serie animada de Disney Gravity Falls, este libro lleno de historia escrito por el creador Alex Hirsch llegó a nuestra dimensión el 23 de julio, y ya está dominando las listas de éxitos.        </div>
+        <hr>
+        <div class="noticias">
+The Book of Bill es ahora el número 2 en la lista de los más vendidos de Amazon, así como el número 1 en la lista de nuevos lanzamientos de Amazon, solo desplazado del trono por Hillbilly Elegy, del aspirante a vicepresidente J.D. Vance. Pero, ¿cómo es que este Gran Malo reina frente a los competidores de no ficción? No te metas con este dios interdimensional del caos: el libro detalla cómo el demonio se involucró con la familia Pines de la serie y arroja luz sobre sus extraños orígenes, así como la clave para derrocar al mundo (presentada en una práctica guía paso a paso).
+    <img src="https://www.estrategiacreativa.com.co/wp-content/uploads/2024/07/descargar-libro-de-bill-cipher-pdf-gratis.jpg" alt="">
+    <a class="comprar" href="https://www.amazon.com/dp/1368092209?tag=rollingston07-20&linkCode=ogi&th=1&psc=1&language=en_US&asc_source=web&asc_campaign=web&asc_refurl=https%3A%2F%2Fwww.rollingstone.com%2Fproduct-recommendations%2Fbooks%2Fthe-book-of-bill-gravity-falls-buy-online-1235070915%2F">Comprar En Amazon</a>
+</div>
+<div class="noticias">
+            En este momento hay suficientes versiones del libro para derretir nuestros débiles cerebros humanos, incluida la de tapa dura regular, donde el personaje principal se muestra en un amenazante color rojo, y la segunda es una edición especial de Barnes & Noble que muestra a Bill Cipher en su oro habitual. Esta versión exclusiva está repleta de 16 páginas adicionales con (terribles) consejos de vida del mismísimo demonio. Ahora mismo, puedes conseguir las "memorias" de este terrible enigma con un 33% de descuento en el momento de la publicación. Normalmente $ 26.99, puede comprar la edición de tapa dura de The Book of Bill por $ 18 mientras dure la promoción de Amazon.
+</div>
+<hr>
+<div class="fin">
+    Gravity Falls fue famoso por involucrar a su audiencia con códigos secretos y mensajes ocultos esparcidos a lo largo de los episodios que comunidades enteras de fanáticos intentaron descifrar, y The Book of Bill no es diferente. Según la descripción de Amazon, "este tomo caótico y bellamente ilustrado contiene acertijos desconcertantes, cifrados imposibles de descifrar, páginas perdidas del Diario de 3, formas de engañar a la muerte, el significado de la vida y un capítulo completo sobre Pajitas tontas". Pero lo más importante, dicen: "El Libro de Bill está muy, muy maldito".
+</div>
+</div>
+
 </body>
 </html>
 

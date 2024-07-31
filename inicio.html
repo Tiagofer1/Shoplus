@@ -1420,65 +1420,102 @@ slider.addEventListener('touchmove', handleTouchMove);
 updateDots();
 
 document.getElementById('noticia-1').addEventListener('click', function() {
-    var imageUrl = 'https://image.tmdb.org/t/p/original/nc1PCPXRrrkNiwkIOAIwDiMbjlR.png'; // Reemplaza con la URL de tu imagen
     var newsPage = `
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="colores-principales.css">
-    <title>Document</title>
-</head>
-<body>
+    <title>Centro de Noticias</title>
     <style>
-        body{
+        body {
+            background-color: #120b1f;
             display: flex;
             justify-content: center;
+            align-items: center;
             color: white;
-            font-family: monospace;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
             overflow: hidden;
         }
         .noticia {
-    border-radius: 20px;
-    width: 500px;
-    height: 100vh;
-    padding: 10px;
-    overflow: auto;
-}
-img {
-    width: 100%;
-    border-radius: 20px;
-}
-h1 {
-    font-size: inherit;
-    padding: 10px;
-}
-.noticias {
-    padding: 10px;
-    text-align: justify;
-    border-bottom: 1px solid rebeccapurple;
-    margin-bottom: 40px;
-}
-.fin{
-    padding: 10px;
-    text-align: justify;
-}
+            border-radius: 10px;
+            overflow: auto;
+            width: 100%;
+            height: 100vh;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #120b1f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: #673AB7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .noticias, .fin {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .noticias:last-of-type, .fin {
+            margin-bottom: 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .back-button:hover {
+            color: #cccccc;
+        }
+        .back-button svg {
+            width: 40px;
+            height: 40px;
+        }
+
     </style>
+</head>
+<body>
+    <a href="inicio.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
     <div class="noticia">
-        <img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg" alt="">
-        <h1>Prime Video ha renovado betty la fea, la historia continúa para una segunda temporada</h1>
+        <img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg" alt="Betty la Fea">
+        <h1>Prime Video renueva 'Betty la Fea': La historia continúa con una segunda temporada</h1>
         <div class="noticias">
             La noticia llega después de una gran semana de estreno para la serie de continuación, rompiendo un nuevo récord de la mayor audiencia global para un título latinoamericano en la historia del streamer. Ahora también es la serie o película más vista de Prime Video en Colombia.
         </div>
+        <hr>
         <div class="noticias">
-
-            Betty, La Fea, la historia continúa cuenta la historia de Beatriz Pinzón Solano 20 años después de la conclusión del programa original. Mientras Betty, empoderada y más sabia, trabaja duro para reconstruir su relación con su hija adolescente Mila, su relación con Armando comienza a deteriorarse, lo que la hace preguntarse si tomó la decisión correcta hace 20 años.
+            'Betty, La Fea, la historia continúa' cuenta la historia de Beatriz Pinzón Solano 20 años después de la conclusión del programa original. Mientras Betty, empoderada y más sabia, trabaja duro para reconstruir su relación con su hija adolescente Mila, su relación con Armando comienza a deteriorarse, lo que la hace preguntarse si tomó la decisión correcta hace 20 años.
         </div>
-        <div class="fin">Ana María Orozco retoma su papel de Betty junto a Jorge Enrique Abella como Armando Mendoza Sáenz. Julián Arango, Natalia Ramírez, Lorna Cepeda, Luces Velásquez, Marcela Posada, Mario Duarte, Julio César Herrera, Ricardo Vélez, Alberto León Jaramillo...</div>
+        <hr>
+        <div class="fin">
+            Ana María Orozco retoma su papel de Betty junto a Jorge Enrique Abella como Armando Mendoza Sáenz. Julián Arango, Natalia Ramírez, Lorna Cepeda, Luces Velásquez, Marcela Posada, Mario Duarte, Julio César Herrera, Ricardo Vélez, Alberto León Jaramillo, entre otros, también regresan para esta esperada continuación.
+        </div>
     </div>
 </body>
 </html>
+
     `;
     var newWindow = window.open();
     newWindow.document.write(newsPage);

@@ -238,6 +238,29 @@ span.dot {
             border-radius: 5px;
         }
 
+        .poster-slides-noticias {
+            display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 240px;
+        }
+
+        .poster-slide-noticias {
+            margin: 0px 5px;
+    box-sizing: border-box;
+    width: 230px;
+    height: 240px;
+
+        }
+
+        .poster-slide-noticias img {
+            height: 200px;
+            display: block;
+            object-fit: cover;
+            width: 226px;
+            background: #1b122d;
+            filter: drop-shadow(2px 4px 6px black);
+            border-radius: 5px;
+        }
         .poster-arrow-left, .poster-arrow-right {
             cursor: pointer;
             font-size: 2em;
@@ -386,11 +409,24 @@ p.descripcion-recomendado {
             object-fit: cover;
             width: 186px;
         }
+        .poster-slide-noticias img {
+            height: 200px;
+            display: block;
+            object-fit: cover;
+            width: 186px;
+        }
         .poster-slide {
             margin: 0px 5px;
             box-sizing: border-box;
             width: 185px;
             height: 330px;
+
+        }
+        .poster-slide-noticias {
+            margin: 0px 5px;
+            box-sizing: border-box;
+            width: 185px;
+            height: 240px;
 
         }
         .banner-principal-2{
@@ -446,6 +482,11 @@ img.logo-anime-3 {
             display: flex;
   transition: transform 0.5s ease-in-out;
   height: 330px;
+        }
+        .poster-slides-noticias {
+            display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 240px;
         }
 .poster-carousel {
             position: relative;
@@ -571,6 +612,11 @@ height: 520px;
 overflow: hidden;
 }
 .poster-slides{
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.poster-slides-noticias{
     overflow-y: hidden;
     overflow-x: auto;
 }
@@ -1142,10 +1188,11 @@ p.descripcion-recomendado{
 <div class="posters">
 
     <div class="poster-carousel">
-        <h4 class="Titulo-genero">Recientes</h4>
+        <h4 class="Titulo-genero">Noticias</h4>
         <div class="poster-arrow-left hidden">&#9664;</div>
-        <div class="poster-slides recientes-slides">
-    
+        <div class="poster-slides-noticias">
+            <a id="noticia-1"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg" alt="Imagen 1"> <h5 class="titulo-anime">Betty - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
+
         </div>
         <div class="poster-arrow-right">&#9654;</div>
     </div>
@@ -1288,147 +1335,6 @@ p.descripcion-recomendado{
 
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const recentSlides = document.querySelector('.recientes-slides');
-
-    // Función para cargar los recientes desde localStorage
-    const loadRecentSlides = () => {
-        const recentData = JSON.parse(localStorage.getItem('recentSlides')) || [];
-        recentData.forEach(slideData => {
-            const slideContainer = document.createElement('div');
-            slideContainer.classList.add('poster-slide');
-            slideContainer.innerHTML = slideData;
-            recentSlides.appendChild(slideContainer);
-        });
-    };
-
-    // Función para guardar los recientes en localStorage
-    const saveRecentSlides = () => {
-        const slidesData = Array.from(recentSlides.querySelectorAll('a')).map(a => a.outerHTML);
-        localStorage.setItem('recentSlides', JSON.stringify(slidesData));
-    };
-
-    // Cargar los recientes al cargar la página
-    loadRecentSlides();
-
-    const isSmallScreen = window.innerWidth <= 599;
-
-    document.querySelectorAll('.poster-carousel').forEach(carousel => {
-        const prevButton = carousel.querySelector('.poster-arrow-left');
-        const nextButton = carousel.querySelector('.poster-arrow-right');
-        const slides = carousel.querySelector('.poster-slides');
-        
-        let carouselIndex = 0;
-
-        const updateCarousel = () => {
-            const slideWidth = slides.children[0].getBoundingClientRect().width;
-            slides.style.transform = `translateX(-${carouselIndex * slideWidth}px)`;
-
-            if (carouselIndex === 0) {
-                prevButton.classList.add('hidden');
-            } else {
-                prevButton.classList.remove('hidden');
-            }
-
-            if (carouselIndex >= slides.children.length - Math.floor(carousel.clientWidth / slideWidth)) {
-                nextButton.classList.add('hidden');
-            } else {
-                nextButton.classList.remove('hidden');
-            }
-        };
-
-        prevButton.addEventListener('click', () => {
-            if (carouselIndex > 0) {
-                carouselIndex--;
-                updateCarousel();
-            }
-        });
-
-        nextButton.addEventListener('click', () => {
-            if (carouselIndex < slides.children.length - 1) {
-                carouselIndex++;
-                updateCarousel();
-            }
-        });
-
-        slides.addEventListener('click', (event) => {
-            const slideLink = event.target.closest('a');
-            if (slideLink) {
-                const selectedSlide = slideLink.cloneNode(true);
-                const selectedSlideHTML = selectedSlide.outerHTML;
-
-                // Verificar si el slide ya está en la lista de recientes y eliminar duplicados
-                Array.from(recentSlides.querySelectorAll('a')).forEach((slide) => {
-                    if (slide.outerHTML === selectedSlideHTML) {
-                        recentSlides.removeChild(slide.parentElement);
-                    }
-                });
-
-                // Crear un contenedor para el nuevo slide
-                const slideContainer = document.createElement('div');
-                slideContainer.classList.add('poster-slide');
-                slideContainer.appendChild(selectedSlide);
-
-                // Añadir el nuevo slide al principio
-                recentSlides.insertBefore(slideContainer, recentSlides.firstChild);
-
-                saveRecentSlides(); // Guardar en localStorage
-                updateCarousel();
-            }
-        });
-
-        if (!isSmallScreen) {
-            let startX = 0;
-            let startY = 0;
-            let currentX = 0;
-            let isDragging = false;
-            const sensitivityThreshold = 50; // Umbral de sensibilidad para el deslizamiento
-
-            const handleTouchStart = (event) => {
-                if (event.target.tagName.toLowerCase() === 'img') {
-                    startX = event.touches[0].clientX;
-                    startY = event.touches[0].clientY;
-                    isDragging = true;
-                }
-            };
-
-            const handleTouchMove = (event) => {
-                if (!isDragging) return;
-                currentX = event.touches[0].clientX;
-                const diffX = currentX - startX;
-                const diffY = event.touches[0].clientY - startY;
-
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    event.preventDefault();
-                    slides.style.transition = 'none'; // Sin transición durante el movimiento
-                    slides.style.transform = `translateX(${diffX - carouselIndex * slides.children[0].getBoundingClientRect().width}px)`;
-                }
-            };
-
-            const handleTouchEnd = () => {
-                if (!isDragging) return;
-                isDragging = false;
-                const slideWidth = slides.children[0].getBoundingClientRect().width;
-                const diffX = currentX - startX;
-                slides.style.transition = ''; // Restaurar la transición normal
-                if (Math.abs(diffX) > sensitivityThreshold) {
-                    if (diffX > 0 && carouselIndex > 0) {
-                        carouselIndex--;
-                    } else if (diffX < 0 && carouselIndex < slides.children.length - 1) {
-                        carouselIndex++;
-                    }
-                }
-                updateCarousel();
-            };
-
-            slides.addEventListener('touchstart', handleTouchStart);
-            slides.addEventListener('touchmove', handleTouchMove);
-            slides.addEventListener('touchend', handleTouchEnd);
-        }
-
-        updateCarousel();
-    });
-});
 
 window.addEventListener('load', function () {
     var loading = document.getElementById('loading');
@@ -1512,6 +1418,72 @@ slider.addEventListener('touchmove', handleTouchMove);
 
 // Initialize dots
 updateDots();
+
+document.getElementById('noticia-1').addEventListener('click', function() {
+    var imageUrl = 'https://image.tmdb.org/t/p/original/nc1PCPXRrrkNiwkIOAIwDiMbjlR.png'; // Reemplaza con la URL de tu imagen
+    var newsPage = `
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-family: monospace;
+            overflow: hidden;
+        }
+        .noticia {
+    border-radius: 20px;
+    width: 500px;
+    height: 100vh;
+    padding: 10px;
+    overflow: auto;
+}
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+h1 {
+    font-size: inherit;
+    padding: 10px;
+}
+.noticias {
+    padding: 10px;
+    text-align: justify;
+    border-bottom: 1px solid rebeccapurple;
+    margin-bottom: 40px;
+}
+.fin{
+    padding: 10px;
+    text-align: justify;
+}
+    </style>
+    <div class="noticia">
+        <img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg" alt="">
+        <h1>Prime Video ha renovado betty la fea, la historia continúa para una segunda temporada</h1>
+        <div class="noticias">
+            La noticia llega después de una gran semana de estreno para la serie de continuación, rompiendo un nuevo récord de la mayor audiencia global para un título latinoamericano en la historia del streamer. Ahora también es la serie o película más vista de Prime Video en Colombia.
+        </div>
+        <div class="noticias">
+
+            Betty, La Fea, la historia continúa cuenta la historia de Beatriz Pinzón Solano 20 años después de la conclusión del programa original. Mientras Betty, empoderada y más sabia, trabaja duro para reconstruir su relación con su hija adolescente Mila, su relación con Armando comienza a deteriorarse, lo que la hace preguntarse si tomó la decisión correcta hace 20 años.
+        </div>
+        <div class="fin">Ana María Orozco retoma su papel de Betty junto a Jorge Enrique Abella como Armando Mendoza Sáenz. Julián Arango, Natalia Ramírez, Lorna Cepeda, Luces Velásquez, Marcela Posada, Mario Duarte, Julio César Herrera, Ricardo Vélez, Alberto León Jaramillo...</div>
+    </div>
+</body>
+</html>
+    `;
+    var newWindow = window.open();
+    newWindow.document.write(newsPage);
+    newWindow.document.close();
+});
 
 </script>
 

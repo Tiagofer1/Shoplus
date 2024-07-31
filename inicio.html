@@ -260,6 +260,7 @@ span.dot {
             background: #1b122d;
             filter: drop-shadow(2px 4px 6px black);
             border-radius: 5px;
+            filter: grayscale(1);
         }
         .poster-arrow-left, .poster-arrow-right {
             cursor: pointer;
@@ -1191,6 +1192,7 @@ p.descripcion-recomendado{
         <h4 class="Titulo-genero">Noticias</h4>
         <div class="poster-arrow-left hidden">&#9664;</div>
         <div class="poster-slides-noticias">
+            <a id="noticia-3"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/mtSZjwZxtPn8oMPliyMiatQLbGv.jpg"> <h5 class="titulo-anime">Avegers - Noticiaㅤ|<span class="fecha-noticia">ㅤ31/7/24</span></h5></div></a>
             <a id="noticia-2"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/cKVI3X6DGhzfAtNbZDyj8RcTWBq.jpg"> <h5 class="titulo-anime">Gravity Falls - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
             <a id="noticia-1"><div class="poster-slide-noticias"><img src="https://image.tmdb.org/t/p/original/us2E4vqo5zJrUledrNX1KTpk3gT.jpg"> <h5 class="titulo-anime">Betty - Noticiaㅤ|<span class="fecha-noticia">ㅤ29/7/24</span></h5></div></a>
 
@@ -1313,7 +1315,6 @@ p.descripcion-recomendado{
     <div class="poster-arrow-left hidden">&#9664;</div>
     <div class="poster-slides">
         <a href="¡Aloha-Scooby-Doo!.html"><div class="poster-slide"><img src="https://image.tmdb.org/t/p/original/kgr5HVQx3wKFbiZmtWwLkfSz3WV.jpg" alt="Imagen 1"> <h5 class="titulo-anime">¡Aloha Scooby-Doo!</h5></div></a>
-
     </div>
     <div class="poster-arrow-right">&#9654;</div>
 </div>
@@ -1644,6 +1645,154 @@ The Book of Bill es ahora el número 2 en la lista de los más vendidos de Amazo
     newWindow.document.write(newsPage);
     newWindow.document.close();
 });
+
+document.getElementById('noticia-3').addEventListener('click', function() {
+    var newsPage = `
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <title>Centro de Noticias</title>
+    <style>
+        body {
+            background-color: #120b1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .noticia {
+            border-radius: 10px;
+            overflow: auto;
+            width: 100%;
+            height: 100vh;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #120b1f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0px;
+            background: #673AB7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .noticias, .fin {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .noticias:last-of-type, .fin {
+            margin-bottom: 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .back-button:hover {
+            color: #cccccc;
+        }
+        .back-button svg {
+            width: 40px;
+            height: 40px;
+        }
+a.comprar {
+height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-family: monospace;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+}
+video {
+    width: 100%;
+   objet-fit:cover;
+}
+    </style>
+</head>
+<body>
+    <a href="inicio.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+    <div class="noticia">
+                    <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30110004/iron-man-doctor-doom.jpg" alt="">
+        <h1>¿Qué pasó cuando Iron Man luchó contra el Doctor Doom? 4 Vengadores de Endgame que pueden derrotar al Doctor Doom de Robert Downey Jr</h1>
+        <div class="noticias">
+            Robert Downey Jr. sorprendió al mundo cuando regresó al MCU como el Doctor Victor Von Doom. Anunciado en la Comic-Con de este año, la estrella de Iron Man se desenmascaró a sí mismo como el antagonista de Avengers: Doomsday y Secret Wars. Downey Jr. interpretó anteriormente a Iron Man en el MCU y terminó su mandato en Avengers: Endgame de 2019.
+            <br><br>
+            <video controls poster="https://imgs.elpais.com.uy/dims4/default/0c09bbf/2147483647/strip/true/crop/1500x1031+0+0/resize/2880x1980!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F42%2Fa1%2Fda2939354002bf3ec63779fb1778%2F2024-comic-con-intern-17553579.jpg" src="https://archive.org/download/mulan-trailer/Robert%20Downey%20Jr%20DOCTOR%20DOOM%20Reveal%21%20Full%20Video%20From%20Marvel%20Hall%20H%21.mp4"></video>
+            <br><br>
+            Victor Von Doom es uno de los villanos más poderosos del Universo Marvel. El emperador de Latveria se ha enemistado con múltiples héroes en los cómics, además de ser el principal enemigo de los Cuatro Fantásticos. Mientras Downey Jr. se prepara para luchar contra los héroes con los que una vez luchó, aquí hay cuatro héroes de Avengers: Endgame, que han derrotado a Doom en los cómics.
+            <hr>
+            1. Pantera Negra
+            <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060258/black-panther.webp" alt="">
+            El Rey T'Challa, interpretado por el difunto Chadwick Boseman, formó parte del Equipo Iron Man en Capitán América: Civil War y luchó junto a Robert Downey Jr. en la película, así como en Endgame. En los cómics, Black Panther una vez derrotó al Doctor Doom después de que este último observara la abundancia de vibranium de Wakanda.
+            <br><br>
+            La batalla entre T'Challa y Victor Von Doom ocurre en la historia de Doomwar, en la que Doom se apodera de Wakanda a través de los Desturi para obtener vibranium. Sin embargo, Shuri y T'Challa derrotan a Doom, que se ha alimentado con vibranium, haciendo que el metal sea inútil.
+            <hr>
+            2. El hombre araña
+<img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060251/tony-peter-1536x864.jpg" alt="">
+
+</div>
+        <div class="noticias">
+            Desde que Robert Downey Jr. fue anunciado como Victor Von Doom, los fanáticos parecían estar preocupados por cómo reaccionaría el Spider-Man de Tom Holland después de ver la cara de su mentor Iron Man al otro lado. Sin embargo, Spider-Man ha derrotado a Victor Von Doom en los cómics, lo que hace que el eventual enfrentamiento sea aún más emotivo en la próxima película. <br><br>
+            Spider-Man se enfrenta a Doom en la reciente Spider-Man: Life Story, mientras se apodera del mundo y hace que los otros héroes peleen. Peter Parker y Miles Morales destruyen el satélite que permite a Doom tomar el control del mundo, y Peter sacrifica su vida en el proceso. Adaptar esta historia haría que el Spider-Man de Holland tuviera un viaje similar al de su mentor.
+<hr>
+3. El hombre hormiga
+<img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060241/ant-man.jpg" alt="">
+            </div>
+        <div class="noticias">
+Si bien Scott Lang (Paul Rudd) no parece el hombre que iría en contra del Doctor Doom, en los cómics, el Hombre Hormiga tiene todas las razones para hacerlo. Doom mata a su hija Cassie Lang en la historia de Avengers: The Children's Crusade mientras el resto intenta detenerlo. En un ataque de rabia, Scott Lang golpea a Doom y lo llama apenas un humano en FF # 16.
+<br><br>
+Si bien Ant-Man tuvo un viaje terrible con Ant-Man and the Wasp: Quantumania, la escena puede ser una redención para el personaje. Sin embargo, es dudoso que Marvel opte por una historia tan oscura, especialmente al comienzo del viaje de Doom en el MCU.
+        <hr>
+4. Hombre de hierro
+    <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060236/iron-man-1.jpg" alt="">
+</div>
+<hr>
+<div class="noticias">
+Mira el meme de los Spider-Men señalándose unos a otros. El legado de Robert Downey Jr. como Iron Man se vio amenazado cuando se reveló que era el rostro de Victor Von Doom en la Comic-Con de este año. Si bien la naturaleza exacta del personaje aún no se ha revelado, será interesante ver cómo Marvel protege el legado de Downey Jr. como Tony solo para convertirlo en un villano.</div>
+<div class="fin">
+Iron Man ha derrotado a Doom en el pasado. En la historia, Iron Man # 150, Tony y Doom son transportados a la antigua era a Camelot. Mientras Doom se acerca a Morgana Le Fay para hacerse cargo, Tony Stark se une al Rey Arturo y lo derrota, evitando así que se haga cargo del reino.
+<br><br>
+Las películas de los Vengadores están disponibles para transmitir en Disney Plus.</div>
+</div>
+
+</body>
+</html>
+
+    `;
+    var newWindow = window.open();
+    newWindow.document.write(newsPage);
+    newWindow.document.close();
+});
+
 
 </script>
 

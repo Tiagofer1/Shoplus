@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>AmPlay</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body {
+            background-color: #04161f;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+.banner-img {
+    background-image: url(https://image.tmdb.org/t/p/original/wptU4Ggg2fv3Qr8s9WuRMZF0K81.jpg);
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position-y: center;
+}
+.degradado-principal-horizontal{
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(360deg, #04161f, transparent);
+}
+.degradado-principal-vertical{
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(45deg, #04161f54, transparent);
+}
+.menu-horizontal {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 9999;
+    height: 90px;
+    background: linear-gradient(180deg, #04161f, transparent);
+    align-items: center;
+}
+.opciones {
+    display: flex;
+    align-items: center;
+    height: 28px;
+}
+.opciones a {
+    margin: 0px 30px;
+    font-size: larger;
+    font-family: oswald;
+    text-decoration: none;
+    color: white;
+}
+.cuadrado-separador {
+    width: 5px;
+    height: 5px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+.opciones-vertical {
+    position: fixed;
+    height: 100%;
+    align-items: center;
+    display: inline-grid;
+    width: 90px;
+    justify-content: center;
+}
+.menu-vertical {
+    position: fixed;
+    width: 90px;
+    height: 100%;
+    z-index: 99999;
+}
+svg.svg-vertical-menu path {
+    fill: white;
+}
+svg.svg-vertical-menu {
+    width: 30px;
+    height: 30px;
+}
+
+div#banner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+.informacion-serie-pelicula {
+    position: absolute;
+    margin: 100px 0px 0px 100px;
+}
+img.logo {
+    width: 500px;
+}
+a.a-play {
+    margin: 10px 0px 0px 0px;
+    width: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    text-decoration: none;
+    padding: 5px 0px;
+    border-radius: 3px;
+    font-family: 'Oswald';
+    border: 1px solid white;
+}
+p.finalizado-emision {
+    width: fit-content;
+    background: #0b175b;
+    font-size: large;
+    font-family: 'Oswald';
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin: 0px 0px 10px 0px;
+    display: none;
+}
+.carousel-container {
+            position: relative;
+            width: 85%;
+            overflow: hidden;
+            margin: 30px 0px 0px 100px;        
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            overflow-y: hidden;
+            overflow-x: auto;
+            position: relative;
+        }
+.carousel-slide::-webkit-scrollbar {
+    height: 4px;
+    background-color: transparent;
+}
+.carousel-slide::-webkit-scrollbar-thumb {
+    background-color: #05486a; 
+}
+    
+
+        .carousel-item {
+            width: 14%;
+            margin-right: 10px;
+            box-sizing: border-box;
+            min-width: 130px;
+            max-width: 204px;
+        }
+
+
+        .carousel-item img {
+            width: 100%;
+            background: #1934435e;
+            height: 100%;
+        }
+
+        .carousel-container h5 {
+    padding: 10px 0px;
+    font-size: larger;
+    font-family: 'Oswald';
+    font-weight: 400;
+}
+.genero-mas {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
+.separacion {
+    margin: 0px 0px 20px 0px;
+}
+a.a-buscador {
+    color: white;
+    text-decoration: none;
+}
+.carousel-item-nuevos-episodios img {
+    width: 99%;
+    height: 99%;
+    background: #1934435e;
+    border-radius: 5px;
+}
+.carousel-item-nuevos-episodios {
+    width: 28%;
+    margin-right: 10px;
+    min-width: 240px;
+    max-width: 380px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+}
+p.nuevos-episodios-p {
+    width: fit-content;
+    position: absolute;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 2px;
+    font-family: 'Oswald';
+    filter: drop-shadow(.5px 4px 6px black);
+    color: black;
+}
+p.top-1-5 {
+    position: absolute;
+    font-family: "Kumar One Outline", system-ui;
+    margin: 0px 0px 0px 10px;
+    font-size: -webkit-xxx-large;
+}
+p.nuevos-episodios-p-2{
+    width: fit-content;
+    position: absolute;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 2px;
+    font-family: 'Oswald';
+    filter: drop-shadow(.5px 4px 6px black);
+    color: black;
+    font-size: 10px;
+    margin: 5px;
+}
+.banner-coleccion {
+    width: 100%;
+    background-image: url(https://image.tmdb.org/t/p/original/fhv3dWOuzeW9eXOSlr8MCHwo24t.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    border-radius: 15px;
+}
+h5.coleccion-AmPlay {
+    padding: 10px;
+    position: relative;
+    font-weight: 500;
+}
+.carousel-slide-coleccion{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    padding: 10px;
+}
+.degradado-horiontal-abajo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(87deg, #04161f 30%, transparent);}
+
+    .colecciones-img{
+    width: 100%;
+    background: #673AB7;
+    height: 100%;
+    border-radius: 5px;
+}
+@media (max-width: 799px){
+    .banner-img {
+        width: 100%;
+        height: 90vh;
+        background-size: cover;
+        background-position-x: center;
+    }
+}
+@media (max-width: 559px){
+    .banner-img {
+        background-image: url(https://image.tmdb.org/t/p/original/2vvKYlDwOPyzhzbRQMVqH645ASy.jpg);
+        width: 100%;
+        height: 65vh;
+        background-size: cover;
+    }
+.degradado-principal-horizontal{
+    position: absolute;
+    width: 100%;
+    height: 65vh;
+    background: linear-gradient(360deg, #04161f, transparent);
+}
+.degradado-principal-vertical{
+    position: absolute;
+    width: 100%;
+    height: 65vh;
+    background: linear-gradient(45deg, #04161f54, transparent);
+}
+.opciones-vertical {
+    position: fixed;
+    height: 90px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    bottom: 0;
+    background: linear-gradient(360deg, #04161f, transparent);
+    flex-flow: row-reverse;
+}
+div#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#Oculto-599px{
+    display: none;
+}
+.carousel-container {
+            position: relative;
+            width: 98%;
+            overflow-y:hidden ;
+            overflow-x: auto;
+        margin: 20px 1% 0px;
+        }
+        .carousel-item {
+    width: 30%;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.informacion-serie-pelicula {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+}
+img.logo {
+    width: 300px;
+}
+.separacion {
+    margin: 0px 0px 70px 0px;
+}
+.carousel-slide::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+.banner-coleccion {
+    border-radius: 0px;
+}
+}
+
+    </style>
+</head>
+<body>
+    <div class="menu-horizontal">
+        <div class="favoritos"></div>
+        <div class="opciones">
+            <a href="inicio-Peliculas.html">Peliculas</a>
+            <div class="cuadrado-separador"></div>
+            <a href="inicio-Series.html">Series</a>
+            <div id="Oculto-599px" class="cuadrado-separador"></div>
+            <a id="Oculto-599px" href="Recomendacion.html">Proximamentes</a>
+        </div>
+        <div ></div>
+    </div>
+
+    <div class="menu-vertical">
+
+        <div class="opciones-vertical">
+            <a href="buscador.html"><svg class="svg-vertical-menu" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="100px" height="100px"><path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z"/></svg></a>
+            <a href="inicio.html"><svg class="svg-vertical-menu" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="1280.000000pt" height="1206.000000pt" viewBox="0 0 1280.000000 1206.000000"
+            preserveAspectRatio="xMidYMid meet">
+           <metadata>
+           Created by potrace 1.15, written by Peter Selinger 2001-2017
+           </metadata>
+           <g transform="translate(0.000000,1206.000000) scale(0.100000,-0.100000)"
+           fill="#000000" stroke="none">
+           <path d="M5828 11600 c-282 -250 -1418 -1256 -2523 -2235 -1106 -978 -2165
+           -1917 -2355 -2085 -190 -168 -460 -407 -600 -530 -140 -124 -276 -245 -302
+           -270 l-48 -45 330 -370 c181 -203 336 -369 343 -369 8 1 603 521 1323 1156
+           3778 3332 4388 3868 4395 3866 4 -2 470 -413 1036 -914 565 -501 1842 -1631
+           2836 -2512 994 -881 1812 -1602 1817 -1602 5 0 12 5 15 10 5 8 11 7 21 -1 19
+           -15 -10 -45 339 351 153 173 293 331 312 351 l34 36 -838 739 c-461 407 -1544
+           1363 -2408 2124 -863 762 -1919 1693 -2347 2070 l-776 685 -45 0 -45 0 -514
+           -455z"/>
+           <path d="M5707 9301 c-364 -322 -1370 -1213 -2235 -1979 l-1572 -1393 2 -2872
+           3 -2872 22 -41 c12 -23 41 -58 64 -77 83 -72 -24 -67 1561 -67 l1428 0 2 1273
+           c3 1266 3 1272 24 1317 26 58 76 108 134 134 45 21 52 21 1224 24 1304 3 1248
+           5 1322 -60 52 -46 81 -97 93 -163 8 -40 11 -454 11 -1292 l0 -1233 1484 2
+           1485 3 30 29 c17 16 45 63 63 105 l33 76 2 2860 2 2860 -2240 1975 c-1270
+           1120 -2249 1976 -2260 1976 -13 1 -247 -200 -682 -585z"/>
+           </g>
+           </svg></a>
+           <a href="noticias.html"><svg class="svg-vertical-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" width="800px" height="800px" viewBox="0 0 64 64" id="Layer_1_1_" version="1.1" xml:space="preserve">
+
+            <g>
+            
+            <path d="M55,21V11h-4V1H5v57c0,2.757,2.243,5,5,5h44c2.757,0,5-2.243,5-5V21H55z M10,61c-1.654,0-3-1.346-3-3V3h42v55   c0,1.125,0.373,2.164,1.002,3H10z M57,58c0,1.654-1.346,3-3,3s-3-1.346-3-3V13h2v42h2V23h2V58z"></path>
+            
+            <rect height="2" width="2" x="53" y="57"></rect>
+            
+            <path d="M39.373,47.209L36,46.246v-0.267c1.246-0.939,2-2.416,2-3.979v-1.828c0-2.646-1.982-4.907-4.513-5.148   c-1.401-0.138-2.81,0.33-3.85,1.275C28.597,37.245,28,38.594,28,40v2c0,1.563,0.754,3.04,2,3.979v0.267l-3.374,0.963   C24.491,47.82,23,49.797,23,52.018V55h20v-2.982C43,49.797,41.509,47.82,39.373,47.209z M41,53H25v-0.982   c0-1.332,0.895-2.519,2.176-2.885L32,47.754V44.87l-0.497-0.289C30.562,44.033,30,43.068,30,42v-2c0-0.844,0.358-1.653,0.982-2.221   c0.633-0.576,1.448-0.843,2.315-0.766C34.813,37.158,36,38.546,36,40.172V42c0,1.068-0.562,2.033-1.503,2.581L34,44.87v2.884   l4.823,1.379C40.105,49.499,41,50.686,41,52.018V53z"></path>
+            
+            <path d="M19,59h28V31H19V59z M21,33h24v24H21V33z"></path>
+            
+            <path d="M21,29c6.617,0,12-5.383,12-12S27.617,5,21,5S9,10.383,9,17S14.383,29,21,29z M21,27c-4.078,0-7.588-2.458-9.143-5.967   c1.205,0.082,2.332,0.569,3.194,1.431l0.207,0.207C16.114,23.528,17.253,24,18.465,24C20.966,24,23,21.966,23,19.465V18.5   c0-1.93-1.57-3.5-3.5-3.5c-0.827,0-1.5-0.673-1.5-1.5V12c0-1.435-0.463-2.849-1.288-4.02c1.034-0.494,2.161-0.821,3.353-0.932   C20.037,7.274,20,7.501,20,7.728c0,1.75,0.783,3.381,2.15,4.474l1.704,1.362C24.582,14.146,25,15.016,25,15.947   C25,18.733,27.267,21,30.053,21c0.036,0,0.074-0.007,0.11-0.008C28.618,24.524,25.094,27,21,27z M31,17   c0,0.661-0.068,1.307-0.191,1.933C30.555,18.973,30.302,19,30.053,19C28.369,19,27,17.631,27,15.947c0-1.542-0.69-2.98-1.896-3.945   l-1.704-1.363C22.51,9.928,22,8.866,22,7.728c0-0.222,0.022-0.445,0.066-0.669C27.08,7.593,31,11.846,31,17z M15.008,9.013   C15.647,9.87,16,10.93,16,12v1.5c0,1.93,1.57,3.5,3.5,3.5c0.827,0,1.5,0.673,1.5,1.5v0.965C21,20.862,19.862,22,18.465,22   c-0.678,0-1.314-0.264-1.793-0.742l-0.207-0.207C15.143,19.729,13.385,19,11.515,19c-0.103,0-0.21-0.014-0.318-0.03   C11.069,18.332,11,17.674,11,17C11,13.735,12.58,10.84,15.008,9.013z"></path>
+            
+            <rect height="2" width="12" x="35" y="5"></rect>
+            
+            <rect height="2" width="2" x="35" y="9"></rect>
+            
+            <rect height="2" width="8" x="39" y="9"></rect>
+            
+            <rect height="2" width="12" x="35" y="13"></rect>
+            
+            <rect height="2" width="12" x="35" y="17"></rect>
+            
+            <rect height="2" width="8" x="35" y="21"></rect>
+            
+            <rect height="2" width="2" x="45" y="21"></rect>
+            
+            <rect height="2" width="8" x="9" y="56"></rect>
+            
+            <rect height="2" width="8" x="9" y="52"></rect>
+            
+            <rect height="2" width="8" x="9" y="48"></rect>
+            
+            <rect height="2" width="8" x="9" y="44"></rect>
+            
+            <rect height="2" width="8" x="9" y="40"></rect>
+            
+            </g>
+            
+            </svg></a>
+        </div>
+
+    </div>
+
+    <div class="banner" id="banner">
+        <div class="degradado-principal-horizontal"></div>
+        <div class="degradado-principal-vertical"></div>
+        <div class="informacion-serie-pelicula">
+            <p class="finalizado-emision">Finalizado</p>
+            <img src="https://image.tmdb.org/t/p/original/cYu9C9wwwJsbH8MgBApFiXomlLs.png" alt="" class="logo">
+            <a class="a-play" href="Romeo-Debe-Morir.html">Ver Ahora</a>
+        </div>
+        <div class="banner-img"></div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Nuevas Peliculas</h5>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item-nuevos-episodios">
+                <p class="nuevos-episodios-p">New Pelicula</p>
+                <a href="Romeo-Debe-Morir.html"><img src="https://image.tmdb.org/t/p/original/wJ1BAWCLgAa7JcMkvQYiEYGpN5V.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item-nuevos-episodios">
+                <p class="nuevos-episodios-p">New Pelicula</p>
+                <a href="Mulan.html"><img src="https://image.tmdb.org/t/p/original/rGh13CtWZpmfMX4nzWYTCN3WHga.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item-nuevos-episodios">
+                <p class="nuevos-episodios-p">New Pelicula</p>
+                <a href="La-Granja.html"><img src="https://image.tmdb.org/t/p/original/dl6KO9Sze00r2pYwVlaNPxJqtjU.jpg" alt="Image 1"></a>
+            </div>
+        </div>
+    </div>   
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Comedia | Romance</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="Cómplices-del-engaño.html"><img src="https://image.tmdb.org/t/p/original/y1oMTK0MwLS4gfpAou7o5s7KNM3.jpg" alt="Image 1"></a>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+   
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Accion</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="Mulan.html"><img src="https://image.tmdb.org/t/p/original/72XYwdIugXnjHxS6upI6U0yeTBU.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Nacer-Para-Morir.html"><img src="https://image.tmdb.org/t/p/original/so0xgKyRBmp08MVG3dykFY5Qwhh.jpg" alt="Image 2"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Romeo-Debe-Morir.html"><img src="https://image.tmdb.org/t/p/original/qiN9QGs9XZQ0R5D02hwNE66CXpB.jpg" alt="Image 3"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Jet-Li-Rey-De-Asesinos.html"><img src="https://image.tmdb.org/t/p/original/lHyIp0ZdY7RB4FHuaP9GClxKmnN.jpg" alt="Image 3"></a>
+            </div>  
+            <div class="carousel-item">
+                <a href="Mad-Max-1.html"><img src="https://image.tmdb.org/t/p/original/pgTGAi2z6hqI2llYvlJjZeP8GuE.jpg" alt="Image 4"></a>
+            </div> 
+            <div class="carousel-item">
+                <a href="American-Psycho.html"><img src="https://image.tmdb.org/t/p/original/ySPCri7VfAjbLLkMKs7Zjn6Njco.jpg" alt="Image 5"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Furiosa.html"><img src="https://image.tmdb.org/t/p/original/tGHUlykWn9V2IIQ4ZaATIAq9VLB.jpg" alt="Image 6"></a>
+            </div>
+        </div>
+    </div>
+ 
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Aventura</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="Dragon-Ball-La-leyenda-de-Shen-Long.html"><img src="https://image.tmdb.org/t/p/original/mxDiaqvep05Z9E4nwEzcXDCuAlP.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="dragon-ball-z-el-episodio-de-bardock.html"><img src="https://image.tmdb.org/t/p/original/fqf19zUVaUEYySCzxK5We31YbkQ.jpg" alt="Image 3"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Ciencia Ficcion</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="Spider-Man.html"><img src="https://image.tmdb.org/t/p/original/bCDaKZLRkrVVtPNyHxUfKvepW1N.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Interestelar.html"><img src="https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Image 2"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="El-Origen.html"><img src="https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg" alt="Image 3"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Mision-Rescate.html"><img src="https://image.tmdb.org/t/p/original/msYMYlbTnrRWf0sxGxdBYOkPWrc.jpg" alt="Image 3"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Fantasia</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="Pinocho.html"><img src="https://image.tmdb.org/t/p/original/bnZJrLRnoQHpzEJdka1KYfsAF3N.jpg" alt="Image 1"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Misterio</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="¡Aloha-Scooby-Doo!.html"><img src="https://image.tmdb.org/t/p/original/kgr5HVQx3wKFbiZmtWwLkfSz3WV.jpg" alt="Image 1"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="genero-mas">
+            <h5>Familia</h5>
+            <a class="a-buscador" href="buscador.html"><h1>+</h1></a>
+        </div>
+        <div class="carousel-slide">
+            <div class="carousel-item">
+                <a href="La-Granja.html"><img src="https://image.tmdb.org/t/p/original/aXScU5uBAD5L7QTYGtvN0WJ2GwQ.jpg" alt="Image 1"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="Intensa-Mente-2.html"><img src="https://image.tmdb.org/t/p/original/7aKI2LLc6KWH65kyQeVF14YtB5F.jpg" alt="Image 1"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="separacion"></div>
+
+    <script>
+
+        document.getElementById('noticia-1').addEventListener('click', function() {
+    var newsPage = `
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <title>Centro de Noticias</title>
+    <style>
+        body {
+            background-color: #04161f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .noticia {
+            border-radius: 10px;
+            overflow: auto;
+            width: 100%;
+            height: 100vh;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #04161f;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0px;
+            background: #673AB7;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .noticias, .fin {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .noticias:last-of-type, .fin {
+            margin-bottom: 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #444;
+            margin: 20px 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .back-button:hover {
+            color: #cccccc;
+        }
+        .back-button svg {
+            width: 40px;
+            height: 40px;
+        }
+a.comprar {
+height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-family: monospace;
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+}
+video {
+    width: 100%;
+   objet-fit:cover;
+}
+    </style>
+</head>
+<body>
+    <a href="inicio.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    </a>
+    <div class="noticia">
+                    <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30110004/iron-man-doctor-doom.jpg" alt="">
+        <h1>¿Qué pasó cuando Iron Man luchó contra el Doctor Doom? 4 Vengadores de Endgame que pueden derrotar al Doctor Doom de Robert Downey Jr</h1>
+        <div class="noticias">
+            Robert Downey Jr. sorprendió al mundo cuando regresó al MCU como el Doctor Victor Von Doom. Anunciado en la Comic-Con de este año, la estrella de Iron Man se desenmascaró a sí mismo como el antagonista de Avengers: Doomsday y Secret Wars. Downey Jr. interpretó anteriormente a Iron Man en el MCU y terminó su mandato en Avengers: Endgame de 2019.
+            <br><br>
+            <video controls poster="https://imgs.elpais.com.uy/dims4/default/0c09bbf/2147483647/strip/true/crop/1500x1031+0+0/resize/2880x1980!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F42%2Fa1%2Fda2939354002bf3ec63779fb1778%2F2024-comic-con-intern-17553579.jpg" src="https://archive.org/download/mulan-trailer/Robert%20Downey%20Jr%20DOCTOR%20DOOM%20Reveal%21%20Full%20Video%20From%20Marvel%20Hall%20H%21.mp4"></video>
+            <br><br>
+            Victor Von Doom es uno de los villanos más poderosos del Universo Marvel. El emperador de Latveria se ha enemistado con múltiples héroes en los cómics, además de ser el principal enemigo de los Cuatro Fantásticos. Mientras Downey Jr. se prepara para luchar contra los héroes con los que una vez luchó, aquí hay cuatro héroes de Avengers: Endgame, que han derrotado a Doom en los cómics.
+            <hr>
+            1. Pantera Negra
+            <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060258/black-panther.webp" alt="">
+            El Rey T'Challa, interpretado por el difunto Chadwick Boseman, formó parte del Equipo Iron Man en Capitán América: Civil War y luchó junto a Robert Downey Jr. en la película, así como en Endgame. En los cómics, Black Panther una vez derrotó al Doctor Doom después de que este último observara la abundancia de vibranium de Wakanda.
+            <br><br>
+            La batalla entre T'Challa y Victor Von Doom ocurre en la historia de Doomwar, en la que Doom se apodera de Wakanda a través de los Desturi para obtener vibranium. Sin embargo, Shuri y T'Challa derrotan a Doom, que se ha alimentado con vibranium, haciendo que el metal sea inútil.
+            <hr>
+            2. El hombre araña
+<img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060251/tony-peter-1536x864.jpg" alt="">
+
+</div>
+        <div class="noticias">
+            Desde que Robert Downey Jr. fue anunciado como Victor Von Doom, los fanáticos parecían estar preocupados por cómo reaccionaría el Spider-Man de Tom Holland después de ver la cara de su mentor Iron Man al otro lado. Sin embargo, Spider-Man ha derrotado a Victor Von Doom en los cómics, lo que hace que el eventual enfrentamiento sea aún más emotivo en la próxima película. <br><br>
+            Spider-Man se enfrenta a Doom en la reciente Spider-Man: Life Story, mientras se apodera del mundo y hace que los otros héroes peleen. Peter Parker y Miles Morales destruyen el satélite que permite a Doom tomar el control del mundo, y Peter sacrifica su vida en el proceso. Adaptar esta historia haría que el Spider-Man de Holland tuviera un viaje similar al de su mentor.
+<hr>
+3. El hombre hormiga
+<img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060241/ant-man.jpg" alt="">
+            </div>
+        <div class="noticias">
+Si bien Scott Lang (Paul Rudd) no parece el hombre que iría en contra del Doctor Doom, en los cómics, el Hombre Hormiga tiene todas las razones para hacerlo. Doom mata a su hija Cassie Lang en la historia de Avengers: The Children's Crusade mientras el resto intenta detenerlo. En un ataque de rabia, Scott Lang golpea a Doom y lo llama apenas un humano en FF # 16.
+<br><br>
+Si bien Ant-Man tuvo un viaje terrible con Ant-Man and the Wasp: Quantumania, la escena puede ser una redención para el personaje. Sin embargo, es dudoso que Marvel opte por una historia tan oscura, especialmente al comienzo del viaje de Doom en el MCU.
+        <hr>
+4. Hombre de hierro
+    <img src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/07/30060236/iron-man-1.jpg" alt="">
+</div>
+<hr>
+<div class="noticias">
+Mira el meme de los Spider-Men señalándose unos a otros. El legado de Robert Downey Jr. como Iron Man se vio amenazado cuando se reveló que era el rostro de Victor Von Doom en la Comic-Con de este año. Si bien la naturaleza exacta del personaje aún no se ha revelado, será interesante ver cómo Marvel protege el legado de Downey Jr. como Tony solo para convertirlo en un villano.</div>
+<div class="fin">
+Iron Man ha derrotado a Doom en el pasado. En la historia, Iron Man # 150, Tony y Doom son transportados a la antigua era a Camelot. Mientras Doom se acerca a Morgana Le Fay para hacerse cargo, Tony Stark se une al Rey Arturo y lo derrota, evitando así que se haga cargo del reino.
+<br><br>
+Las películas de los Vengadores están disponibles para transmitir en Disney Plus.</div>
+</div>
+
+</body>
+</html>
+
+    `;
+    var newWindow = window.open();
+    newWindow.document.write(newsPage);
+    newWindow.document.close();
+});
+    </script>
+
+    
+</body>
+</html>

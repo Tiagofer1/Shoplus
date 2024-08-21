@@ -270,12 +270,24 @@ h5.coleccion-AmPlay {
         background-position-x: center;
     }
 }
-@media (max-width: 559px){
+@media (max-width: 775px){
     .banner-img {
         background-image: url(https://image.tmdb.org/t/p/original/2vvKYlDwOPyzhzbRQMVqH645ASy.jpg);
         width: 100%;
+        background-size: cover;
+        background-position-y: center;
+    }
+    img.logo {
+    width: 300px;
+}
+}
+@media (max-width: 559px){
+
+    .banner-img {
+        width: 100%;
         height: 65vh;
         background-size: cover;
+        background-position-y: -100px;
     }
 .degradado-principal-horizontal{
     position: absolute;

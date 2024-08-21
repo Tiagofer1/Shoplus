@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="colores-principales.css">
     <link href="https://fonts.googleapis.com/css2?family=Kumar+One+Outline&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>AmPlay</title>
     <style>
@@ -262,6 +263,14 @@ h5.coleccion-AmPlay {
     height: 100%;
     border-radius: 5px;
 }
+@media (max-width: 950px){
+    .banner-img {
+        background-image: url(https://image.tmdb.org/t/p/original/2vvKYlDwOPyzhzbRQMVqH645ASy.jpg);
+        width: 100%;
+        background-size: cover;
+        background-position-y: -150px;
+    }
+}
 @media (max-width: 799px){
     .banner-img {
         width: 100%;
@@ -269,25 +278,16 @@ h5.coleccion-AmPlay {
         background-size: cover;
         background-position-x: center;
     }
-}
-@media (max-width: 775px){
-    .banner-img {
-        background-image: url(https://image.tmdb.org/t/p/original/2vvKYlDwOPyzhzbRQMVqH645ASy.jpg);
-        width: 100%;
-        background-size: cover;
-        background-position-y: center;
-    }
     img.logo {
-    width: 300px;
+    width: 400px;
 }
 }
 @media (max-width: 559px){
-
     .banner-img {
         width: 100%;
         height: 65vh;
         background-size: cover;
-        background-position-y: -100px;
+        background-position-y: top;
     }
 .degradado-principal-horizontal{
     position: absolute;

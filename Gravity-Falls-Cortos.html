@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="colores-principales.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>AmPlay | Gravity Falls</title>
+</head>
+<body>
+    <style>
+        .info-anime {
+    width: 96%;
+    margin: 20px 2% 0 2%;
+    position: relative;
+    z-index: 1;
+}
+.info-anime h4 {
+    font-size: 1.5rem;
+    color: white;
+    font-family: oswald;
+    display: none;
+}
+.nombre-compartir{
+    width: 100%;
+}
+
+.erc-series-tags.tags {
+    color: white;
+    font-family: 'Oswald';
+    margin: 10px 0px 0px 0px;
+}
+
+.meta-tags__tag--W4JTZ:not(:first-child):before {
+    background-color: var(--color-primario);
+    content: "";
+    display: inline-block;
+    height: .25rem;
+    line-height: 1;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: .25rem;
+}
+.estrellas{
+    display: flex;
+    margin: 10px 0px 0px 0px;
+}
+.estrellas svg{
+    width: 30px;
+    
+}
+.estrella-unica{
+
+    stroke: var(--color-primario);
+stroke-width: 1px;
+fill: none;
+}
+h5.puntuacion-media {
+    color: white;
+    font-family: 'Oswald';
+    margin: 0px 10px 0px 10px;
+    font-size: 18px;
+    text-wrap: nowrap;
+}
+.botones-reproducir-favorito {
+    width: 100%;
+}
+.reproducir-boton {
+    background: var(--color-primario);
+    position: absolute;
+    width: 290px;
+    height: 50px;
+    margin: 20px 20px 0px 0px;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;
+    font-family: 'Oswald';
+    text-decoration: none;
+    border-radius: 1px;
+    color: white;
+    font-weight: 900;
+    border-radius: 200px;
+}
+.reproducir-boton:hover{
+    background: var(--color-hover-vermas);
+}
+a.añadir-favorito {
+    position: absolute;
+    margin: 20px 0% 0px 300px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-primario);
+    border-radius: 200px;
+}
+svg.favorito-svg {
+    width: 30px;
+    height: 30px;
+    margin: 9px;
+}
+.descripcion {
+    margin: 85px 1% 0px 0px;
+    color: white;
+    text-align: left;
+}
+    p {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 13px;
+    width: 90%;
+    overflow: hidden;
+}
+h5.titulo-descripcion {
+    font-size: x-large;
+    font-family: 'Oswald';
+    color: var(--color-primario);
+    margin: 0px 0px 10px 0px;
+}
+.tab-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+.banner {
+    width: 100%;
+    height: 950px;
+    object-fit: cover;
+    object-position: top;
+    background-image: url(https://image.tmdb.org/t/p/original/lhg7eA6CTOCL10QNVdKiyxkgPsL.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 220px;
+}
+.degradado{
+        position: absolute;
+        width: 100%;
+        height: 950px;
+        background: linear-gradient(0deg, #04161f, transparent);
+ }
+
+    .tab-content {
+        display: none;
+        width: 96%;
+        margin: 0px 2% 0px 2%;
+        color: white;
+    }
+    .temporada-padre {
+    width: 100%;
+}
+.temporada-medio {
+    width: 100%;
+}
+.temporada-hijo-episodios {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.temporada-hijo-episodios img{
+
+    width: 100%;
+    object-fit: cover;
+
+}
+.a-episodios h5{
+ 
+    margin: 10px;
+    font-family: 'Oswald';
+    color: #a9a9a99c;
+    display: none;
+
+}
+.a-episodios p{
+    margin: 5px 0px 10px;
+    color: white;
+    font-size: 12px;
+    height: 18px;
+    overflow: hidden;
+}
+.episodios-titulo{
+    color: var(--color-primario);
+}
+.a-episodios{
+    text-decoration: none;
+    width: 31%;
+    margin: 0px 1% 10px 1%;
+}
+.info-episodio{
+width: 100%;
+}
+
+.poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: none;
+            }
+
+img.logo {
+    margin: 10px 0px 10px 0px;
+    height: 105px;
+}
+                        
+ .temporada-hijo-episodios img:hover {
+    opacity: 0.4;
+}
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: hidden;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.poster-mismo-genero{
+    width: 31%;
+    margin: 0px .5% 1%;
+}
+.poster-mismo-genero-img{
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 5px;
+}
+.tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f000;
+    width: 46%;
+    border: none;
+    border-bottom: 1px solid #ffffff3b;
+    color: white;
+    font-size: larger;
+    font-family: 'Oswald';
+}
+        .tab-button.active {
+            border-bottom: 1px solid #ffffff;
+        }
+        .Tabs-button {
+    padding: 10px 0px 40px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.a-video-play {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.play-video{
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+}
+h6.video-trailer-clip-tiempo {
+    position: absolute;
+    margin: 100px 0px 0px 0px;
+    font-size: smaller;
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.video-trailer-clip-tiempo:hover{
+color: white;
+}
+.capa-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(360deg, #120b1f, transparent);
+    opacity: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.capa-hover:hover {
+    opacity: 1;
+}
+.\31-detalles {
+    display: flex;
+}
+.detalles-fila-1 {
+    width: 31%;
+    margin: 0px 1% 0px;
+    padding: 20px;
+
+}
+h5.titulo-detalles {
+    margin: 10px;
+    color: #ffffff94;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: larger;
+}
+p.descripcion-detalles {
+    color: white;
+    margin: 0px 10px;
+    font-weight: 300;
+    font-size: larger;
+}
+.sigue-la-serie-logo svg {
+    width: 30px;
+    height: 30px;
+}
+.sigue-la-serie-logo a {
+    margin: 0px 5px;
+}
+.sigue-la-serie-logo svg path {
+    fill: white;
+}
+.sigue-la-serie-logo {
+    margin: 0px 10px;
+    display: flex;
+}
+#mismo-genero-2{
+    display: none;
+}
+
+@media (max-width:1080px){
+    .a-episodios{
+    text-decoration: none;
+    width: 23%;
+    margin: 0px 1% 10px 1%;
+}
+
+}
+@media (max-width: 1023px) {
+    .banner{
+        width: 100%;
+        height: 850px;
+        object-fit: cover;
+        object-position: top;
+        background-position-x: center;
+    
+    }
+    .poster {
+                width: 170px;
+                position: absolute;
+                margin: 80px 0px 0px 2%;
+                border-radius: 10px;
+                z-index: 1;
+                object-fit: cover;
+                z-index: 1;
+                display: block;
+            }
+    .degradado{
+        position: absolute;
+        width: 100%;
+        height: 850px;
+        background: linear-gradient(0deg, #04161f, transparent);
+            }
+            img.logo {
+        margin: 10px 0px 10px 0px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 1000px){
+    .temporada-hijo-episodios {
+                width: 100%;
+                display: block;
+                flex-wrap: wrap;
+            }
+            .a-episodios {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+.temporada-hijo-episodios img {
+    width: 170px;
+    height: 110px;
+    border-radius: 7px;
+}
+.a-episodios h5{
+ 
+ margin: 10px;
+ font-family: 'Oswald';
+ color: #a9a9a99c;
+ display: block;
+
+}
+.a-episodios p{
+    margin:10px;
+    color: white;
+    font-size: smaller;
+    height: auto;
+    overflow: auto;
+}
+#detalles,.detalles-todo{
+    display: none;
+}
+#mismo-genero-2{
+    display: flex;
+}
+.tab-button{
+    border-bottom: 1px solid #ffffff;
+}
+}
+@media (max-width: 775px){
+    .banner {
+        background-image: url(https://image.tmdb.org/t/p/original/ob2dlyqAvYyH3rP4Weg0RDdo4QC.jpg);
+        background-position-y: bottom;
+        background-position-x: center;
+    }
+
+    .poster-mismo-genero{
+    width: 300%;
+    margin: 0px .5% .5%;
+}
+.poster-mismo-genero-img {
+        width: 300px;
+        height: 168px;
+        filter: drop-shadow(2px 4px 6px black);
+        object-fit: cover;
+    }
+.Mismo-Genero {
+    width: 92%;
+    height: auto;
+    margin-left: 4%;
+    overflow: auto;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: normal;
+}
+h6.video-trailer-clip-tiempo , .capa-hover {
+display: none;
+}
+
+}
+
+    </style>
+        <div id="loading">
+            <div class="spinner"></div>
+            <h5 class="cargando-recursos">Cargando Recursos...</h5>
+            </div>
+<div class="flecha-salir">
+    <a href="inicio.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+</div>
+    <img src="https://image.tmdb.org/t/p/original/8ybcBf4o8ao2AtZZNHITMdc7P7Z.jpg" alt="" class="poster">
+    <div class="poster-grande"> 
+        <div class="degradado"></div>
+        <img src="" class="banner" alt="">
+        
+    </div>
+    <div class="info-anime">
+        <div class="nombre-compartir">
+        <h4>Gravity Falls</h4>
+        <img class="logo" src="https://image.tmdb.org/t/p/original/AuVk4IetOmyHjdQRuk1OuFuRxIz.png" alt="">
+    </div>
+    <div class="erc-series-tags tags"><div class="meta-tags--o8OYw" data-t="meta-tags"><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ" id="GJ0H7QGME" title=" Se recomienda la supervisión de los padres." rating="16">PG</span><span class="text--gq6o- text--is-m--pqiL- meta-tags__tag--W4JTZ">Dob  | 2013  |<span class="Genero">Animacion / Comedia / Misterio</span></span>
+    </div>
+
+</div>
+<div class="estrellas">
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <svg class="star-rating-controls__star-icon--j0zHA base-svg--is-flip--QvCQC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="" aria-labelledby="star-svg" aria-hidden="false" role="img"><title id="star-svg">Reseña destacada</title><path class="estrella-unica" d="M15.266 8.352L11.988 1.723 8.73 8.352 1.431 9.397 6.71 14.528 5.465 21.849 11.999 18.39 18.544 21.85 17.285 14.528 22.57 9.398z"></path></svg>
+    <h5 class="puntuacion-media">| Puntuación Media 4.6</h5>
+</div>
+<div class="botones-reproducir-favorito">
+    <a class="reproducir-boton" href="reproductor.html?video=https://digcorp.xyz/priv/levix.php?page=WENxSnRVb2V4cVFiVmZFb1NWMnNzQnlrWXlwS2lZb1hqdm1sYWNwZA==&poster=https://image.tmdb.org/t/p/original/aRquEWm8wWF1dfa9uZ1TXLvVrKD.jpg"><span></span>Comenzar E1</a>
+    <a class="añadir-favorito" onclick="addToFavorites(event)" href="#">
+        <span>
+            <svg class="favorito-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-t="watchlist-svg" aria-labelledby="watchlist-svg" aria-hidden="false" role="img"><title id="watchlist-svg">Favoritos</title><path class="favorito-path" d="M17 18.113l-3.256-2.326A2.989 2.989 0 0 0 12 15.228c-.629 0-1.232.194-1.744.559L7 18.113V4h10v14.113zM18 2H6a1 1 0 0 0-1 1v17.056c0 .209.065.412.187.581a.994.994 0 0 0 1.394.233l4.838-3.455a1 1 0 0 1 1.162 0l4.838 3.455A1 1 0 0 0 19 20.056V3a1 1 0 0 0-1-1z"></path></svg>
+        </span>
+    </a>
+</div>
+<div class="descripcion">
+    <h5 class="titulo-descripcion"></h5>
+    <p>
+        Cortos de 2 minutos sobre Gravity Falls.
+
+    </p>
+</div>
+</div>
+
+    <div class="tab-container">
+        <select id="gender-select" onchange="switchTab()">
+            <option value="T1">Temporada 1</option>
+        </select>
+
+        <div id="T1" class="tab-content">
+            <div class="temporada-padre">
+                <div class="temporada-medio">
+                    <div class="temporada-hijo-episodios">
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_1%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                            <div class="img-episodio">
+                                <img src="https://i.ytimg.com/vi/sIVz6nB1HD8/maxresdefault.jpg" alt="Episodio 1">
+                            </div>
+                            <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E1 - </span>Los misterios de Gravity falls #1</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_2%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/ZLRLh9wSDhI/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E2 - </span>Los misterios de Gravity falls #2</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_3%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/rMZPkyMbyvQ/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E4 - </span>Los misterios de Gravity falls #3</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_4%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/fGLQcs_SyM0/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E4 - </span>Los misterios de Gravity falls #4</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_5%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/u7rHiwIe1PA/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E5 - </span>Los misterios de Gravity falls #5</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Los%20misterios%20de%20Gravity%20Falls%20_6%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/ncvP8I7y5MI/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E6 - </span>Los misterios de Gravity falls #6</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Hermano%20de%20Stan%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/M8toEBNIkUU/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E7 - </span>Teorías Locas del Viejo McGucket #1</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Relaciones%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/jOw4TOWK0dE/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E8 - </span>Teorías Locas del Viejo McGucket #2</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Tri%C3%A1ngulos%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/MIeEsC-DMK4/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E9 - </span>Teorías Locas del Viejo McGucket #3</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/C%C3%B3digo%20Laptop%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/VZXSmEZ3TMI/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E10 - </span>Teorías Locas del Viejo McGucket #4</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Medallones%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/fYplFKZG-_E/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E11 - </span>Teorías Locas del Viejo McGucket #5</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Hombre%20de%20Hielo%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/Vvx_c4NTkuA/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E12 - </span>Teorías Locas del Viejo McGucket #6</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Agentes%20Secretos%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/L480gXT6nPM/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E13 - </span>Teorías Locas del Viejo McGucket #7</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Tuertos%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/DrG6qxgui98/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E14 - </span>Teorías Locas del Viejo McGucket #8</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/618%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/djPRtcCfjsM/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E15 - </span>Teorías Locas del Viejo McGucket #9</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Criptogramas%20_%20Teor%C3%ADas%20Locas%20del%20Viejo%20McGucket%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/ZNLDpDRe1Rw/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E16 - </span>Teorías Locas del Viejo McGucket #10</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Tatuaje%20del%20T%C3%ADo%20Stan%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/Ztf6xB4vSLw/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E17 - </span>Dipper los Guía a lo Inexplicable #1</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Buz%C3%B3n%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/ttu50vYqhTY/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E18 - </span>Dipper los Guía a lo Inexplicable #2</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Siempre%20Detr%C3%A1s%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/tVD0vfL-Xt0/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E19 - </span>Dipper los Guía a lo Inexplicable #3</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Diente%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/DjuPtpxACo0/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E20 - </span>Dipper los Guía a lo Inexplicable #4</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Esa%20Cosa%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/-znU4oFLJn0/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E21 - </span>Dipper los Guía a lo Inexplicable #5</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Solo%20el%20Lado%20Izquierdo%20_%20Dipper%20los%20Gu%C3%ADa%20a%20lo%20Inexplicable%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/hJSqi9BHMrg/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E22 - </span>Dipper los Guía a lo Inexplicable #6</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20los%20Gu%C3%ADa%20al%20Arte%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/OmmyKIW8AJI/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E23 - </span>Mabel los guia al Arte</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Carro%20de%20Golf%20_%20Repara%20Todo%20con%20Soos%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/jQ8T7zGEqtU/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E24 - </span>Repara todo con Soos #1</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Reloj%20Cuc%C3%BA%20_%20Repara%20Todo%20con%20Soos%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/-6kLwnFNhxQ/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E25 - </span>Repara todo con Soos #2</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20los%20Gu%C3%ADa%20a%20una%20Cita%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/13dIJ8CFHZg/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E26 - </span>Mabel los guia a una Cita</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20los%20Gu%C3%ADa%20a%20la%20Moda%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/9DZZ3dS3eIM/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E27 - </span>Mabel los guia a la Moda</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20los%20Gu%C3%ADa%20a%20las%20Calcoman%C3%ADas%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/yoC7erNLjMc/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E28 - </span>Mabel los guia a las Calcomanias</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20los%20Gu%C3%ADa%20al%20Color%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/CLqIwS-K5Xw/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E29 - </span>Mabel los guia al Color</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20T%C3%ADo%20Stan%20y%20la%20Televisi%C3%B3n%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/ojR-d3otzkQ/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E30 - </span>El Tio Stan y la Televisión</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/Mabel%20y%20la%20Televisi%C3%B3n%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/G5lkqxQc16A/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E31 - </span>Mabel y la Televisión</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Viaje%20al%20Zool%C3%B3gico%20Infantil%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/8SGeKVUv0ug/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E32 - </span>El Viaje al Zoologico Infantil</p>
+                    </div></a>
+                    <a class="a-episodios" href="reproductor.html?video=https://archive.org/download/los-misterios-de-gravity-falls-3-720-p-hd/El%20Viaje%20al%20Cine%20_%20Gravity%20Falls%28720P_HD%29.mp4&poster=https://image.tmdb.org/t/p/original/l0XvAI856XdyDYEfr1njztjH7u0.jpg">
+                        <div class="img-episodio">
+                            <img src="https://i.ytimg.com/vi/PT5_vOn-mFw/maxresdefault.jpg" alt="Episodio 1">
+                        </div>
+                        <div class="info-episodio">
+                            
+                            <h5>GRAVITY FALLS SHORTS</h5>
+                            <p><span class="episodios-titulo">T1 E33 - </span>El Viaje al Cine</p>
+                    </div></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="Tabs-button">
+        <button class="tab-button" id="detalles" onclick="openTab('tab1')">Detalles</button>
+        <button class="tab-button" onclick="openTab('tab2')">Avances</button>
+    </div>
+    <div id="tab1"  class="tab">
+<div class="detalles-todo">
+    <div class="1-detalles">
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Ver online</h5>
+            <p class="descripcion-detalles">Ve AmPlay Donde Vayas</p>
+        </div>
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Géneros</h5>
+            <p class="descripcion-detalles">Animación, Misterio, Comedia, Aventura, Fantasía</p>
+        </div>
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Este Título Es</h5>
+            <p class="descripcion-detalles">Divertido, Misterioso, Emocionante</p>
+        </div>
+
+    </div>
+    <div class="1-detalles">
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Sigue la serie</h5>
+            <div class="sigue-la-serie-logo">
+                <a href="https://www.facebook.com/GravityFallsTV" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="14.2222in" height="14.2222in" version="1.1"viewBox="0 0 14222 14222"><path class="fil0" d="M14222 7111c0,-3927 -3184,-7111 -7111,-7111 -3927,0 -7111,3184 -7111,7111 0,3549 2600,6491 6000,7025l0 -4969 -1806 0 0 -2056 1806 0 0 -1567c0,-1782 1062,-2767 2686,-2767 778,0 1592,139 1592,139l0 1750 -897 0c-883,0 -1159,548 -1159,1111l0 1334 1972 0 -315 2056 -1657 0 0 4969c3400,-533 6000,-3475 6000,-7025z"/></svg></a>
+                <a href="https://www.instagram.com/_alexhirsch_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><svg aria-label="Instagram" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M12 2.982c2.937 0 3.285.011 4.445.064a6.087 6.087 0 0 1 2.042.379 3.408 3.408 0 0 1 1.265.823 3.408 3.408 0 0 1 .823 1.265 6.087 6.087 0 0 1 .379 2.042c.053 1.16.064 1.508.064 4.445s-.011 3.285-.064 4.445a6.087 6.087 0 0 1-.379 2.042 3.643 3.643 0 0 1-2.088 2.088 6.087 6.087 0 0 1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087 6.087 0 0 1-2.043-.379 3.408 3.408 0 0 1-1.264-.823 3.408 3.408 0 0 1-.823-1.265 6.087 6.087 0 0 1-.379-2.042c-.053-1.16-.064-1.508-.064-4.445s.011-3.285.064-4.445a6.087 6.087 0 0 1 .379-2.042 3.408 3.408 0 0 1 .823-1.265 3.408 3.408 0 0 1 1.265-.823 6.087 6.087 0 0 1 2.042-.379c1.16-.053 1.508-.064 4.445-.064M12 1c-2.987 0-3.362.013-4.535.066a8.074 8.074 0 0 0-2.67.511 5.392 5.392 0 0 0-1.949 1.27 5.392 5.392 0 0 0-1.269 1.948 8.074 8.074 0 0 0-.51 2.67C1.012 8.638 1 9.013 1 12s.013 3.362.066 4.535a8.074 8.074 0 0 0 .511 2.67 5.392 5.392 0 0 0 1.27 1.949 5.392 5.392 0 0 0 1.948 1.269 8.074 8.074 0 0 0 2.67.51C8.638 22.988 9.013 23 12 23s3.362-.013 4.535-.066a8.074 8.074 0 0 0 2.67-.511 5.625 5.625 0 0 0 3.218-3.218 8.074 8.074 0 0 0 .51-2.67C22.988 15.362 23 14.987 23 12s-.013-3.362-.066-4.535a8.074 8.074 0 0 0-.511-2.67 5.392 5.392 0 0 0-1.27-1.949 5.392 5.392 0 0 0-1.948-1.269 8.074 8.074 0 0 0-2.67-.51C15.362 1.012 14.987 1 12 1Zm0 5.351A5.649 5.649 0 1 0 17.649 12 5.649 5.649 0 0 0 12 6.351Zm0 9.316A3.667 3.667 0 1 1 15.667 12 3.667 3.667 0 0 1 12 15.667Zm5.872-10.859a1.32 1.32 0 1 0 1.32 1.32 1.32 1.32 0 0 0-1.32-1.32Z"></path></svg></a>
+               <a href="https://x.com/_alexhirsch/" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-k200y r-1nao33i r-5sfk15 r-kzbkwu"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg></a>
+
+                </div>
+        </div>
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Acerca de Gravity Falls</h5>
+            <p class="descripcion-detalles">
+                Gravity Falls sigue a los gemelos Dipper y Mabel mientras descubren misterios y criaturas sobrenaturales en un pueblo extraño.</p>
+        </div>
+    </div>
+    <div class="1-detalles">
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">Elenco</h5>
+            <p class="descripcion-detalles">
+                Jason Ritter <br>
+                Kristen Schaal <br>
+                Alex Hirsch <br>
+                Linda Cardellini <br>
+                J.K. Simmons <br>
+                Kevin Michael Richardson <br>
+                Grey DeLisle <br>
+                Jennifer Coolidge
+            </p>
+        </div>
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">‎ </h5>
+            <p class="descripcion-detalles">
+                Stephen Root <br>
+                T.J. Miller <br>
+                Keith Ferguson <br>
+                Thurop Van Orman <br>
+                Niki Yang <br>
+                Michael Rianda <br>
+                Will Forte <br>
+                Carl Faruolo
+            </p>
+        </div>
+        <div class="detalles-fila-1">
+            <h5 class="titulo-detalles">‎</h5>
+            <p class="descripcion-detalles">
+                Chelsea Peretti <br>
+                Mark Hamill <br>
+                Patton Oswalt <br>
+                John DiMaggio <br>
+                Jim Cummings <br>
+                Frank Welker <br>
+                Larry King <br>
+                Cecil Baldwin
+            </p>
+        </div>
+
+
+    </div>
+</div>
+<div class="Mismo-Genero" id="mismo-genero-2">
+    <div class="poster-mismo-genero">
+        <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20%20IMDb.mp4&poster=https://m.media-amazon.com/images/M/MV5BMDdkNTA5OGYtMTBlMC00YzZjLWE0MWYtZTc2ODg4MGVkMDQwXkEyXkFqcGdeQTNwaW5nZXN0._V1_.jpg" class="a-video-play">
+        <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+        <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMDdkNTA5OGYtMTBlMC00YzZjLWE0MWYtZTc2ODg4MGVkMDQwXkEyXkFqcGdeQTNwaW5nZXN0._V1_.jpg" alt="">
+        <div class="capa-hover">
+            <h6 class="video-trailer-clip-tiempo">Trailer 1:37</h6>
+        </div>
+    </a>
+    </div>
+    <div class="poster-mismo-genero">
+        <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20-%20Gravity%20Falls%20Six%20Strange%20Tales%20%20IMDb.mp4&poster=https://m.media-amazon.com/images/M/MV5BOGMwZmI1N2ItNGFhYy00NGVkLTg0ZTItMjdiMTQ5Nzk2ODFlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" class="a-video-play">
+        <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+        <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BOGMwZmI1N2ItNGFhYy00NGVkLTg0ZTItMjdiMTQ5Nzk2ODFlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" alt="">
+        <div class="capa-hover">
+            <h6 class="video-trailer-clip-tiempo">Trailer 1:22</h6>
+        </div>
+    </a>
+    </div>
+    <div class="poster-mismo-genero">
+        <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20Grunkle%20Stan%20Cartoon%20Comes%20to%20Life%20%F0%9F%96%8A.mp4&poster=https://i.ytimg.com/vi/FP_4l_FFasQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==" class="a-video-play">
+        <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+        <img class="poster-mismo-genero-img" src="https://i.ytimg.com/vi/FP_4l_FFasQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==" alt="">
+        <div class="capa-hover">
+            <h6 class="video-trailer-clip-tiempo">Trailer 2:11</h6>
+        </div>
+    </a>
+    </div>
+</div>
+    </div>
+    <div id="tab2" class="tab">
+        <div class="Mismo-Genero">
+            <div class="poster-mismo-genero">
+                <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20%20IMDb.mp4&poster=https://m.media-amazon.com/images/M/MV5BMDdkNTA5OGYtMTBlMC00YzZjLWE0MWYtZTc2ODg4MGVkMDQwXkEyXkFqcGdeQTNwaW5nZXN0._V1_.jpg" class="a-video-play">
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BMDdkNTA5OGYtMTBlMC00YzZjLWE0MWYtZTc2ODg4MGVkMDQwXkEyXkFqcGdeQTNwaW5nZXN0._V1_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Trailer 1:37</h6>
+                </div>
+            </a>
+            </div>
+            <div class="poster-mismo-genero">
+                <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20-%20Gravity%20Falls%20Six%20Strange%20Tales%20%20IMDb.mp4&poster=https://m.media-amazon.com/images/M/MV5BOGMwZmI1N2ItNGFhYy00NGVkLTg0ZTItMjdiMTQ5Nzk2ODFlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" class="a-video-play">
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://m.media-amazon.com/images/M/MV5BOGMwZmI1N2ItNGFhYy00NGVkLTg0ZTItMjdiMTQ5Nzk2ODFlXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_QL75_UX1000_CR0,94,1000,563_.jpg" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Trailer 1:22</h6>
+                </div>
+            </a>
+            </div>
+            <div class="poster-mismo-genero">
+                <a  href="reproductor.html?video=https://archive.org/download/gravity-falls-grunkle-stan-cartoon-comes-to-life/Gravity%20Falls%20Grunkle%20Stan%20Cartoon%20Comes%20to%20Life%20%F0%9F%96%8A.mp4&poster=https://i.ytimg.com/vi/FP_4l_FFasQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==" class="a-video-play">
+                <svg class="play-video" xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="ipc-icon ipc-icon--play-circle-outline ipc-lockup-overlay__icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M10.8 15.9l4.67-3.5c.27-.2.27-.6 0-.8L10.8 8.1a.5.5 0 0 0-.8.4v7c0 .41.47.65.8.4zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                <img class="poster-mismo-genero-img" src="https://i.ytimg.com/vi/FP_4l_FFasQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==" alt="">
+                <div class="capa-hover">
+                    <h6 class="video-trailer-clip-tiempo">Trailer 2:11</h6>
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab() {
+            var select = document.getElementById("gender-select");
+            var selectedValue = select.value;
+            var tabcontent = document.getElementsByClassName("tab-content");
+
+            // Guardar la selección en localStorage
+            localStorage.setItem('selectedTab', selectedValue);
+
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            document.getElementById(selectedValue).style.display = "block";
+        }
+
+        // Mostrar la pestaña seleccionada previamente o la primera por defecto
+        document.addEventListener("DOMContentLoaded", function () {
+            var savedTab = localStorage.getItem('selectedTab') || "T1";
+            document.getElementById("gender-select").value = savedTab;
+            switchTab();
+        });
+        function addToFavorites(event) {
+            event.preventDefault();
+            
+            const poster = document.querySelector('.poster').src;
+            const nombre = document.querySelector('.nombre-compartir h4').innerText;
+
+            const favorito = {
+                poster: poster,
+                nombre: nombre
+            };
+
+            let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+            favoritos.push(favorito);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+
+            alert('Añadido a favoritos');
+        } 
+function openTab(tabId) {
+            var tabs = document.querySelectorAll('.tab');
+            var buttons = document.querySelectorAll('.tab-button');
+            
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector('.tab-button[onclick="openTab(\'' + tabId + '\')"]').classList.add('active');
+        }
+
+        // Abrir la primera pestaña por defecto
+        openTab('tab1');
+        window.addEventListener('load', function () {
+    var loading = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    loading.style.display = 'none';
+    content.style.display = 'block';
+});
+   </script>
+
+</body>
+</html>

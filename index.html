@@ -1,146 +1,495 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Login Único</title>
-    <link rel="stylesheet" href="colores-principales.css">
-</head>
-<body>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Mi Amor</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background:#f8c0c8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .header {
+      text-align: center;
+      background: #ff9a9e;
+      color: white;
+      padding: 30px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 90%;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .game {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #ff9a9e;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #bb377d;
+    }
+
+    .letter {
+      background: linear-gradient(to bottom, #ffe4e1, #fcd5ce);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+      width: 80%;
+      max-width: 800px;
+      text-align: left;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .img-video {
+      width: 200px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #f8c0c8;
+      padding: 20px;
+      margin: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+      background-color: #ffdae8;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    .unique-modal-container {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+
         }
-        .background-image {
-            background-image: url('https://image.tmdb.org/t/p/original/sHn3Zgss1hnxpt0GaVREAP5hTga.pngg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
+
+        .unique-modal-box {
+            position: relative;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .unique-modal-image {
+            max-width: 90%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .unique-close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e3028b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-weight: bold;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+
+        .unique-open-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #e3028b;
             color: white;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        div#loginModal {
-            width: 340px;
-            background: #673ab742;
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-        }
-        .modal-content {
-            width: 340px;
-            height: 100%;
-        }
-        h2.h2-login {
-            margin: 30px 0px 30px 0px;
-            font-family: oswald;
-            font-size: xx-large;
-        }
-        .Usuario-contraseña {
-    margin: 60px 0px 20px 0px;
-    font-family: oswald;
-    font-size: large;
-}
 
 
-input#username {
-    width: 80%;
-    background: none;
-    border: none;
-    border-bottom: 2px solid var(--color-primario);
-    color: white;
-    margin: 15px 0px 15px 0px;
-    outline: none;
-    padding: 0px 0px 5px 0px;
-}
-input#password {
-    width: 80%;
-    background: none;
-    border: none;
-    border-bottom: 2px solid var(--color-primario);
-    color: white;
-    margin: 15px 0px 15px 0px;
-    outline: none;
-    padding: 0px 0px 5px 0px;
-}
-button#loginButton {
-    margin: 15px 0px 30px 0px;
-    width: 80%;
-    height: 40px;
-    background: var(--color-primario);
-    color: white;
-    border-radius: 5px;
-    border: none;
-    font-size: larger;
-    font-family: 'Oswald';
-}
-            </style>
-    <div class="background-image">
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <h2 class="h2-login">Iniciar Sesion</h2>
-            <label for="username" class="Usuario-contraseña">Nombre de Usuario</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password" class="Usuario-contraseña">Contraseña</label><br>
-            <input type="password" id="password" name="password" required><br>
-            <button id="loginButton">Inciar Sesion</button>
-        </div>
+  </style>
+</head>
+<body>
+
+  <div class="header">Para Sofi ❤️</div>
+
+  <div class="section">
+    <h2>Recuerdos</h2>
+    <div class="carousel" id="carousel">
+      <div class="carousel-images">
+        <img src="https://archive.org/download/4_20250112/Dise%C3%B1o%20sin%20t%C3%ADtulo.png" alt="Foto 1">
+        <img src="https://archive.org/download/4_20250112/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%281%29.png" alt="Foto 2">
+        <img src="https://archive.org/download/4_20250112/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%282%29.png" alt="Foto 3">
+        <img src="https://archive.org/download/4_20250112/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%283%29.png" alt="Foto 4">
+      </div>
     </div>
-</div>
+  </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginModal = document.getElementById('loginModal');
-        const loginButton = document.getElementById('loginButton');
+  <!-- Juego interactivo de verdadero o falso -->
+  <div class="section game">
+    <h2>Juego de Verdadero o Falso</h2>
+    <p id="question-text">Responde las preguntas sobre nosotros</p>
 
-        // Verificar si el usuario ya está registrado
-        if (localStorage.getItem('registered')) {
-            if (navigator.onLine) {
-                window.location.href = 'inicio.html'; // Redirigir a la página de perfil si ya está registrado
-            } else {
-                window.location.href = 'internet.html'; // Redirigir a la página sin conexión si no hay conexión
-            }
-        }
+    <div id="game-buttons">
+      <button class="btn" onclick="answerQuestion(true)">Verdadero</button>
+      <button class="btn" onclick="answerQuestion(false)">Falso</button>
+    </div>
 
-        loginButton.addEventListener('click', function() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    <div id="game-result"></div>
+  </div>
 
-            if (username && password) {
-                let users = JSON.parse(localStorage.getItem('users')) || [];
+  <!-- Más cartas románticas -->
+  <div class="section cards-section">
+    <div class="card">
+      <h3>Un poco de lo que me gusta de ti</h3>
+      <p>siento que las palabras nunca van a ser suficientes para describir todo lo que siento por vos y todo lo que me encanta de vos, pero voy a intentar explicarlo porque necesito que sepas cuánto me importás y lo increíble que sos para mí.</p>
+      <button class="btn" onclick="openModal('modal1')">Ver más</button>
+    </div>
+    <div class="card">
+      <h3>Un poco de lo que siento por ti</h3>
+      <p>todo lo que siento por vos se mezcla en mi cabeza y me llena el corazón de una manera que nunca pensé que fuera posible. Desde que llegaste a mi vida, todo cambió. Vos tenés una forma de hacerme feliz que nadie más ti..</p>
+      <button class="btn" onclick="openModal('modal2')">Ver más</button>
+    </div>
+    <div class="card">
+      <h3>Un Poco del Futuro</h3>
+      <p>cada vez que pienso en nuestro futuro juntos se me llena el corazón de una felicidad tan grande que no encuentro las palabras exactas.</p>
+      <button class="btn" onclick="openModal('modal3')">Ver más</button>
+    </div>
+    <div class="card">
+      <h3>Perdon Por Todo</h3>
+      <button class="btn" onclick="openModal('modal4')">Ver más</button>
+    </div>
+  </div>
 
-                // Verificar si el nombre de usuario ya está en uso
-                if (users.includes(username)) {
-                    alert('El nombre de usuario ya está en uso. Por favor, elige otro.');
-                } else {
-                    // Guardar el nombre de usuario en la lista de usuarios registrados
-                    users.push(username);
-                    localStorage.setItem('users', JSON.stringify(users));
+  <!-- Modal 1 -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>Un poco de lo que me gusta de ti</h3>
+      <p>siento que las palabras nunca van a ser suficientes para describir todo lo que siento por vos y todo lo que me encanta de vos, pero voy a intentar explicarlo porque necesito que sepas cuánto me importás y lo increíble que sos para mí.
 
-                    // Guardar estado de registro en localStorage
-                    localStorage.setItem('registered', 'true');
-                    localStorage.setItem('currentUser', username);
+        Primero, tu sonrisa. Mi amor, no sabés lo que me pasa cada vez que te veo sonreír. Es como si el mundo se detuviera por un segundo, como si nada más importara. Tu sonrisa es mi lugar favorito, es tan sincera, tan hermosa, tan perfecta que cada vez que la veo siento que puedo con todo. Es como un rayito de luz en los días más grises, y me hace feliz saber que soy uno de los motivos por los que sonreís.
+        
+        Después está tu piel, esa piel canela tan única, tan especial, tan vos. No puedo describir lo lindo que es tocarte, acariciarte, sentir tu suavidad. Es como si estuviera tocando algo mágico, algo que no tiene comparación. Cada vez que el sol te ilumina, parece que brillaras más que él, y eso me hace pensar que sos de otro mundo, que viniste a este planeta solo para ser perfecta.
+        
+        Y tu pelo, ay, tu pelo. Me encanta cómo se ve siempre, ya sea suelto, atado, desordenado, no importa cómo esté porque siempre es perfecto. Me encanta el olor que tiene, el brillo cuando le da la luz, cómo se mueve con el viento. A veces, cuando estoy a tu lado, no puedo evitar jugar con él, y cada vez que lo hago siento que estoy tocando algo especial, algo que me conecta más con vos.
+        
+        Tus ojos, mi amor, son otro mundo. Cada vez que te miro a los ojos siento que me pierdo en ellos, como si fueran un lugar donde podría quedarme para siempre. Tus ojos hablan, ¿sabías? Me cuentan cosas que no me decís con palabras, me hacen sentir que soy importante para vos, y cuando me mirás con esa ternura, me derrito por completo.
+        
+        Y tu nariz, tan linda, tan perfecta. Me encanta mirarte de perfil, observar cada detalle de tu carita. A veces pienso que no existe nadie más hermosa que vos, y creo que tengo razón porque sos única. Todo en vos tiene esa magia, esa chispa que no encuentro en nadie más.
+        
+        Después está tu cuerpo, y no sé ni por dónde empezar porque todo en vos es hermoso. Cada curva, cada movimiento, cada abrazo que me das es lo mejor que me puede pasar. Me encanta abrazarte, sentirte cerca, olerte, y quedarme así como si el tiempo no existiera. No es solo cómo te ves, que para mí ya es increíble, es todo lo que transmitís, cómo te movés, cómo caminás, cómo sos.
+        
+        Pero más allá de todo lo que puedo ver, tocar o sentir, me encanta quién sos. Me encanta tu risa, cómo suena, cómo llena cualquier lugar donde estés. Me encanta cómo hablás, cómo te emocionás por cosas pequeñas, cómo me cuidás, cómo siempre encontrás algo lindo en los días más normales. Sos mi lugar seguro, mi mejor amiga, mi persona favorita en el mundo entero.
+        
+        Gracias por ser vos, por existir, por dejarme estar a tu lado. No hay nada que me haga más feliz que tenerte en mi vida, y quiero que sepas que siempre voy a estar para vos, en las buenas y en las malas, en todo. Porque no me alcanza con decirte que te quiero, porque te quiero más de lo que las palabras pueden explicar.
+        
+        Sos mi todo, mi sueño hecho realidad, y nunca me voy a cansar de decirte cuánto te amo.</p>
+    </div>
+  </div>
 
-                    // Redirigir a la página de inicio
-                    if (navigator.onLine) {
-                        window.location.href = 'inicio.html';
-                    } else {
-                        window.location.href = 'internet.html';
-                    }
-                }
-            } else {
-                alert('Por favor, ingresa un nombre de usuario y una contraseña.');
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Un poco de lo que siento por ti</h3>
+      <p>todo lo que siento por vos se mezcla en mi cabeza y me llena el corazón de una manera que nunca pensé que fuera posible. Desde que llegaste a mi vida, todo cambió. Vos tenés una forma de hacerme feliz que nadie más tiene, como si hubieras nacido con la llave para abrir la mejor versión de mí.
+
+        Cada vez que estoy con vos siento que el mundo es un lugar mejor. Cuando me mirás con esos ojitos llenos de ternura, cuando me dedicás una sonrisa, cuando reís de algo que digo, mi corazón late más fuerte, y todo lo que me preocupa desaparece. Con vos me siento completo, como si no necesitara nada más para estar bien.
+        
+        Me hacés feliz con cosas tan simples como tus mensajes cuando menos lo espero, tus abrazos que me hacen sentir que todo va a estar bien, tu forma de escucharme cuando tengo algo en la cabeza, y hasta con la manera en la que me agarrás la mano cuando estamos juntos. Todo eso, aunque parezca pequeño, para mí lo es todo.
+        
+        A veces me pongo a pensar en cómo sería mi vida sin vos, y no puedo ni imaginarlo. Con vos todo tiene más sentido. Me enseñaste a ver la vida de otra forma, a valorar los momentos pequeños, a encontrar felicidad en cosas que antes no veía. Sos mi motivación, mi alegría, mi razón para levantarme cada día con una sonrisa.
+        
+        Y no solo es lo que hacés por mí, sino cómo sos vos. Tu forma de ser, tu risa, tus ocurrencias, esa energía tan linda que tenés. Hacés que cualquier día normal sea especial. Nunca voy a poder agradecerte lo suficiente por todo lo que me das, por cómo llenás mi vida de amor, de luz y de felicidad.
+        
+        Gracias por hacerme sentir amado, por ser paciente conmigo, por estar siempre ahí cuando te necesito, por ser mi refugio. Gracias por ser la razón por la que me voy a dormir con una sonrisa y por la que me despierto pensando que todo es posible. Sos mi alegría, mi compañera, mi mejor decisión.
+        
+        Quiero que sepas que todo lo que hacés por mí no pasa desapercibido. Cada gesto, cada palabra, cada mirada tuya se queda grabada en mi corazón. Y quiero prometerte que voy a hacer todo lo posible para devolverte aunque sea un poquito de toda la felicidad que vos me das cada día.
+        
+        Gracias por existir, por ser vos, por elegir estar conmigo. No me alcanzan las palabras para explicar lo feliz que me hacés, pero voy a pasar cada día demostrándotelo. Sos la mejor parte de mi vida, y voy a cuidarte siempre</p>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>Un poco del Futuro</h3>
+      <p>cada vez que pienso en nuestro futuro juntos se me llena el corazón de una felicidad tan grande que no encuentro las palabras exactas. Pero quiero que sepas algo: vos sos la persona con la que quiero todo. Sos con quien quiero construir mi vida, mi hogar, mi familia, mi mundo.
+
+        A veces me quedo pensando en lo lindo que sería formar una familia con vos. Te imagino siendo la mamá más increíble que pueda existir, con ese amor tan grande que tenés, esa paciencia, esa ternura que me enamora cada día más. Y pienso en nosotros, cuidando juntos a nuestros hijos, siendo equipo, apoyándonos en todo.
+        
+        Imagino tener una nena, ¿sabés? Una princesita que se parezca a vos, que tenga tu sonrisa, tus ojos, tu forma de ser. Me la imagino corriendo por la casa, jugando, riéndose, y vos ahí mirándola con esa carita hermosa que ponés cuando estás feliz. Pienso en cómo la vestiríamos, cómo le enseñaríamos a ser fuerte, a ser buena persona, a soñar en grande.
+        
+        Y también imagino tener un nene, nuestro campeón, que herede tu dulzura y un poquito de mi locura. Me lo imagino queriendo ser como nosotros, siguiéndonos a todos lados, riéndose con su hermana, aprendiendo cosas de vos, porque sé que vos serías su ejemplo a seguir.
+        
+        Pienso en cómo sería nuestra casa, llena de risas, de juegos, de momentos únicos. Un lugar donde todos se sientan amados, seguros, felices. Quiero que nuestros hijos crezcan sabiendo que tienen unos padres que se aman, que se respetan, que se cuidan. Quiero que vean en nosotros lo que significa el verdadero amor.
+        
+        Quiero tantas cosas con vos, mi amor. Quiero salir a pasear con nuestra familia, celebrar cumpleaños, navidades, todo. Quiero estar a tu lado en cada paso, en cada decisión, en cada etapa de nuestra vida. Quiero acompañarte en todo, apoyarte, y ver cómo cumplimos juntos cada sueño.
+        
+        Y no solo quiero hijos, también quiero seguir soñando grande con vos. Quiero viajar juntos, quiero envejecer a tu lado, quiero que nuestros hijos crezcan y después nos den nietos, y nosotros seguir ahí, mirándonos con la misma mirada llena de amor que tenemos ahora.
+        
+        Sos la persona con la que quiero todo, y no me da miedo decirlo. Con vos me siento seguro, me siento listo, porque sé que a tu lado cualquier cosa que venga la vamos a enfrentar juntos. No puedo imaginarme mi vida sin vos, porque en mi mente y en mi corazón siempre estás vos, y un futuro lleno de cosas hermosas que vamos a construir juntos.
+        
+        Gracias por ser vos, gracias por darme la certeza de que el amor verdadero existe y que quiero vivirlo con vos. Quiero que sepas que te elijo hoy, mañana y siempre, y que no importa cuánto tiempo pase, siempre voy a querer ese futuro contigo.
+        
+        Te amo más de lo que puedo explicar, y sé que nuestra vida juntos va a ser tan linda como la soñamos.</p>
+
+        <button id="uniqueOpenButton" class="unique-open-button">Abrir Imagen</button>
+
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h3>Un poco de mi Arrepentimiento</h3>
+      <p>cuánto me duele haber sido yo el que te lastimó alguna vez. No hay nada en este mundo que odie más que haberte hecho daño, y no pasa un día en el que no me arrepienta de cada inseguridad, de cada palabra, de cada acción que te haya hecho derramar una lágrima.
+
+        Quiero empezar diciéndote que nunca fue mi intención lastimarte. Todo lo que hago, todo lo que siento por vos, siempre viene desde el amor, pero sé que eso no justifica mis errores. Sé que a veces dije o hice cosas que no estuvieron bien, que te lastimaron, que te hicieron dudar de lo mucho que te amo. Y quiero que sepas que me duele más de lo que puedo explicar.
+        
+        Cada vez que pienso en esos momentos en los que te vi triste por mi culpa, siento como si algo dentro de mí se rompiera. Vos no te merecés eso, mi amor. Vos merecés sonrisas, abrazos, momentos lindos, todo lo mejor que este mundo pueda darte, y yo quiero ser la persona que te lo dé. Pero sé que fallé, sé que no siempre fui la mejor versión de mí mismo para vos, y por eso estoy acá, pidiéndote perdón.
+        
+        Perdón por cada vez que mi inseguridad te hizo sentir que no eras suficiente, porque la verdad es que sos más de lo que jamás soñé. Perdón por cada discusión innecesaria, por cada silencio que dolió, por no haber sabido manejar mis emociones en algunos momentos. Perdón por no haberte escuchado como debía, por no haber estado a la altura de lo que vos necesitabas.
+        
+        Sé que las lágrimas que derramaste por mí no se pueden borrar, pero quiero que sepas que estoy haciendo todo lo posible por aprender, por crecer, por ser mejor para vos. Porque no quiero que vuelvas a sentirte así nunca más. No quiero ser la razón de tu tristeza, quiero ser tu refugio, tu apoyo, tu alegría.
+        
+        Gracias por tu paciencia, por seguir creyendo en mí incluso cuando no lo merecía. Gracias por no soltarme, por confiar en que puedo ser mejor, por enseñarme con tu amor lo que significa realmente querer a alguien. Prometo que voy a hacer todo lo que esté a mi alcance para demostrarte que puedo cambiar, que puedo ser el hombre que vos merecés, ese que te cuide, que te valore, que te haga feliz.
+        
+        No me alcanza con decirte cuánto lo siento, porque sé que las palabras no son suficientes. Pero quiero que sepas que cada día que pase voy a demostrarte con hechos que estoy acá, que te elijo, que te amo con todo mi corazón y que voy a luchar por vos, por nosotros, por este amor que es lo más importante en mi vida.
+        
+        Perdón por cada herida, por cada duda, por cada momento que te hizo sentir menos de lo increíble que sos. Te prometo que voy a hacer todo para que esas lágrimas se conviertan en sonrisas, y para que nunca más tengas que sentirte así.
+        
+        Te amo más de lo que puedo explicar, y no voy a parar hasta ser la persona que te merecés. Gracias por ser vos, por ser tan fuerte, tan buena, tan llena de amor. No sé qué haría sin vos, pero sé que no quiero ni imaginarlo.</p>
+    </div>
+  </div>
+
+
+  <div class="section">
+    <h2>Más Fotos De Nosotros</h2>
+    <div class="photo-gallery">
+      <img class="img-video" src="https://ia804603.us.archive.org/6/items/4_20250112/1.jpg" alt="Foto 4">
+      <img class="img-video" src="https://archive.org/download/4_20250112/2.jpg" alt="Foto 5">
+      <video loop autoplay muted  class="img-video" src="https://archive.org/download/4_20250112/3.mp4" alt="Foto 6"></video>
+       <video loop autoplay muted  class="img-video" src="../Imágenes/4.mp4" alt="Foto 6"></video>
+       <img class="img-video" src="https://ia904603.us.archive.org/6/items/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.12_13f6e3eb.jpg" alt="Foto 8">
+      <img class="img-video" src="https://archive.org/download/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.13_2a61a4af.jpg" alt="Foto 9">
+      <img class="img-video" src="https://archive.org/download/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.13_b0d60868.jpg" alt="Foto 10">
+      <img class="img-video" src="https://archive.org/download/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.14_7a939592.jpg" alt="Foto 10">
+      <img class="img-video" src="https://archive.org/download/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.21_afec8ce0.jpg" alt="Foto 10">
+      <img class="img-video" src="https://archive.org/download/4_20250112/Imagen%20de%20WhatsApp%202025-01-11%20a%20las%2021.46.22_92f26ea3.jpg" alt="Foto 10">
+      <video loop autoplay muted class="img-video" src="https://archive.org/download/4_20250112/Video%20de%20WhatsApp%202025-01-11%20a%20las%2021.47.52_0c075720.mp4" alt="Foto 10"></video>
+
+    </div>
+  </div>
+
+      <!-- Botón para abrir el modal -->
+
+      <!-- Modal -->
+      <div id="uniqueModalContainer" class="unique-modal-container">
+          <div class="unique-modal-box">
+              <button id="uniqueCloseButton" class="unique-close-button">&times;</button>
+              <img src="https://ia904603.us.archive.org/6/items/4_20250112/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%284%29.png" alt="Imagen de ejemplo" class="unique-modal-image">
+          </div>
+      </div>
+
+  <!-- Footer -->
+  <footer class="header">
+    Te Amo 💕
+  </footer>
+
+  <script>
+    // Carrusel automático
+    let carouselIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const images = carousel.querySelector('.carousel-images');
+
+    setInterval(() => {
+      carouselIndex = (carouselIndex + 1) % images.children.length;
+      images.style.transform = `translateX(-${carouselIndex * 100}%)`;
+    }, 3000);
+
+    const questions = [
+      { text: "Nuestro Primer beso fue en el liceo?", correct: false, explanation: "Falso , nuestro primer beso fue en tu casa" },
+      { text: "Nos Pusimos de novios en tu casa?", correct: true, explanation: "Verdadero , Nos pusimos de novios en tu casa" },
+      { text: "somos la primera vez de los 2?", correct: true, explanation: "Verdadero , Somos la primera vez de ambos" },
+      { text: "a los 2 nos gusta el Mondongo??", correct: false, explanation: "Falso , A ti no te gusta el mondongo" },
+      { text: "Yo te dije te amo primero?", correct: true, explanation: "Verdadero , Yo te lo dije primero" },
+      { text: "Yo te amo mas", correct: true, explanation: "Verdadero , Yo te amo mas" },
+      { text: "Ambos tenemos los mismos planes para el futuro.", correct: true, explanation: "Verdadero , Planeamos tener Hijos y casarnos" },
+      { text: "Sabemos casi todo del Otro", correct: true, explanation: "Verdadero" }
+
+
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function showQuestion() {
+      if (currentQuestionIndex < questions.length) {
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question-text').innerText = question.text;
+        document.getElementById('game-result').innerText = '';
+      } else {
+        document.getElementById('question-text').innerText = "¡Juego terminado!";
+        document.getElementById('game-buttons').style.display = 'none';
+        document.getElementById('game-result').innerText = `Puntuación final: ${score}/${questions.length}`;
+      }
+    }
+
+    function answerQuestion(answer) {
+      const question = questions[currentQuestionIndex];
+
+      if (answer === question.correct) {
+        score++;
+        document.getElementById('game-result').innerText = question.explanation;
+      } else {
+        document.getElementById('game-result').innerText = "Opcion Equivocada. ";
+      }
+
+      currentQuestionIndex++;
+      setTimeout(showQuestion, 2000);
+    }
+
+    // Mostrar la primera pregunta al cargar la página
+    showQuestion();
+
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+
+
+
+          // Obtener referencias a los elementos
+          const uniqueOpenButton = document.getElementById('uniqueOpenButton');
+        const uniqueCloseButton = document.getElementById('uniqueCloseButton');
+        const uniqueModalContainer = document.getElementById('uniqueModalContainer');
+
+        // Mostrar el modal al hacer clic en el botón
+        uniqueOpenButton.addEventListener('click', () => {
+            uniqueModalContainer.style.display = 'flex';
+        });
+
+        // Ocultar el modal al hacer clic en el botón de cerrar
+        uniqueCloseButton.addEventListener('click', () => {
+            uniqueModalContainer.style.display = 'none';
+        });
+
+        // Ocultar el modal al hacer clic fuera del contenido del modal
+        window.addEventListener('click', (e) => {
+            if (e.target === uniqueModalContainer) {
+                uniqueModalContainer.style.display = 'none';
             }
         });
-    });
-</script>
+  </script>
 </body>
 </html>
